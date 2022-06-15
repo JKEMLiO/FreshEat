@@ -9,13 +9,14 @@
 /* Begin PBXBuildFile section */
 		20330470285A2BF0006DB34A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2033046F285A2BF0006DB34A /* AppDelegate.swift */; };
 		20330472285A2BF0006DB34A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20330471285A2BF0006DB34A /* SceneDelegate.swift */; };
-		20330474285A2BF0006DB34A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20330473285A2BF0006DB34A /* ViewController.swift */; };
+		20330474285A2BF0006DB34A /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20330473285A2BF0006DB34A /* WelcomeViewController.swift */; };
 		20330477285A2BF0006DB34A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 20330475285A2BF0006DB34A /* Main.storyboard */; };
 		20330479285A2BF4006DB34A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 20330478285A2BF4006DB34A /* Assets.xcassets */; };
 		2033047C285A2BF4006DB34A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2033047A285A2BF4006DB34A /* LaunchScreen.storyboard */; };
 		20330487285A2BF4006DB34A /* FreshEatIOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20330486285A2BF4006DB34A /* FreshEatIOSTests.swift */; };
 		20330491285A2BF4006DB34A /* FreshEatIOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20330490285A2BF4006DB34A /* FreshEatIOSUITests.swift */; };
 		20330493285A2BF4006DB34A /* FreshEatIOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20330492285A2BF4006DB34A /* FreshEatIOSUITestsLaunchTests.swift */; };
+		203304A0285A2EAB006DB34A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2033049F285A2EAB006DB34A /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +40,7 @@
 		2033046C285A2BF0006DB34A /* FreshEatIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FreshEatIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2033046F285A2BF0006DB34A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20330471285A2BF0006DB34A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		20330473285A2BF0006DB34A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		20330473285A2BF0006DB34A /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		20330476285A2BF0006DB34A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		20330478285A2BF4006DB34A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2033047B285A2BF4006DB34A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +50,7 @@
 		2033048C285A2BF4006DB34A /* FreshEatIOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FreshEatIOSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		20330490285A2BF4006DB34A /* FreshEatIOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreshEatIOSUITests.swift; sourceTree = "<group>"; };
 		20330492285A2BF4006DB34A /* FreshEatIOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreshEatIOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		2033049F285A2EAB006DB34A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,11 +103,12 @@
 			children = (
 				2033046F285A2BF0006DB34A /* AppDelegate.swift */,
 				20330471285A2BF0006DB34A /* SceneDelegate.swift */,
-				20330473285A2BF0006DB34A /* ViewController.swift */,
+				20330473285A2BF0006DB34A /* WelcomeViewController.swift */,
 				20330475285A2BF0006DB34A /* Main.storyboard */,
 				20330478285A2BF4006DB34A /* Assets.xcassets */,
 				2033047A285A2BF4006DB34A /* LaunchScreen.storyboard */,
 				2033047D285A2BF4006DB34A /* Info.plist */,
+				2033049F285A2EAB006DB34A /* LoginViewController.swift */,
 			);
 			path = FreshEatIOS;
 			sourceTree = "<group>";
@@ -258,8 +261,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				20330474285A2BF0006DB34A /* ViewController.swift in Sources */,
+				20330474285A2BF0006DB34A /* WelcomeViewController.swift in Sources */,
 				20330470285A2BF0006DB34A /* AppDelegate.swift in Sources */,
+				203304A0285A2EAB006DB34A /* LoginViewController.swift in Sources */,
 				20330472285A2BF0006DB34A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
