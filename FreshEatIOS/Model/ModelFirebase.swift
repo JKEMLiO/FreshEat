@@ -9,5 +9,5 @@ import Foundation
 import FirebaseFirestore
 
 class ModelFirebase{
-    
+    let db = Firestore.firestore()
 }

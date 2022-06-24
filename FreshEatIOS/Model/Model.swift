@@ -8,7 +8,11 @@
 import Foundation
 
 class Model{
-    static let instance = Model()
     
+    let firebaseModel = ModelFirebase()
+    
+    static let instance = Model()
     private init(){}
+    
+    
 }
