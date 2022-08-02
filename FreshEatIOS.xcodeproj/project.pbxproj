@@ -17,6 +17,10 @@
 		20330491285A2BF4006DB34A /* FreshEatIOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20330490285A2BF4006DB34A /* FreshEatIOSUITests.swift */; };
 		20330493285A2BF4006DB34A /* FreshEatIOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20330492285A2BF4006DB34A /* FreshEatIOSUITestsLaunchTests.swift */; };
 		203304A0285A2EAB006DB34A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2033049F285A2EAB006DB34A /* LoginViewController.swift */; };
+		7B5C8759289956920048D7C8 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5C8758289956920048D7C8 /* RegisterViewController.swift */; };
+		7B5C875B289956B60048D7C8 /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5C875A289956B60048D7C8 /* NewPostViewController.swift */; };
+		7B5C875D289957030048D7C8 /* PostTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5C875C289957030048D7C8 /* PostTableViewController.swift */; };
+		7B5C875F289958020048D7C8 /* SeePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5C875E289958020048D7C8 /* SeePostViewController.swift */; };
 		C2C269D02865F85800C621CD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C2C269CF2865F85800C621CD /* GoogleService-Info.plist */; };
 		C2C269D32865F94C00C621CD /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = C2C269D22865F94C00C621CD /* FirebaseAnalytics */; };
 		C2C269D52865F94C00C621CD /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = C2C269D42865F94C00C621CD /* FirebaseAuth */; };
@@ -59,6 +63,10 @@
 		20330490285A2BF4006DB34A /* FreshEatIOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreshEatIOSUITests.swift; sourceTree = "<group>"; };
 		20330492285A2BF4006DB34A /* FreshEatIOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreshEatIOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		2033049F285A2EAB006DB34A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		7B5C8758289956920048D7C8 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		7B5C875A289956B60048D7C8 /* NewPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
+		7B5C875C289957030048D7C8 /* PostTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewController.swift; sourceTree = "<group>"; };
+		7B5C875E289958020048D7C8 /* SeePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeePostViewController.swift; sourceTree = "<group>"; };
 		C2C269CF2865F85800C621CD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C2C269DB2865FA9D00C621CD /* ModelFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelFirebase.swift; sourceTree = "<group>"; };
 		C2C269DD2865FACF00C621CD /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
@@ -127,7 +135,11 @@
 				2033047A285A2BF4006DB34A /* LaunchScreen.storyboard */,
 				2033047D285A2BF4006DB34A /* Info.plist */,
 				2033049F285A2EAB006DB34A /* LoginViewController.swift */,
+				7B5C8758289956920048D7C8 /* RegisterViewController.swift */,
+				7B5C875C289957030048D7C8 /* PostTableViewController.swift */,
+				7B5C875A289956B60048D7C8 /* NewPostViewController.swift */,
 				C2C269DF2865FDCE00C621CD /* DataModel.xcdatamodeld */,
+				7B5C875E289958020048D7C8 /* SeePostViewController.swift */,
 			);
 			path = FreshEatIOS;
 			sourceTree = "<group>";
@@ -300,9 +312,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				20330474285A2BF0006DB34A /* WelcomeViewController.swift in Sources */,
+				7B5C875F289958020048D7C8 /* SeePostViewController.swift in Sources */,
 				20330470285A2BF0006DB34A /* AppDelegate.swift in Sources */,
 				203304A0285A2EAB006DB34A /* LoginViewController.swift in Sources */,
+				7B5C8759289956920048D7C8 /* RegisterViewController.swift in Sources */,
 				C2C269E12865FDCE00C621CD /* DataModel.xcdatamodeld in Sources */,
+				7B5C875D289957030048D7C8 /* PostTableViewController.swift in Sources */,
+				7B5C875B289956B60048D7C8 /* NewPostViewController.swift in Sources */,
 				C2C269DE2865FACF00C621CD /* Model.swift in Sources */,
 				C2C269DC2865FA9D00C621CD /* ModelFirebase.swift in Sources */,
 				20330472285A2BF0006DB34A /* SceneDelegate.swift in Sources */,
