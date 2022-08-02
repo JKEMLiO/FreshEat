@@ -66,6 +66,9 @@
                                     </attributedString>
                                     <color key="baseForegroundColor" systemColor="systemBackgroundColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="cOZ-Nf-Fob" kind="show" id="iPd-ZK-VJA"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -84,6 +87,22 @@
                 <exit id="cEd-w7-CZs" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="131.8840579710145" y="99.776785714285708"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="bk1-4M-zJx">
+            <objects>
+                <viewController id="cOZ-Nf-Fob" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="M3G-Hn-Byx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="hew-R1-Nbi"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="xSb-4H-BhX"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5Pf-jl-8cR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1300" y="447"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="Vpk-5U-J13">
