@@ -22,7 +22,9 @@
 		7B5C875D289957030048D7C8 /* PostTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5C875C289957030048D7C8 /* PostTableViewController.swift */; };
 		7B5C875F289958020048D7C8 /* SeePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5C875E289958020048D7C8 /* SeePostViewController.swift */; };
 		C22C522C289E5EA100C8E4A0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22C522B289E5EA100C8E4A0 /* User.swift */; };
-		C2C269D02865F85800C621CD /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C2C269CF2865F85800C621CD /* GoogleService-Info.plist */; };
+		C22C522E289E65B100C8E4A0 /* UserDao+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22C522D289E65B100C8E4A0 /* UserDao+CoreDataClass.swift */; };
+		C22C5230289E66DE00C8E4A0 /* UserDao+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22C522F289E66DD00C8E4A0 /* UserDao+CoreDataProperties.swift */; };
+		C22C5231289E6B7700C8E4A0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C2C269CF2865F85800C621CD /* GoogleService-Info.plist */; };
 		C2C269D32865F94C00C621CD /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = C2C269D22865F94C00C621CD /* FirebaseAnalytics */; };
 		C2C269D52865F94C00C621CD /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = C2C269D42865F94C00C621CD /* FirebaseAuth */; };
 		C2C269D72865F94C00C621CD /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = C2C269D62865F94C00C621CD /* FirebaseFirestore */; };
@@ -69,6 +71,9 @@
 		7B5C875C289957030048D7C8 /* PostTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewController.swift; sourceTree = "<group>"; };
 		7B5C875E289958020048D7C8 /* SeePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeePostViewController.swift; sourceTree = "<group>"; };
 		C22C522B289E5EA100C8E4A0 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		C22C522D289E65B100C8E4A0 /* UserDao+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDao+CoreDataClass.swift"; sourceTree = "<group>"; };
+		C22C522F289E66DD00C8E4A0 /* UserDao+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDao+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C22C5232289E6DA100C8E4A0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C2C269CF2865F85800C621CD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C2C269DB2865FA9D00C621CD /* ModelFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelFirebase.swift; sourceTree = "<group>"; };
 		C2C269DD2865FACF00C621CD /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
@@ -169,6 +174,9 @@
 				C2C269DB2865FA9D00C621CD /* ModelFirebase.swift */,
 				C2C269DD2865FACF00C621CD /* Model.swift */,
 				C22C522B289E5EA100C8E4A0 /* User.swift */,
+				C22C522D289E65B100C8E4A0 /* UserDao+CoreDataClass.swift */,
+				C22C5232289E6DA100C8E4A0 /* GoogleService-Info.plist */,
+				C22C522F289E66DD00C8E4A0 /* UserDao+CoreDataProperties.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -286,8 +294,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C22C5231289E6B7700C8E4A0 /* GoogleService-Info.plist in Resources */,
 				2033047C285A2BF4006DB34A /* LaunchScreen.storyboard in Resources */,
-				C2C269D02865F85800C621CD /* GoogleService-Info.plist in Resources */,
 				20330479285A2BF4006DB34A /* Assets.xcassets in Resources */,
 				20330477285A2BF0006DB34A /* Main.storyboard in Resources */,
 			);
@@ -314,9 +322,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C22C5230289E66DE00C8E4A0 /* UserDao+CoreDataProperties.swift in Sources */,
 				20330474285A2BF0006DB34A /* WelcomeViewController.swift in Sources */,
 				7B5C875F289958020048D7C8 /* SeePostViewController.swift in Sources */,
 				20330470285A2BF0006DB34A /* AppDelegate.swift in Sources */,
+				C22C522E289E65B100C8E4A0 /* UserDao+CoreDataClass.swift in Sources */,
 				203304A0285A2EAB006DB34A /* LoginViewController.swift in Sources */,
 				7B5C8759289956920048D7C8 /* RegisterViewController.swift in Sources */,
 				C2C269E12865FDCE00C621CD /* DataModel.xcdatamodeld in Sources */,

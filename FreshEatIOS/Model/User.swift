@@ -17,6 +17,14 @@ class User{
     public var lastUpdated: Int64 = 0
     
     init(){}
+    
+    init(user:UserDao){
+        id = user.id
+        name = user.name
+        email = user.email
+        avatarUrl = user.avatarUrl
+        lastUpdated = user.lastUpdated
+    }
 }
 
 extension User{
