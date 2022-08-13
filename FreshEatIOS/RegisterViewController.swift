@@ -7,17 +7,47 @@
 
 import UIKit
 
-class RegisterViewController: UIViewController {
+class RegisterViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
 
     @IBOutlet weak var profileImage: UIImageView!
+    @IBOutlet weak var confirmPassword: UITextField!
+    @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var name: UITextField!
+    @IBOutlet weak var email: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         profileImage.layer.cornerRadius=40
         profileImage.clipsToBounds=true
-        
+    }
+    
+    @IBAction func register(_ sender: UIButton) {
         
     }
     
+    @IBAction func openCamera(_ sender: UIButton) {
+        takePicture(source: .camera)
+    }
+    
+    func takePicture(source: UIImagePickerController.SourceType){
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.sourceType = source;
+        imagePicker.allowsEditing = true
+        if (UIImagePickerController.isSourceTypeAvailable(source))
+        {
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+    }
+    
+    var selectedImage: UIImage?
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        selectedImage = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerOriginalImage")] as? UIImage
+        self.profileImage.image = selectedImage
+        self.dismiss(animated: true, completion: nil)
+    }
 
     /*
     // MARK: - Navigation

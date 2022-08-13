@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Tlu-gF-e3S">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -117,7 +117,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="24" translatesAutoresizingMaskIntoConstraints="NO" id="De8-zD-vUg">
-                                <rect key="frame" x="20" y="339" width="374" height="50"/>
+                                <rect key="frame" x="20" y="383" width="374" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="ufD-MK-IAi"/>
                                 </constraints>
@@ -125,7 +125,7 @@
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" textContentType="email"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User Name" textAlignment="natural" minimumFontSize="24" translatesAutoresizingMaskIntoConstraints="NO" id="Rfg-MY-bSF">
-                                <rect key="frame" x="20" y="419" width="374" height="50"/>
+                                <rect key="frame" x="20" y="463" width="374" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="seq-dC-hou"/>
                                 </constraints>
@@ -133,7 +133,7 @@
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" textContentType="username"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="24" translatesAutoresizingMaskIntoConstraints="NO" id="Cub-cp-GhW">
-                                <rect key="frame" x="20" y="499" width="374" height="50"/>
+                                <rect key="frame" x="20" y="543" width="374" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="ZoA-Rf-l1W"/>
                                 </constraints>
@@ -141,7 +141,7 @@
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" secureTextEntry="YES" textContentType="new-password"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="24" translatesAutoresizingMaskIntoConstraints="NO" id="gNr-3p-tpH">
-                                <rect key="frame" x="20" y="579" width="374" height="50"/>
+                                <rect key="frame" x="20" y="623" width="374" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Tmf-um-Hfj"/>
                                 </constraints>
@@ -149,7 +149,7 @@
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" secureTextEntry="YES" textContentType="new-password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sbS-81-rgf">
-                                <rect key="frame" x="107" y="649" width="200" height="50"/>
+                                <rect key="frame" x="107" y="693" width="200" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Ct5-Zn-WkP"/>
                                 </constraints>
@@ -169,9 +169,12 @@
                                     </attributedString>
                                     <color key="baseForegroundColor" systemColor="systemBackgroundColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="register:" destination="cOZ-Nf-Fob" eventType="touchUpInside" id="27W-bW-ZW6"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="farmerAvatarSmall" translatesAutoresizingMaskIntoConstraints="NO" id="fhx-WL-STy" userLabel="userImage">
-                                <rect key="frame" x="107" y="20" width="200" height="200"/>
+                                <rect key="frame" x="107" y="64" width="200" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="SwY-jM-lFS"/>
                                     <constraint firstAttribute="height" constant="200" id="hzN-ES-GUA"/>
@@ -179,7 +182,7 @@
                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="small"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Plese Enter Details" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="gVj-mc-vg4" userLabel="loginTxt">
-                                <rect key="frame" x="70" y="282" width="275" height="49"/>
+                                <rect key="frame" x="70" y="326" width="275" height="49"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="49" id="I1l-9K-Y6T"/>
                                     <constraint firstAttribute="width" constant="275" id="OuI-S5-ON2"/>
@@ -189,7 +192,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WGi-tQ-95j">
-                                <rect key="frame" x="107" y="228" width="200" height="35"/>
+                                <rect key="frame" x="107" y="272" width="200" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="LOn-iy-TZX"/>
                                     <constraint firstAttribute="height" constant="35" id="sxR-g3-wZH"/>
@@ -201,6 +204,9 @@
                                     </preferredSymbolConfiguration>
                                     <color key="baseBackgroundColor" red="0.39028996230000002" green="0.65612149239999995" blue="0.26791793110000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="openCamera:" destination="cOZ-Nf-Fob" eventType="touchUpInside" id="CeK-Mv-WFA"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hew-R1-Nbi"/>
@@ -233,6 +239,10 @@
                     </view>
                     <navigationItem key="navigationItem" id="xSb-4H-BhX"/>
                     <connections>
+                        <outlet property="confirmPassword" destination="gNr-3p-tpH" id="ICt-bE-dPd"/>
+                        <outlet property="email" destination="De8-zD-vUg" id="6CH-Pu-JKH"/>
+                        <outlet property="name" destination="Rfg-MY-bSF" id="LRw-2L-sQb"/>
+                        <outlet property="password" destination="gNr-3p-tpH" id="J6A-cE-uQp"/>
                         <outlet property="profileImage" destination="fhx-WL-STy" id="HGS-Xf-PjR"/>
                     </connections>
                 </viewController>
@@ -249,10 +259,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logoWithEat" translatesAutoresizingMaskIntoConstraints="NO" id="EcZ-Vd-UXz">
-                                <rect key="frame" x="47" y="144" width="296" height="160"/>
+                                <rect key="frame" x="47" y="188" width="296" height="160"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Please Enter User Name &amp; Password" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="t35-CV-yMc" userLabel="loginTxt">
-                                <rect key="frame" x="40" y="335" width="310" height="91"/>
+                                <rect key="frame" x="40" y="379" width="310" height="91"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="91" id="WJa-AB-kqg"/>
                                 </constraints>
@@ -261,7 +271,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User Name" textAlignment="natural" minimumFontSize="24" translatesAutoresizingMaskIntoConstraints="NO" id="7QZ-4D-05U">
-                                <rect key="frame" x="20" y="475" width="350" height="50"/>
+                                <rect key="frame" x="20" y="519" width="350" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="zc3-uf-W0K"/>
                                 </constraints>
@@ -269,7 +279,7 @@
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" textContentType="username"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="24" translatesAutoresizingMaskIntoConstraints="NO" id="9CD-cF-lGV">
-                                <rect key="frame" x="20" y="555" width="350" height="50"/>
+                                <rect key="frame" x="20" y="599" width="350" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="q4l-nV-Ikc"/>
                                 </constraints>
@@ -277,7 +287,7 @@
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MXa-Ni-m1s">
-                                <rect key="frame" x="107" y="670" width="176" height="50"/>
+                                <rect key="frame" x="107" y="714" width="176" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="DFt-PR-cun"/>
                                 </constraints>
@@ -419,7 +429,6 @@
         <!--ADD-->
         <scene sceneID="wWZ-ow-Oog">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Hfi-7W-407" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController id="bLf-fF-a32" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="ADD" image="plus" catalog="system" id="LSw-Ya-dgl"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="hhg-E8-A8t">
@@ -430,6 +439,7 @@
                         <segue destination="CLD-eH-ZfL" kind="relationship" relationship="rootViewController" id="Yry-SR-dYK"/>
                     </connections>
                 </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hfi-7W-407" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3942" y="-175"/>
         </scene>
@@ -728,11 +738,11 @@
         <scene sceneID="tQB-Ax-qz4">
             <objects>
                 <viewController id="SxS-XT-odG" customClass="SeePostViewController" customModule="FreshEatIOS" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="IBb-ny-b5c">
+                    <view key="view" contentMode="scaleToFill" ambiguous="YES" id="IBb-ny-b5c">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nhM-hW-8pQ">
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nhM-hW-8pQ">
                                 <rect key="frame" x="30" y="386" width="330" height="72"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Israel Israel" translatesAutoresizingMaskIntoConstraints="NO" id="s6H-WG-J8c" userLabel="userName">
@@ -780,10 +790,10 @@
                                     <constraint firstAttribute="bottom" secondItem="qRe-y2-d1U" secondAttribute="bottom" constant="8" id="mOT-Wt-Y42"/>
                                 </constraints>
                             </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aar-kN-gUw">
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aar-kN-gUw">
                                 <rect key="frame" x="30" y="466" width="330" height="120"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Our food is from tel tol dasjlk sdjlk asd " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="sq5-GZ-y2z" userLabel="Main text">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" text="Our food is from tel tol dasjlk sdjlk asd " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="sq5-GZ-y2z" userLabel="Main text">
                                         <rect key="frame" x="8" y="8" width="316" height="104"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
@@ -802,17 +812,17 @@
                                     <constraint firstAttribute="trailing" secondItem="sq5-GZ-y2z" secondAttribute="trailing" constant="6" id="eYM-sZ-dS0"/>
                                 </constraints>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="CRa-ze-H7O" userLabel="postMainImage">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CRa-ze-H7O" userLabel="postMainImage">
                                 <rect key="frame" x="30" y="144" width="330" height="230"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="230" id="AfR-IV-m3U"/>
                                     <constraint firstAttribute="width" constant="354" id="HH3-gB-Eni"/>
                                 </constraints>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nPc-UI-9nM">
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nPc-UI-9nM">
                                 <rect key="frame" x="30" y="596" width="330" height="80"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Contatct Info:" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vaB-0F-co3" userLabel="contactInfohead">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" text="Contatct Info:" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vaB-0F-co3" userLabel="contactInfohead">
                                         <rect key="frame" x="8" y="8" width="316" height="28"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
