@@ -76,12 +76,31 @@ class ModelFirebase{
         }
     }
     
+    func getAllUsers(completion:@escaping ([User])->Void){
+        db.collection("users").getDocuments() {
+            (querySnapshot, error) in
+            var users = [User]()
+            if let err = error {
+                print("Error getting users: \(err)")
+                completion(users)
+            } else {
+                for document in querySnapshot!.documents {
+                    let u = User.FromJson(json: document.data())
+                    users.append(u)
+                }
+                completion(users)
+            }
+        }
+    }
+    
     /*
      Post
      */
     
     func getAllPosts(since:Int64, completion:@escaping ([Post])->Void){
-        db.collection("posts").whereField("lastUpdated", isGreaterThanOrEqualTo: Timestamp(seconds: since, nanoseconds: 0)).getDocuments() {
+        db.collection("posts").order(by: "timestamp",descending: true)
+            .whereField("lastUpdated", isGreaterThanOrEqualTo: Timestamp(seconds: since, nanoseconds: 0))
+            .getDocuments() {
             (querySnapshot, error) in
             var posts = [Post]()
             if let err = error {
@@ -91,13 +110,13 @@ class ModelFirebase{
                 for document in querySnapshot!.documents {
                     let p = Post.FromJson(json: document.data())
                     posts.append(p)
-                    completion(posts)
                 }
+                completion(posts)
             }
         }
     }
     
-    func add(post:Post, completion:@escaping ()->Void){
+    func addPost(post:Post, completion:@escaping ()->Void){
         db.collection("posts").document(post.id!).setData(post.toJson())
         {
             error in

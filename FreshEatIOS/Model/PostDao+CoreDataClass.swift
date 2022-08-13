@@ -50,7 +50,7 @@ public class PostDao: NSManagedObject {
             }
             return nil
         }catch let error as NSError{
-            print("posts fetch error \(error) \(error.userInfo)")
+            print("post fetch error core data \(error) \(error.userInfo)")
             return nil
         }
     }

@@ -31,7 +31,7 @@ public class UserDao: NSManagedObject {
             }
             return uArray
         }catch let error as NSError{
-            print("user fetch error \(error) \(error.userInfo)")
+            print("user fetch error core data\(error) \(error.userInfo)")
             return []
         }
     }
@@ -49,16 +49,50 @@ public class UserDao: NSManagedObject {
         do{
             try context.save()
         }catch let error as NSError{
-            print("user add error \(error) \(error.userInfo)")
+            print("user add error core data \(error) \(error.userInfo)")
         }
     }
     
     static func getUser(byId:String)->User?{
-        return nil
+        guard let context = context else {
+            return nil
+        }
+
+        do{
+            let userDao = try context.fetch(UserDao.fetchRequest())
+            for uDao in userDao{
+                if(uDao.id == byId){
+                    return User(user:uDao)
+                }
+            }
+            return nil
+        }catch let error as NSError{
+            print("user fetch error core data \(error) \(error.userInfo)")
+            return nil
+        }
     }
     
-    static func delete(user:User){
+    static func deleteAllUsers(){
+        guard let context = context else {
+            return
+        }
         
+        do{
+            let usersDao = try context.fetch(UserDao.fetchRequest())
+            if(usersDao.count>0){
+                for uDao in usersDao{
+                    context.delete(uDao)
+                }
+            }
+        }catch let error as NSError{
+            print("users delete error core data \(error) \(error.userInfo)")
+        }
+        
+        do{
+            try context.save()
+        } catch {
+            print("Didn't save userDao after deleting all users.")
+        }
     }
     
 }

@@ -36,6 +36,21 @@ class Model{
         }
     }
     
+    func getAllUsers(completion:@escaping ([User])->Void){
+        firebaseModel.getAllUsers(){
+            users in
+            self.dispatchQueue.async{
+                for user in users {
+                    UserDao.addUser(user: user)
+                }
+                DispatchQueue.main.async {
+                    //return all records to caller
+                    completion(UserDao.getAllUsers())
+                }
+            }
+        }
+    }
+    
     /*
      Post
      */
@@ -73,7 +88,7 @@ class Model{
     }
     
     func addPost(post:Post, completion: @escaping ()->Void){
-        firebaseModel.add(post: post){
+        firebaseModel.addPost(post: post){
             completion()
             Model.postDataNotification.post()
         }
