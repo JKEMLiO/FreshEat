@@ -216,7 +216,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Pf-jl-8cR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1298.5507246376812" y="446.65178571428567"/>
+            <point key="canvasLocation" x="1345" y="448"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="Vpk-5U-J13">
@@ -403,7 +403,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="New Post" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="bG9-01-ffp" userLabel="loginTxt">
-                                <rect key="frame" x="40" y="124" width="334" height="49"/>
+                                <rect key="frame" x="40" y="123" width="334" height="49"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="49" id="YLk-s7-0lD"/>
                                 </constraints>
@@ -412,7 +412,7 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" minimumFontSize="24" translatesAutoresizingMaskIntoConstraints="NO" id="Oir-4K-4sE">
-                                <rect key="frame" x="20" y="206" width="374" height="50"/>
+                                <rect key="frame" x="20" y="205" width="374" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="C8a-n4-Zi3"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="JO2-fi-ieV"/>
@@ -421,7 +421,7 @@
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" textContentType="organization-title"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="What you sell?" textAlignment="natural" minimumFontSize="24" translatesAutoresizingMaskIntoConstraints="NO" id="TwB-PZ-jum">
-                                <rect key="frame" x="20" y="264" width="374" height="250"/>
+                                <rect key="frame" x="20" y="263" width="374" height="250"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="250" id="vkv-Te-NBM"/>
                                 </constraints>
@@ -429,7 +429,7 @@
                                 <textInputTraits key="textInputTraits" autocorrectionType="no"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u4L-US-gmh">
-                                <rect key="frame" x="107" y="782" width="200" height="50"/>
+                                <rect key="frame" x="107" y="781" width="200" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="0Ch-wc-ZeU"/>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="gbY-qU-dHX"/>
@@ -455,14 +455,14 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5pU-O9-Cfs" userLabel="postMainImage">
-                                <rect key="frame" x="82" y="611" width="251" height="160"/>
+                                <rect key="frame" x="82" y="610" width="251" height="160"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="160" id="fBR-44-qqU"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="251" id="wO7-Mr-ZTD"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bPE-B7-cXO">
-                                <rect key="frame" x="75" y="541" width="264" height="50"/>
+                                <rect key="frame" x="75" y="540" width="264" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="8Ib-Ml-x2o"/>
                                     <constraint firstAttribute="height" constant="50" id="GSx-jg-fHv"/>
@@ -493,7 +493,7 @@
                         <constraints>
                             <constraint firstItem="bG9-01-ffp" firstAttribute="leading" secondItem="jgN-L0-LHW" secondAttribute="leading" constant="40" id="1cG-bk-Dx5"/>
                             <constraint firstItem="jgN-L0-LHW" firstAttribute="trailing" secondItem="TwB-PZ-jum" secondAttribute="trailing" constant="20" id="3Ux-q7-Tyf"/>
-                            <constraint firstItem="bG9-01-ffp" firstAttribute="top" secondItem="jgN-L0-LHW" secondAttribute="top" constant="80" id="62f-xM-eJe"/>
+                            <constraint firstItem="bG9-01-ffp" firstAttribute="top" secondItem="jgN-L0-LHW" secondAttribute="top" constant="79" id="62f-xM-eJe"/>
                             <constraint firstItem="5pU-O9-Cfs" firstAttribute="leading" secondItem="jgN-L0-LHW" secondAttribute="leading" constant="82" id="72l-wt-MLp"/>
                             <constraint firstItem="jgN-L0-LHW" firstAttribute="trailing" secondItem="bG9-01-ffp" secondAttribute="trailing" constant="40" id="969-br-Vai"/>
                             <constraint firstItem="5pU-O9-Cfs" firstAttribute="top" secondItem="bPE-B7-cXO" secondAttribute="bottom" constant="20" id="DAy-7u-F85"/>
