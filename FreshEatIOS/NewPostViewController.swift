@@ -9,8 +9,11 @@ import UIKit
 
 class NewPostViewController: UIViewController {
 
+    @IBOutlet weak var imgPost: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        imgPost.layer.cornerRadius=15
+        imgPost.clipsToBounds=true
 
         // Do any additional setup after loading the view.
     }
