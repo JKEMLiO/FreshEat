@@ -26,7 +26,7 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate 
     }
     
     @IBAction func openCamera(_ sender: UIButton) {
-        takePicture(source: .camera)
+        takePicture(source: .photoLibrary)
     }
     
     func takePicture(source: UIImagePickerController.SourceType){
