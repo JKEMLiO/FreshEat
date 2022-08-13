@@ -24,6 +24,8 @@
 		7B5C876328A78B920048D7C8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7B5C876228A78B920048D7C8 /* GoogleService-Info.plist */; };
 		7B5C876428A78B920048D7C8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7B5C876228A78B920048D7C8 /* GoogleService-Info.plist */; };
 		7B5C876528A78B920048D7C8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7B5C876228A78B920048D7C8 /* GoogleService-Info.plist */; };
+		7B5C876728A79BD20048D7C8 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5C876628A79BD20048D7C8 /* UserProfileViewController.swift */; };
+		7B5C876928A7D32E0048D7C8 /* changePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5C876828A7D32E0048D7C8 /* changePasswordViewController.swift */; };
 		C22C522C289E5EA100C8E4A0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22C522B289E5EA100C8E4A0 /* User.swift */; };
 		C22C522E289E65B100C8E4A0 /* UserDao+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22C522D289E65B100C8E4A0 /* UserDao+CoreDataClass.swift */; };
 		C22C5230289E66DE00C8E4A0 /* UserDao+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22C522F289E66DD00C8E4A0 /* UserDao+CoreDataProperties.swift */; };
@@ -76,6 +78,8 @@
 		7B5C875C289957030048D7C8 /* PostTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewController.swift; sourceTree = "<group>"; };
 		7B5C875E289958020048D7C8 /* SeePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeePostViewController.swift; sourceTree = "<group>"; };
 		7B5C876228A78B920048D7C8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7B5C876628A79BD20048D7C8 /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
+		7B5C876828A7D32E0048D7C8 /* changePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = changePasswordViewController.swift; sourceTree = "<group>"; };
 		C22C522B289E5EA100C8E4A0 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C22C522D289E65B100C8E4A0 /* UserDao+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDao+CoreDataClass.swift"; sourceTree = "<group>"; };
 		C22C522F289E66DD00C8E4A0 /* UserDao+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDao+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -154,6 +158,8 @@
 				7B5C875A289956B60048D7C8 /* NewPostViewController.swift */,
 				C2C269DF2865FDCE00C621CD /* DataModel.xcdatamodeld */,
 				7B5C875E289958020048D7C8 /* SeePostViewController.swift */,
+				7B5C876628A79BD20048D7C8 /* UserProfileViewController.swift */,
+				7B5C876828A7D32E0048D7C8 /* changePasswordViewController.swift */,
 			);
 			path = FreshEatIOS;
 			sourceTree = "<group>";
@@ -337,9 +343,11 @@
 				20330474285A2BF0006DB34A /* WelcomeViewController.swift in Sources */,
 				7B5C875F289958020048D7C8 /* SeePostViewController.swift in Sources */,
 				20330470285A2BF0006DB34A /* AppDelegate.swift in Sources */,
+				7B5C876928A7D32E0048D7C8 /* changePasswordViewController.swift in Sources */,
 				C29BCBB228A66FA20003EBD7 /* PostDao+CoreDataClass.swift in Sources */,
 				C22C522E289E65B100C8E4A0 /* UserDao+CoreDataClass.swift in Sources */,
 				203304A0285A2EAB006DB34A /* LoginViewController.swift in Sources */,
+				7B5C876728A79BD20048D7C8 /* UserProfileViewController.swift in Sources */,
 				7B5C8759289956920048D7C8 /* RegisterViewController.swift in Sources */,
 				C2C269E12865FDCE00C621CD /* DataModel.xcdatamodeld in Sources */,
 				7B5C875D289957030048D7C8 /* PostTableViewController.swift in Sources */,
