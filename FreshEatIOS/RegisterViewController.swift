@@ -22,7 +22,33 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate 
     }
     
     @IBAction func register(_ sender: UIButton) {
+        let emailAddress = email.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let fullName = name.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let pass = password.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let confirmPass = confirmPassword.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         
+        var fields = [String]()
+        fields.append(emailAddress)
+        fields.append(fullName)
+        fields.append(pass)
+        fields.append(confirmPass)
+
+        if !validateFields(fields:fields){
+            self.alert(title:"Error Signing Up",msg:"You must fill in all of the fields")
+        }
+        
+        if !Model.instance.isValidEmail(email: emailAddress){
+            self.alert(title:"Error Signing Up",msg:"Invalid Email Address")
+        }
+        
+        if !Model.instance.isValidPassword(password: pass){
+            self.alert(title:"Error Signing Up",msg:"Password MUST have minimum of 6 characters and include:\nUppercase and Lowercase letters,\na Number,\nand a Special Character")
+        }
+        
+        if pass != confirmPass{
+            self.alert(title:"Error Signing Up",msg:"Password does not match Confirm Password")
+        }
+
     }
     
     @IBAction func openCamera(_ sender: UIButton) {
@@ -48,7 +74,23 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate 
         self.profileImage.image = selectedImage
         self.dismiss(animated: true, completion: nil)
     }
-
+    
+    func validateFields(fields: [String]) ->Bool{
+        for field in fields{
+            if field == ""{
+                return false
+            }
+        }
+        return true
+    }
+    
+    func alert(title:String, msg: String){
+        let alertController = UIAlertController(title: title, message: msg, preferredStyle: .alert)
+        let okButton = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alertController.addAction(okButton)
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
     /*
     // MARK: - Navigation
 
