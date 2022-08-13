@@ -62,20 +62,66 @@ class ModelFirebase{
     }
     
     func getUserById(id:String, completion:@escaping (User?)->Void){
-        db.collection("users").whereField("id", isEqualTo: id)
-            .getDocuments() {
-                (querySnapshot, err) in
-                if let err = err {
-                    print("Error getting documents: \(err)")
-                    completion(nil)
-                } else {
-                    for document in querySnapshot!.documents {
-                        let user = User.FromJson(json: document.data())
-                        completion(user)
-                    }
+        db.collection("users").whereField("id", isEqualTo: id).getDocuments() {
+            (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+                completion(nil)
+            } else {
+                for document in querySnapshot!.documents {
+                    let user = User.FromJson(json: document.data())
+                    completion(user)
                 }
             }
         }
+    }
+    
+    /*
+     Post
+     */
+    
+    func getAllPosts(since:Int64, completion:@escaping ([Post])->Void){
+        db.collection("posts").whereField("lastUpdated", isGreaterThanOrEqualTo: Timestamp(seconds: since, nanoseconds: 0)).getDocuments() {
+            (querySnapshot, error) in
+            var posts = [Post]()
+            if let err = error {
+                print("Error getting posts: \(err)")
+                completion(posts)
+            } else {
+                for document in querySnapshot!.documents {
+                    let p = Post.FromJson(json: document.data())
+                    posts.append(p)
+                    completion(posts)
+                }
+            }
+        }
+    }
+    
+    func add(post:Post, completion:@escaping ()->Void){
+        db.collection("posts").document(post.id!).setData(post.toJson())
+        {
+            error in
+            if let err = error {
+                print("Error adding post: \(err)")
+            } else {
+                print("Post added successfully")
+            }
+            completion()
+        }
+    }
+    
+    func editPost(post: Post, data: [String:Any], completion:@escaping ()->Void){
+        db.collection("posts").document(post.id!).updateData(data)
+        {
+            error in
+            if let err  = error {
+                print("Error Updating Post: \(err)")
+            } else {
+                print("Post Updated Successfully")
+            }
+            completion()
+        }
+    }
     
     /*
      Authentication
