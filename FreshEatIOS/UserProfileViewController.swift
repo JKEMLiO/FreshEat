@@ -12,7 +12,7 @@ class UserProfileViewController: UIViewController {
     @IBOutlet weak var profileImage: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        profileImage.layer.cornerRadius=40
+        profileImage.layer.cornerRadius=100
         profileImage.clipsToBounds=true
 
         // Do any additional setup after loading the view.

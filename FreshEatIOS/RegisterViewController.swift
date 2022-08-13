@@ -17,7 +17,7 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        profileImage.layer.cornerRadius=40
+        profileImage.layer.cornerRadius=100
         profileImage.clipsToBounds=true
     }
     
