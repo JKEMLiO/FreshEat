@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import UIKit
+import CoreData
 
 class Model{
     
@@ -14,6 +16,25 @@ class Model{
     static let instance = Model()
     static let postDataNotification = ModelNotificationBase("com.FreshEatIOS.postDataNotification")
     private init(){}
+    
+    
+    /*
+     User
+     */
+    
+    func addUser(user:User, completion: @escaping ()->Void){
+        firebaseModel.addUser(user: user){
+            completion()
+            Model.postDataNotification.post()
+        }
+    }
+    
+    func getUser(byId:String,completion: @escaping (User?)->Void){
+        firebaseModel.getUserById(id: byId){
+            user in
+            completion(user)
+        }
+    }
     
     /*
      Post
@@ -51,26 +72,43 @@ class Model{
         }
     }
     
-    func add(post:Post, completion: @escaping ()->Void){
+    func addPost(post:Post, completion: @escaping ()->Void){
         firebaseModel.add(post: post){
             completion()
             Model.postDataNotification.post()
         }
     }
     
-    func getUser(byId:String,completion: @escaping (User?)->Void){
-        firebaseModel.getUserById(id: byId){
-            user in
-            completion(user)
-        }
-    }
-    
-    func delete(post:Post, completion:@escaping ()->Void){
+    func deletePost(post:Post, completion:@escaping ()->Void){
         firebaseModel.editPost(post: post, data: ["isPostDeleted":true]){
             PostDao.delete(post: post)
             completion()
             Model.postDataNotification.post()
         }
+    }
+    
+    /*
+     Authentication
+     */
+    
+    func register(email: String, password: String, completion: @escaping (_ success: Bool)->Void){
+        firebaseModel.register(email: email, password: password, completion: completion)
+    }
+    
+    func signIn(email: String, password: String, completion: @escaping (_ success: Bool)->Void){
+        firebaseModel.signIn(email: email, password: password, completion: completion)
+    }
+    
+    func signOut(completion: @escaping (_ success: Bool)->Void){
+        firebaseModel.signOut(completion: completion)
+    }
+    
+    /*
+     Images
+     */
+    
+    func uploadImage(name:String, image:UIImage, callback:@escaping(_ url:String)->Void){
+        firebaseModel.uploadImage(name: name, image: image, callback: callback)
     }
 }
 
