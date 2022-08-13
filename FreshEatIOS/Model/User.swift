@@ -14,7 +14,6 @@ class User{
     public var name: String? = ""
     public var email: String? = ""
     public var avatarUrl: String? = ""
-    public var lastUpdated: Int64 = 0
     
     init(){}
     
@@ -23,7 +22,6 @@ class User{
         name = user.name
         email = user.email
         avatarUrl = user.avatarUrl
-        lastUpdated = user.lastUpdated
     }
 }
 
@@ -34,9 +32,6 @@ extension User{
         u.name = json["name"] as? String
         u.email = json["email"] as? String
         u.avatarUrl = json["avatarUrl"] as? String
-        if let lup = json["lastUpdated"] as? Timestamp{
-            u.lastUpdated = lup.seconds
-        }
         return u
     }
     
@@ -46,7 +41,6 @@ extension User{
         json["name"] = self.name!
         json["email"] = self.email!
         json["avatarUrl"] = self.avatarUrl!
-        json["lastUpdated"] = FieldValue.serverTimestamp()
         return json
     }
 }

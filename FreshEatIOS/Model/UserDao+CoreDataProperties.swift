@@ -18,8 +18,6 @@ extension UserDao {
     @NSManaged public var name: String?
     @NSManaged public var email: String?
     @NSManaged public var avatarUrl: String?
-    @NSManaged public var lastUpdated: Int64
-
 }
 
 extension UserDao : Identifiable {
