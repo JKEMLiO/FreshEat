@@ -46,8 +46,6 @@ public class UserDao: NSManagedObject {
         u.name = user.name
         u.email = user.email
         u.avatarUrl = user.avatarUrl
-        u.lastUpdated = user.lastUpdated
-        
         do{
             try context.save()
         }catch let error as NSError{
@@ -63,11 +61,4 @@ public class UserDao: NSManagedObject {
         
     }
     
-    static func localLastUpdated() -> Int64{
-        return Int64(UserDefaults.standard.integer(forKey: "USERS_LAST_UPDATE"))
-    }
-    
-    static func setLocalLastUpdated(date:Int64){
-        UserDefaults.standard.set(date, forKey: "USERS_LAST_UPDATE")
-    }
 }

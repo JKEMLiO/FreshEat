@@ -48,6 +48,7 @@ public class PostDao: NSManagedObject {
         p.photo = post.photo
         p.isPostDeleted = post.isPostDeleted!
         p.postDescription = post.postDescription
+        p.lastUpdated = post.lastUpdated
         
         do{
             try context.save()
@@ -62,6 +63,14 @@ public class PostDao: NSManagedObject {
     
     static func delete(post:Post){
         
+    }
+    
+    static func localLastUpdated() -> Int64{
+        return Int64(UserDefaults.standard.integer(forKey: "POSTS_LAST_UPDATE"))
+    }
+        
+    static func setLocalLastUpdated(date:Int64){
+        UserDefaults.standard.set(date, forKey: "POSTS_LAST_UPDATE")
     }
     
 }
