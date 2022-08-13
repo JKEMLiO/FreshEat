@@ -21,11 +21,12 @@
 		7B5C875B289956B60048D7C8 /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5C875A289956B60048D7C8 /* NewPostViewController.swift */; };
 		7B5C875D289957030048D7C8 /* PostTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5C875C289957030048D7C8 /* PostTableViewController.swift */; };
 		7B5C875F289958020048D7C8 /* SeePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5C875E289958020048D7C8 /* SeePostViewController.swift */; };
-		7B5C876128A781050048D7C8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7B5C876028A781050048D7C8 /* GoogleService-Info.plist */; };
+		7B5C876328A78B920048D7C8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7B5C876228A78B920048D7C8 /* GoogleService-Info.plist */; };
+		7B5C876428A78B920048D7C8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7B5C876228A78B920048D7C8 /* GoogleService-Info.plist */; };
+		7B5C876528A78B920048D7C8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7B5C876228A78B920048D7C8 /* GoogleService-Info.plist */; };
 		C22C522C289E5EA100C8E4A0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22C522B289E5EA100C8E4A0 /* User.swift */; };
 		C22C522E289E65B100C8E4A0 /* UserDao+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22C522D289E65B100C8E4A0 /* UserDao+CoreDataClass.swift */; };
 		C22C5230289E66DE00C8E4A0 /* UserDao+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22C522F289E66DD00C8E4A0 /* UserDao+CoreDataProperties.swift */; };
-		C22C5231289E6B7700C8E4A0 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C2C269CF2865F85800C621CD /* GoogleService-Info.plist */; };
 		C29BCBB028A66C020003EBD7 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29BCBAF28A66C020003EBD7 /* Post.swift */; };
 		C29BCBB228A66FA20003EBD7 /* PostDao+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29BCBB128A66FA20003EBD7 /* PostDao+CoreDataClass.swift */; };
 		C29BCBB628A671130003EBD7 /* PostDao+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29BCBB528A671130003EBD7 /* PostDao+CoreDataProperties.swift */; };
@@ -74,7 +75,7 @@
 		7B5C875A289956B60048D7C8 /* NewPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
 		7B5C875C289957030048D7C8 /* PostTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewController.swift; sourceTree = "<group>"; };
 		7B5C875E289958020048D7C8 /* SeePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeePostViewController.swift; sourceTree = "<group>"; };
-		7B5C876028A781050048D7C8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		7B5C876228A78B920048D7C8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C22C522B289E5EA100C8E4A0 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C22C522D289E65B100C8E4A0 /* UserDao+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDao+CoreDataClass.swift"; sourceTree = "<group>"; };
 		C22C522F289E66DD00C8E4A0 /* UserDao+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDao+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -82,7 +83,6 @@
 		C29BCBAF28A66C020003EBD7 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		C29BCBB128A66FA20003EBD7 /* PostDao+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PostDao+CoreDataClass.swift"; sourceTree = "<group>"; };
 		C29BCBB528A671130003EBD7 /* PostDao+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PostDao+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		C2C269CF2865F85800C621CD /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C2C269DB2865FA9D00C621CD /* ModelFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelFirebase.swift; sourceTree = "<group>"; };
 		C2C269DD2865FACF00C621CD /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		C2C269E02865FDCE00C621CD /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
@@ -140,9 +140,8 @@
 		2033046E285A2BF0006DB34A /* FreshEatIOS */ = {
 			isa = PBXGroup;
 			children = (
-				7B5C876028A781050048D7C8 /* GoogleService-Info.plist */,
+				7B5C876228A78B920048D7C8 /* GoogleService-Info.plist */,
 				C2C269DA2865FA8500C621CD /* Model */,
-				C2C269CF2865F85800C621CD /* GoogleService-Info.plist */,
 				2033046F285A2BF0006DB34A /* AppDelegate.swift */,
 				20330471285A2BF0006DB34A /* SceneDelegate.swift */,
 				20330473285A2BF0006DB34A /* WelcomeViewController.swift */,
@@ -306,9 +305,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C22C5231289E6B7700C8E4A0 /* GoogleService-Info.plist in Resources */,
 				2033047C285A2BF4006DB34A /* LaunchScreen.storyboard in Resources */,
-				7B5C876128A781050048D7C8 /* GoogleService-Info.plist in Resources */,
+				7B5C876328A78B920048D7C8 /* GoogleService-Info.plist in Resources */,
 				20330479285A2BF4006DB34A /* Assets.xcassets in Resources */,
 				20330477285A2BF0006DB34A /* Main.storyboard in Resources */,
 			);
@@ -318,6 +316,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B5C876428A78B920048D7C8 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -325,6 +324,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7B5C876528A78B920048D7C8 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
