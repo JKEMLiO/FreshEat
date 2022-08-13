@@ -31,13 +31,33 @@ public class PostDao: NSManagedObject {
             }
             return pArray
         }catch let error as NSError{
-            print("post fetch error \(error) \(error.userInfo)")
+            print("posts fetch error core data\(error) \(error.userInfo)")
             return []
+        }
+    }
+    
+    static func getPost(byId:String)->Post?{
+        guard let context = context else {
+            return nil
+        }
+
+        do{
+            let postDao = try context.fetch(PostDao.fetchRequest())
+            for pDao in postDao{
+                if(pDao.id == byId){
+                    return Post(post:pDao)
+                }
+            }
+            return nil
+        }catch let error as NSError{
+            print("posts fetch error \(error) \(error.userInfo)")
+            return nil
         }
     }
     
     static func addPost(post:Post){
         guard let context = context else {
+            print("post add error with context core data")
             return
         }
         context.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
@@ -53,16 +73,32 @@ public class PostDao: NSManagedObject {
         do{
             try context.save()
         }catch let error as NSError{
-            print("post add error \(error) \(error.userInfo)")
+            print("post add error core data\(error) \(error.userInfo)")
         }
-    }
-    
-    static func getPost(byId:String)->User?{
-        return nil
     }
     
     static func delete(post:Post){
         
+        guard let context = context else {
+            return
+        }
+        
+        do{
+           let postDao = try context.fetch(PostDao.fetchRequest())
+           for ptDao in postDao{
+               if(ptDao.id == post.id){
+                   context.delete(ptDao)
+               }
+           }
+       } catch let error as NSError{
+           print("post delete error core data \(error) \(error.userInfo)")
+       }
+       
+       do{
+           try context.save()
+       } catch {
+           print("Didn't save postDao after deleting post.")
+       }
     }
     
     static func localLastUpdated() -> Int64{
