@@ -21,6 +21,7 @@
 		7B5C875B289956B60048D7C8 /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5C875A289956B60048D7C8 /* NewPostViewController.swift */; };
 		7B5C875D289957030048D7C8 /* PostTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5C875C289957030048D7C8 /* PostTableViewController.swift */; };
 		7B5C875F289958020048D7C8 /* SeePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5C875E289958020048D7C8 /* SeePostViewController.swift */; };
+		7B5C876128A781050048D7C8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7B5C876028A781050048D7C8 /* GoogleService-Info.plist */; };
 		C22C522C289E5EA100C8E4A0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22C522B289E5EA100C8E4A0 /* User.swift */; };
 		C22C522E289E65B100C8E4A0 /* UserDao+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22C522D289E65B100C8E4A0 /* UserDao+CoreDataClass.swift */; };
 		C22C5230289E66DE00C8E4A0 /* UserDao+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22C522F289E66DD00C8E4A0 /* UserDao+CoreDataProperties.swift */; };
@@ -73,6 +74,7 @@
 		7B5C875A289956B60048D7C8 /* NewPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
 		7B5C875C289957030048D7C8 /* PostTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewController.swift; sourceTree = "<group>"; };
 		7B5C875E289958020048D7C8 /* SeePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeePostViewController.swift; sourceTree = "<group>"; };
+		7B5C876028A781050048D7C8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C22C522B289E5EA100C8E4A0 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C22C522D289E65B100C8E4A0 /* UserDao+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDao+CoreDataClass.swift"; sourceTree = "<group>"; };
 		C22C522F289E66DD00C8E4A0 /* UserDao+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDao+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 		2033046E285A2BF0006DB34A /* FreshEatIOS */ = {
 			isa = PBXGroup;
 			children = (
+				7B5C876028A781050048D7C8 /* GoogleService-Info.plist */,
 				C2C269DA2865FA8500C621CD /* Model */,
 				C2C269CF2865F85800C621CD /* GoogleService-Info.plist */,
 				2033046F285A2BF0006DB34A /* AppDelegate.swift */,
@@ -305,6 +308,7 @@
 			files = (
 				C22C5231289E6B7700C8E4A0 /* GoogleService-Info.plist in Resources */,
 				2033047C285A2BF4006DB34A /* LaunchScreen.storyboard in Resources */,
+				7B5C876128A781050048D7C8 /* GoogleService-Info.plist in Resources */,
 				20330479285A2BF4006DB34A /* Assets.xcassets in Resources */,
 				20330477285A2BF0006DB34A /* Main.storyboard in Resources */,
 			);
