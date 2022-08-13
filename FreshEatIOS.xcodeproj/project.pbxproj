@@ -76,7 +76,6 @@
 		C22C522B289E5EA100C8E4A0 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C22C522D289E65B100C8E4A0 /* UserDao+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDao+CoreDataClass.swift"; sourceTree = "<group>"; };
 		C22C522F289E66DD00C8E4A0 /* UserDao+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDao+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		C22C5232289E6DA100C8E4A0 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C29BCBAF28A66C020003EBD7 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		C29BCBB128A66FA20003EBD7 /* PostDao+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PostDao+CoreDataClass.swift"; sourceTree = "<group>"; };
 		C29BCBB528A671130003EBD7 /* PostDao+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PostDao+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -181,7 +180,6 @@
 				C2C269DD2865FACF00C621CD /* Model.swift */,
 				C22C522B289E5EA100C8E4A0 /* User.swift */,
 				C22C522D289E65B100C8E4A0 /* UserDao+CoreDataClass.swift */,
-				C22C5232289E6DA100C8E4A0 /* GoogleService-Info.plist */,
 				C22C522F289E66DD00C8E4A0 /* UserDao+CoreDataProperties.swift */,
 				C29BCBAF28A66C020003EBD7 /* Post.swift */,
 				C29BCBB128A66FA20003EBD7 /* PostDao+CoreDataClass.swift */,

@@ -36,8 +36,8 @@ class ModelFirebase{
         }
     }
     
-    func editUser(user: User, key: String, value: String, completion:@escaping ()->Void){
-        db.collection("users").document(user.id!).updateData([key : value])
+    func editUser(user: User, data: [String:Any], completion:@escaping ()->Void){
+        db.collection("users").document(user.id!).updateData(data)
         {
             error in
             if let err  = error {
@@ -60,6 +60,22 @@ class ModelFirebase{
             completion(true)
         }
     }
+    
+    func getUserById(id:String, completion:@escaping (User?)->Void){
+        db.collection("users").whereField("id", isEqualTo: id)
+            .getDocuments() {
+                (querySnapshot, err) in
+                if let err = err {
+                    print("Error getting documents: \(err)")
+                    completion(nil)
+                } else {
+                    for document in querySnapshot!.documents {
+                        let user = User.FromJson(json: document.data())
+                        completion(user)
+                    }
+                }
+            }
+        }
     
     /*
      Authentication

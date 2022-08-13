@@ -10,7 +10,7 @@ import Foundation
 class Model{
     
     let firebaseModel = ModelFirebase()
-    
+    let dispatchQueue = DispatchQueue(label: "com.FreshEatIOS")
     static let instance = Model()
     private init(){}
     
