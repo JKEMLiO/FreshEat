@@ -525,7 +525,7 @@
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="50" id="yQH-98-Izv"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="yes"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="yes" textContentType="location"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Post" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Tj-YA-Mox">
                                 <rect key="frame" x="20" y="109" width="350" height="30"/>
