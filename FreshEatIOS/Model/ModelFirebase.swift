@@ -212,8 +212,14 @@ class ModelFirebase{
         metaData.contentType = "image/jpeg"
         imageRef.putData(data!, metadata: metaData){(metaData,error) in
             imageRef.downloadURL { (url, error) in
-                let urlString = url?.absoluteString
-                callback(urlString!)
+                if let err = error{
+                    print("Error Uploading Picture to Firebase Storage: \(err)")
+                }
+                else{
+                    let urlString = url?.absoluteString
+                    print("Uploaded picture successfully")
+                    callback(urlString!)
+                }
             }
         }
     }
