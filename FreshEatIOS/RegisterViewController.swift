@@ -35,20 +35,66 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate 
 
         if !validateFields(fields:fields){
             self.alert(title:"Error Signing Up",msg:"You must fill in all of the fields")
+            return
         }
         
         if !Model.instance.isValidEmail(email: emailAddress){
             self.alert(title:"Error Signing Up",msg:"Invalid Email Address")
+            email.text! = ""
+            return
         }
         
+        print("\(String(describing: password.text))")
         if !Model.instance.isValidPassword(password: pass){
             self.alert(title:"Error Signing Up",msg:"Password MUST have minimum of 6 characters and include:\nUppercase and Lowercase letters,\na Number,\nand a Special Character")
+            password.text! = ""
+            confirmPassword.text! = ""
+            return
         }
         
         if pass != confirmPass{
             self.alert(title:"Error Signing Up",msg:"Password does not match Confirm Password")
+            confirmPassword.text! = ""
+            return
         }
-
+        
+        let user = User()
+        user.email = emailAddress
+        user.name = fullName
+        
+        Model.instance.isUserExists(email: user.email!) { success in
+            if success{
+                self.alert(title: "Failed to Sign Up", msg: "Email already exists")
+                self.email.text! = ""
+                return
+            }
+            else{
+                //User has selected image
+                if let image = self.selectedImage{
+                    Model.instance.uploadImage(name: emailAddress, image: image) { url in
+                        user.avatarUrl = url
+                        Model.instance.register(email: user.email!, password: pass) { success in
+                            if success{
+                                Model.instance.addUser(user: user) {
+                                    // Navigate to Home Screen
+                                }
+                            }
+                        }
+                    }
+                }
+                //User hasn't selected image - using default avatar image
+                else{
+                    user.avatarUrl = "farmerAvatar"
+                    Model.instance.register(email: user.email!, password: pass) { success in
+                        if success{
+                            Model.instance.addUser(user: user) {
+                                // Navigate to Home Screen
+                            }
+                        }
+                    }
+                }
+            }
+        }
     }
     
     @IBAction func openCamera(_ sender: UIButton) {

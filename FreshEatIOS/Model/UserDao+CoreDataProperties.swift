@@ -14,7 +14,6 @@ extension UserDao {
         return NSFetchRequest<UserDao>(entityName: "UserDao")
     }
 
-    @NSManaged public var id: String?
     @NSManaged public var name: String?
     @NSManaged public var email: String?
     @NSManaged public var avatarUrl: String?

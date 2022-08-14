@@ -23,7 +23,7 @@ class ModelFirebase{
      */
     
     func addUser(user:User,completion:@escaping ()->Void){
-        db.collection("users").document(user.id!).setData(user.toJson())
+        db.collection("users").document(user.email!).setData(user.toJson())
         {
             error in
             if let err = error{
@@ -37,7 +37,7 @@ class ModelFirebase{
     }
     
     func editUser(user: User, data: [String:Any], completion:@escaping ()->Void){
-        db.collection("users").document(user.id!).updateData(data)
+        db.collection("users").document(user.email!).updateData(data)
         {
             error in
             if let err  = error {
@@ -49,8 +49,8 @@ class ModelFirebase{
         }
     }
     
-    func isUserExists(id: String ,completion: @escaping (_ success: Bool)->Void){
-        db.collection("users").document(id).getDocument {
+    func isUserExists(email: String ,completion: @escaping (_ success: Bool)->Void){
+        db.collection("users").document(email).getDocument {
             (document, error) in
             guard let document = document, document.exists else {
                 print("User does not exist")
@@ -61,8 +61,8 @@ class ModelFirebase{
         }
     }
     
-    func getUserById(id:String, completion:@escaping (User?)->Void){
-        db.collection("users").whereField("id", isEqualTo: id).getDocuments() {
+    func getUserByEmail(email:String, completion:@escaping (User?)->Void){
+        db.collection("users").whereField("email", isEqualTo: email).getDocuments() {
             (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")

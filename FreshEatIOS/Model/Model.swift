@@ -29,8 +29,8 @@ class Model{
         }
     }
     
-    func getUser(byId:String,completion: @escaping (User?)->Void){
-        firebaseModel.getUserById(id: byId){
+    func getUser(byEmail:String,completion: @escaping (User?)->Void){
+        firebaseModel.getUserByEmail(email: byEmail){
             user in
             completion(user)
         }
@@ -116,6 +116,10 @@ class Model{
     
     func signOut(completion: @escaping (_ success: Bool)->Void){
         firebaseModel.signOut(completion: completion)
+    }
+    
+    func isUserExists(email:String,completion: @escaping(_ success: Bool)->Void){
+        firebaseModel.isUserExists(email: email, completion:completion)
     }
     
     /*

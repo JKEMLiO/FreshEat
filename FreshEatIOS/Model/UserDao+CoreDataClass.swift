@@ -42,7 +42,6 @@ public class UserDao: NSManagedObject {
         }
         context.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
         let u = UserDao(context: context)
-        u.id = user.id
         u.name = user.name
         u.email = user.email
         u.avatarUrl = user.avatarUrl
@@ -53,7 +52,7 @@ public class UserDao: NSManagedObject {
         }
     }
     
-    static func getUser(byId:String)->User?{
+    static func getUser(byEmail:String)->User?{
         guard let context = context else {
             return nil
         }
@@ -61,7 +60,7 @@ public class UserDao: NSManagedObject {
         do{
             let userDao = try context.fetch(UserDao.fetchRequest())
             for uDao in userDao{
-                if(uDao.id == byId){
+                if(uDao.email == byEmail){
                     return User(user:uDao)
                 }
             }

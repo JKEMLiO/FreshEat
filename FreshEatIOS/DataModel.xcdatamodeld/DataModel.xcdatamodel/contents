@@ -12,11 +12,10 @@
     <entity name="UserDao" representedClassName=".UserDao" syncable="YES">
         <attribute name="avatarUrl" optional="YES" attributeType="String"/>
         <attribute name="email" optional="YES" attributeType="String"/>
-        <attribute name="id" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="UserDao" positionX="-63" positionY="-18" width="128" height="89"/>
+        <element name="UserDao" positionX="-63" positionY="-18" width="128" height="74"/>
         <element name="PostDao" positionX="-63" positionY="18" width="128" height="134"/>
     </elements>
 </model>
