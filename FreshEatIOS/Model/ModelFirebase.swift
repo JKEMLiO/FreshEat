@@ -149,6 +149,8 @@ class ModelFirebase{
     func register(email: String, password: String, completion: @escaping (_ success: Bool) -> Void) {
         Auth.auth().createUser(withEmail: email, password: password) {(result, error) in
             if (result?.user) != nil {
+                UserDefaults.standard.set(email, forKey: "email")
+                UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
                 completion(true)
             } else {
                 print("Register User Error \(String(describing: error))")
@@ -163,6 +165,8 @@ class ModelFirebase{
                 print("Sign In Error: \(error)")
                 completion(false)
             } else {
+                UserDefaults.standard.set(email, forKey: "email")
+                UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
                 completion(true)
             }
         }
@@ -171,6 +175,9 @@ class ModelFirebase{
     func signOut(completion: @escaping (_ success: Bool) -> Void){
         do {
             try Auth.auth().signOut()
+            UserDefaults.standard.set("", forKey: "email")
+            UserDefaults.standard.set(false, forKey: "isUserLoggedIn")
+            UserDefaults.standard.synchronize()
             completion(true)
         } catch let signOutError as NSError {
             print("Error Sign Out: \(signOutError)")
@@ -179,12 +186,11 @@ class ModelFirebase{
     }
     
     func isUserLoggedIn(completion:@escaping (_ success: Bool)->Void){
-        Auth.auth().addStateDidChangeListener { auth, user in
-            if user != nil{
-                completion(true)
-            } else {
-                completion(false)
-            }
+        if (Auth.auth().currentUser != nil){
+            completion(true)
+        }
+        else{
+            completion(false)
         }
     }
     
