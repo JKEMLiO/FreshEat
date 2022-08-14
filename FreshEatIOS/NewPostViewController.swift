@@ -69,6 +69,8 @@ class NewPostViewController: UIViewController, UITextViewDelegate, UITextFieldDe
         if ((locationInput.text?.isEmpty) != nil){
             locationInput.placeholder = locationPH
         }
+        
+        
             
         
     
