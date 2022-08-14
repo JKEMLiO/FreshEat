@@ -75,7 +75,7 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate 
                         Model.instance.register(email: user.email!, password: pass) { success in
                             if success{
                                 Model.instance.addUser(user: user) {
-                                    // Navigate to Home Screen
+                                    self.navigationController?.popViewController(animated: true)
                                 }
                             }
                         }
@@ -87,7 +87,7 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate 
                     Model.instance.register(email: user.email!, password: pass) { success in
                         if success{
                             Model.instance.addUser(user: user) {
-                                // Navigate to Home Screen
+                                self.navigationController?.popViewController(animated: true)
                             }
                         }
                     }

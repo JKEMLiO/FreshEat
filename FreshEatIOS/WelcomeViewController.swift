@@ -12,7 +12,13 @@ class WelcomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        Model.instance.isUserLoggedIn(){
+           success in
+           if success{
+               self.performSegue(withIdentifier: "toHomeSegue", sender: nil)
+           }
+       }
     }
     
     @IBAction func backFromRegister (segue:UIStoryboardSegue){
