@@ -9,11 +9,18 @@ import UIKit
 
 class NewPostViewController: UIViewController {
 
+    @IBOutlet weak var titleInput: UITextField!
+    @IBOutlet weak var mainInput: UITextField!
+    @IBOutlet weak var locationInput: UITextField!
     @IBOutlet weak var imgPost: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
         imgPost.layer.cornerRadius=15
         imgPost.clipsToBounds=true
+        titleInput.layer.cornerRadius=10
+        titleInput.clipsToBounds=true
+        locationInput.layer.cornerRadius=10
+        locationInput.clipsToBounds=true
 
         // Do any additional setup after loading the view.
     }
