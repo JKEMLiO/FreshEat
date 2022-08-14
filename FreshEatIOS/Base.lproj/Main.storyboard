@@ -102,6 +102,9 @@
                             <constraint firstItem="hTC-wh-nxJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="87" id="my2-ZD-lJx"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <segue destination="Tlu-gF-e3S" kind="show" identifier="toHomeSegue" id="UBL-bq-R5q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <exit id="cEd-w7-CZs" userLabel="Exit" sceneMemberID="exit"/>
@@ -171,7 +174,7 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="register:" destination="cOZ-Nf-Fob" eventType="touchUpInside" id="27W-bW-ZW6"/>
-                                    <segue destination="Tlu-gF-e3S" kind="show" id="LEx-1J-A2f"/>
+                                    <segue destination="sYU-Ca-PwY" kind="unwind" unwindAction="backFromRegisterWithSegue:" id="1HN-Aw-GOn"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="farmerAvatarSmall" translatesAutoresizingMaskIntoConstraints="NO" id="fhx-WL-STy" userLabel="userImage">
@@ -248,6 +251,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Pf-jl-8cR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="sYU-Ca-PwY" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1344.9275362318842" y="447.99107142857139"/>
         </scene>
@@ -337,7 +341,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SJ0-MS-hRx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1298.5507246376812" y="-294.64285714285711"/>
+            <point key="canvasLocation" x="845" y="-580"/>
         </scene>
         <!--Root View Controller-->
         <scene sceneID="1ww-fe-KhM">
@@ -954,7 +958,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="hJw-8J-grT"/>
+        <segue reference="UBL-bq-R5q"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="camera.fill" catalog="system" width="128" height="94"/>

@@ -23,7 +23,9 @@ class NewPostViewController: UIViewController {
         locationInput.clipsToBounds=true
         mainInput.layer.cornerRadius=10
         mainInput.clipsToBounds=true
-        mainInput.tag
+        
+
+        
         
 
         // Do any additional setup after loading the view.
