@@ -44,7 +44,6 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate 
             return
         }
         
-        print("\(String(describing: password.text))")
         if !Model.instance.isValidPassword(password: pass){
             self.alert(title:"Error Signing Up",msg:"Password MUST have minimum of 6 characters and include:\nUppercase and Lowercase letters,\na Number,\nand a Special Character")
             password.text! = ""
