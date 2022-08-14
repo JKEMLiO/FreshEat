@@ -24,6 +24,9 @@ class NewPostViewController: UIViewController {
         mainInput.layer.cornerRadius=10
         mainInput.clipsToBounds=true
         
+        mainInput.leftAnchor.constraint(greaterThanOrEqualTo: view.leftAnchor).isActive = true
+        mainInput.rightAnchor.constraint(lessThanOrEqualTo: view.rightAnchor).isActive = true
+        
 
         
         
