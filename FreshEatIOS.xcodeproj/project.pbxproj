@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2020359928A8FCAC009578BA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2020359828A8FCAC009578BA /* GoogleService-Info.plist */; };
 		20330470285A2BF0006DB34A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2033046F285A2BF0006DB34A /* AppDelegate.swift */; };
 		20330472285A2BF0006DB34A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20330471285A2BF0006DB34A /* SceneDelegate.swift */; };
 		20330474285A2BF0006DB34A /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20330473285A2BF0006DB34A /* WelcomeViewController.swift */; };
@@ -21,9 +22,6 @@
 		7B5C875B289956B60048D7C8 /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5C875A289956B60048D7C8 /* NewPostViewController.swift */; };
 		7B5C875D289957030048D7C8 /* PostTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5C875C289957030048D7C8 /* PostTableViewController.swift */; };
 		7B5C875F289958020048D7C8 /* SeePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5C875E289958020048D7C8 /* SeePostViewController.swift */; };
-		7B5C876328A78B920048D7C8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7B5C876228A78B920048D7C8 /* GoogleService-Info.plist */; };
-		7B5C876428A78B920048D7C8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7B5C876228A78B920048D7C8 /* GoogleService-Info.plist */; };
-		7B5C876528A78B920048D7C8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7B5C876228A78B920048D7C8 /* GoogleService-Info.plist */; };
 		7B5C876728A79BD20048D7C8 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5C876628A79BD20048D7C8 /* UserProfileViewController.swift */; };
 		7B5C876928A7D32E0048D7C8 /* changePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5C876828A7D32E0048D7C8 /* changePasswordViewController.swift */; };
 		C22C522C289E5EA100C8E4A0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22C522B289E5EA100C8E4A0 /* User.swift */; };
@@ -59,6 +57,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2020359828A8FCAC009578BA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2033046C285A2BF0006DB34A /* FreshEatIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FreshEatIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2033046F285A2BF0006DB34A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20330471285A2BF0006DB34A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -77,7 +76,6 @@
 		7B5C875A289956B60048D7C8 /* NewPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
 		7B5C875C289957030048D7C8 /* PostTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewController.swift; sourceTree = "<group>"; };
 		7B5C875E289958020048D7C8 /* SeePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeePostViewController.swift; sourceTree = "<group>"; };
-		7B5C876228A78B920048D7C8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7B5C876628A79BD20048D7C8 /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
 		7B5C876828A7D32E0048D7C8 /* changePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = changePasswordViewController.swift; sourceTree = "<group>"; };
 		C22C522B289E5EA100C8E4A0 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -143,7 +141,7 @@
 		2033046E285A2BF0006DB34A /* FreshEatIOS */ = {
 			isa = PBXGroup;
 			children = (
-				7B5C876228A78B920048D7C8 /* GoogleService-Info.plist */,
+				2020359828A8FCAC009578BA /* GoogleService-Info.plist */,
 				C2C269DA2865FA8500C621CD /* Model */,
 				2033046F285A2BF0006DB34A /* AppDelegate.swift */,
 				20330471285A2BF0006DB34A /* SceneDelegate.swift */,
@@ -310,7 +308,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2033047C285A2BF4006DB34A /* LaunchScreen.storyboard in Resources */,
-				7B5C876328A78B920048D7C8 /* GoogleService-Info.plist in Resources */,
+				2020359928A8FCAC009578BA /* GoogleService-Info.plist in Resources */,
 				20330479285A2BF4006DB34A /* Assets.xcassets in Resources */,
 				20330477285A2BF0006DB34A /* Main.storyboard in Resources */,
 			);
@@ -320,7 +318,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B5C876428A78B920048D7C8 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,7 +325,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7B5C876528A78B920048D7C8 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
