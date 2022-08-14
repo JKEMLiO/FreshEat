@@ -171,6 +171,7 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="register:" destination="cOZ-Nf-Fob" eventType="touchUpInside" id="27W-bW-ZW6"/>
+                                    <segue destination="Tlu-gF-e3S" kind="show" id="LEx-1J-A2f"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="farmerAvatarSmall" translatesAutoresizingMaskIntoConstraints="NO" id="fhx-WL-STy" userLabel="userImage">
@@ -244,7 +245,6 @@
                         <outlet property="name" destination="Rfg-MY-bSF" id="LRw-2L-sQb"/>
                         <outlet property="password" destination="Cub-cp-GhW" id="d1r-qO-6Yw"/>
                         <outlet property="profileImage" destination="fhx-WL-STy" id="HGS-Xf-PjR"/>
-                        <segue destination="Tlu-gF-e3S" kind="show" id="qbY-bf-O6q"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Pf-jl-8cR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -526,7 +526,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="yes"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="roundedRect" placeholder="What Do You Offer?" minimumFontSize="22" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="DfV-Ai-cp9" userLabel="Adress Input">
+                            <textField opaque="NO" contentMode="scaleAspectFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="roundedRect" placeholder="What Do You Offer?" minimumFontSize="22" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="DfV-Ai-cp9" userLabel="Adress Input">
                                 <rect key="frame" x="20" y="193" width="350" height="150"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="150" id="9hO-hb-qWA"/>
@@ -574,6 +574,7 @@
                     <connections>
                         <outlet property="imgPost" destination="5pU-O9-Cfs" id="NQA-jL-wQr"/>
                         <outlet property="locationInput" destination="w8Z-8y-8Lk" id="Rlh-jG-y17"/>
+                        <outlet property="mainInput" destination="DfV-Ai-cp9" id="rPm-dQ-AQ6"/>
                         <outlet property="titleInput" destination="Oir-4K-4sE" id="Tle-zE-Zwc"/>
                     </connections>
                 </viewController>
@@ -953,7 +954,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="qbY-bf-O6q"/>
+        <segue reference="hJw-8J-grT"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="camera.fill" catalog="system" width="128" height="94"/>
