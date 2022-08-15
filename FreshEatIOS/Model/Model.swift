@@ -167,3 +167,38 @@ class ModelNotificationBase{
         NotificationCenter.default.post(name: Notification.Name(name), object: self)
     }
 }
+
+extension UIViewController {
+    func popupAlert(title: String?, message: String?, actionTitles:[String?], actions:[((UIAlertAction) -> Void)?]) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        for (index, title) in actionTitles.enumerated() {
+            let action = UIAlertAction(title: title, style: .default, handler: actions[index])
+            alert.addAction(action)
+        }
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    static let activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
+
+        func startLoading() {
+            let activityIndicator = UIViewController.activityIndicator
+            activityIndicator.center = self.view.center
+            activityIndicator.hidesWhenStopped = true
+            activityIndicator.style = .large
+            activityIndicator.color = .black
+            DispatchQueue.main.async {
+                self.view.addSubview(activityIndicator)
+            }
+            activityIndicator.startAnimating()
+            self.view.isUserInteractionEnabled = false
+        }
+
+        func stopLoading() {
+            let activityIndicator = UIViewController.activityIndicator
+            DispatchQueue.main.async {
+                activityIndicator.stopAnimating()
+                activityIndicator.removeFromSuperview()
+            }
+            self.view.isUserInteractionEnabled = true
+          }
+}

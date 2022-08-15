@@ -19,6 +19,7 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate 
         super.viewDidLoad()
         profileImage.layer.cornerRadius=100
         profileImage.clipsToBounds=true
+        self.stopLoading()
     }
     
     @IBAction func register(_ sender: UIButton) {
@@ -34,36 +35,48 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate 
         fields.append(confirmPass)
 
         if !validateFields(fields:fields){
-            self.alert(title:"Error Signing Up",msg:"You must fill in all of the fields")
+            self.popupAlert(title: "Error Signing Up",
+                            message: "You must fill in all of the fields",
+                            actionTitles: ["OK"], actions: [nil])
             return
         }
         
         if !Model.instance.isValidEmail(email: emailAddress){
-            self.alert(title:"Error Signing Up",msg:"Invalid Email Address")
+            self.popupAlert(title: "Error Signing Up",
+                            message: "Invalid Email Address",
+                            actionTitles: ["OK"], actions: [nil])
             email.text! = ""
             return
         }
         
         if !Model.instance.isValidPassword(password: pass){
-            self.alert(title:"Error Signing Up",msg:"Password MUST have minimum of 6 characters and include:\nUppercase and Lowercase letters,\na Number,\nand a Special Character")
+            self.popupAlert(title: "Error Signing Up",
+                            message: "Password MUST have minimum of 6 characters and include:\nUppercase and Lowercase letters,\na Number,\nand a Special Character",
+                            actionTitles: ["OK"], actions: [nil])
             password.text! = ""
             confirmPassword.text! = ""
             return
         }
         
         if pass != confirmPass{
-            self.alert(title:"Error Signing Up",msg:"Password does not match Confirm Password")
+            self.popupAlert(title: "Error Signing Up",
+                            message: "Password does not match Confirm Password",
+                            actionTitles: ["OK"], actions: [nil])
             confirmPassword.text! = ""
             return
         }
         
+        self.startLoading()
         let user = User()
         user.email = emailAddress
         user.name = fullName
         
         Model.instance.isUserExists(email: user.email!) { success in
             if success{
-                self.alert(title: "Failed to Sign Up", msg: "Email already exists")
+                self.stopLoading()
+                self.popupAlert(title: "Error Signing Up",
+                                message: "Email already exists",
+                                actionTitles: ["OK"], actions: [nil])
                 self.email.text! = ""
                 return
             }
@@ -78,6 +91,12 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate 
                                     self.performSegue(withIdentifier: "toHomeScreenSegue", sender: self)
                                 }
                             }
+                            else{
+                                self.stopLoading()
+                                self.popupAlert(title: "Error Signing Up",
+                                                message: "There is an issue with our server...\nPlease try again later",
+                                                actionTitles: ["OK"], actions: [nil])
+                            }
                         }
                     }
                 }
@@ -89,6 +108,12 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate 
                             Model.instance.addUser(user: user) {
                                 self.performSegue(withIdentifier: "toHomeScreenSegue", sender: self)
                             }
+                        }
+                        else{
+                            self.stopLoading()
+                            self.popupAlert(title: "Error Signing Up",
+                                            message: "There is an issue with our server...\nPlease try again later",
+                                            actionTitles: ["OK"], actions: [nil])
                         }
                     }
                 }
@@ -134,6 +159,10 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate 
         let okButton = UIAlertAction(title: "OK", style: .default, handler: nil)
         alertController.addAction(okButton)
         self.present(alertController, animated: true, completion: nil)
+    }
+    
+    func progressBar(){
+        
     }
     
     /*

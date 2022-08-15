@@ -149,8 +149,10 @@ class ModelFirebase{
     func register(email: String, password: String, completion: @escaping (_ success: Bool) -> Void) {
         Auth.auth().createUser(withEmail: email, password: password) {(result, error) in
             if (result?.user) != nil {
+
                 UserDefaults.standard.set(email, forKey: "email")
                 UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
+                UserDefaults.standard.synchronize()
                 completion(true)
             } else {
                 print("Register User Error \(String(describing: error))")
@@ -167,6 +169,7 @@ class ModelFirebase{
             } else {
                 UserDefaults.standard.set(email, forKey: "email")
                 UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
+                UserDefaults.standard.synchronize()
                 completion(true)
             }
         }
