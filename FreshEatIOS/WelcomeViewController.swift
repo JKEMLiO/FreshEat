@@ -9,39 +9,27 @@ import UIKit
 
 class WelcomeViewController: UIViewController {
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        if UserDefaults.standard.bool(forKey: "isUserLoggedIn"){
-            if let email = UserDefaults.standard.string(forKey: "email"){
-                Model.instance.isUserExists(email: email) { success in
+        let seconds = 3.0
+        DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
+            Model.instance.isUserLoggedIn { email in
+                if email != nil {
+                Model.instance.isUserExists(email: email!) { success in
                     if !success{
                         Model.instance.signOut { success in
                             print("Logout successfully - Navigating to Welcome Screen")
                         }
                     }
                     else{
-                        Model.instance.isUserLoggedIn(){
-                           success in
-                           if success{
-                               self.performSegue(withIdentifier: "toHomeSegue", sender: nil)
-                           }else{
-                               Model.instance.signOut { success in
-                                   print("Logout successfully - Navigating to Welcome Screen")
-                               }
-                           }
+                        self.performSegue(withIdentifier: "toHomeSegue", sender: nil)
                        }
                     }
                 }
             }
-            else{
-                Model.instance.signOut { success in
-                    print("Logout successfully - Navigating to Welcome Screen")
-                }
-            }
         }
     }
-    
-
 }
+
+
 

@@ -122,7 +122,7 @@ class Model{
         firebaseModel.isUserExists(email: email, completion:completion)
     }
     
-    func isUserLoggedIn(completion:@escaping (_ success: Bool)->Void){
+    func isUserLoggedIn(completion:@escaping (_ success: String?)->Void){
         firebaseModel.isUserLoggedIn(completion: completion)
     }
     

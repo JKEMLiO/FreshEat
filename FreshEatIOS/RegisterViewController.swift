@@ -19,6 +19,8 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate 
         super.viewDidLoad()
         profileImage.layer.cornerRadius=100
         profileImage.clipsToBounds=true
+        password.textContentType = .oneTimeCode
+        confirmPassword.textContentType = .oneTimeCode
         self.stopLoading()
     }
     
@@ -66,6 +68,7 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate 
             return
         }
         
+        self.isModalInPresentation = true
         self.startLoading()
         let user = User()
         user.email = emailAddress
@@ -74,6 +77,7 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate 
         Model.instance.isUserExists(email: user.email!) { success in
             if success{
                 self.stopLoading()
+                self.isModalInPresentation = false
                 self.popupAlert(title: "Error Signing Up",
                                 message: "Email already exists",
                                 actionTitles: ["OK"], actions: [nil])
@@ -92,6 +96,7 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate 
                                 }
                             }
                             else{
+                                self.isModalInPresentation = false
                                 self.stopLoading()
                                 self.popupAlert(title: "Error Signing Up",
                                                 message: "There is an issue with our server...\nPlease try again later",
@@ -110,6 +115,7 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate 
                             }
                         }
                         else{
+                            self.isModalInPresentation = false
                             self.stopLoading()
                             self.popupAlert(title: "Error Signing Up",
                                             message: "There is an issue with our server...\nPlease try again later",
@@ -154,16 +160,6 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate 
         return true
     }
     
-    func alert(title:String, msg: String){
-        let alertController = UIAlertController(title: title, message: msg, preferredStyle: .alert)
-        let okButton = UIAlertAction(title: "OK", style: .default, handler: nil)
-        alertController.addAction(okButton)
-        self.present(alertController, animated: true, completion: nil)
-    }
-    
-    func progressBar(){
-        
-    }
     
     /*
     // MARK: - Navigation

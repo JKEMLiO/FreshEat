@@ -149,7 +149,6 @@ class ModelFirebase{
     func register(email: String, password: String, completion: @escaping (_ success: Bool) -> Void) {
         Auth.auth().createUser(withEmail: email, password: password) {(result, error) in
             if (result?.user) != nil {
-
                 UserDefaults.standard.set(email, forKey: "email")
                 UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
                 UserDefaults.standard.synchronize()
@@ -188,12 +187,12 @@ class ModelFirebase{
         }
     }
     
-    func isUserLoggedIn(completion:@escaping (_ success: Bool)->Void){
+    func isUserLoggedIn(completion:@escaping (_ success: String?)->Void){
         if (Auth.auth().currentUser != nil){
-            completion(true)
+            completion(Auth.auth().currentUser?.email)
         }
         else{
-            completion(false)
+            completion(nil)
         }
     }
     
