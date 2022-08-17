@@ -127,6 +127,27 @@ public class PostDao: NSManagedObject {
        }
     }
     
+    static func deleteAllPosts(){
+        guard let context = context else {
+            return
+        }
+        do{
+            let fetchRequest: NSFetchRequest<PostDao> = PostDao.fetchRequest()
+            let postsDao = try context.fetch(fetchRequest)
+            if(postsDao.count>0){
+                for pDao in postsDao{
+                    context.delete(pDao)
+                }
+                try context.save()
+            }
+            
+            return
+        }catch let error as NSError{
+            print("posts delete core error \(error) \(error.userInfo)")
+            return
+        }
+    }
+    
     static func localLastUpdated() -> Int64{
         return Int64(UserDefaults.standard.integer(forKey: "POSTS_LAST_UPDATE"))
     }

@@ -24,12 +24,10 @@ class Model{
      */
     
     func addUser(user:User, completion: @escaping ()->Void){
-        UserDao.addUser(user: user)
         firebaseModel.addUser(user: user, completion: completion)
     }
     
     func editUser(user: User, data: [String:Any], completion:@escaping ()->Void){
-        UserDao.editUser(email: user.email!, data: data)
         firebaseModel.editUser(user: user, data: data,completion: completion)
     }
     
@@ -92,7 +90,6 @@ class Model{
     }
     
     func addPost(post:Post, completion: @escaping ()->Void){
-        PostDao.addPost(post: post)
         firebaseModel.addPost(post: post){
             completion()
             Model.postDataNotification.post()
@@ -100,7 +97,6 @@ class Model{
     }
     
     func editPost(post: Post, data: [String:Any], completion:@escaping ()->Void){
-        PostDao.editPost(id: post.id!, data: data)
         firebaseModel.editPost(post: post, data: data) {
             completion()
             Model.postDataNotification.post()

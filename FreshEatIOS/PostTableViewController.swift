@@ -25,6 +25,8 @@ class PostTableViewController: UITableViewController {
         reload()
     }
     
+    //TODO - OVERRIDE VIEWWILLAPPEAR AFTER LIST IS WORKING WELL
+    
     @objc func reload(){
         if self.refreshControl?.isRefreshing == false {
             self.refreshControl?.beginRefreshing()
