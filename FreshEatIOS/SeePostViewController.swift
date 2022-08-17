@@ -43,7 +43,7 @@ class SeePostViewController: UIViewController {
     }
     
     func updateDisplay(){
-        
+      //Update display after repairing post details
     }
     
 
