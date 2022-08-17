@@ -703,7 +703,7 @@
         <!--Change Password View Controller-->
         <scene sceneID="PDM-vu-X0W">
             <objects>
-                <viewController id="flc-zz-PgE" customClass="changePasswordViewController" customModule="FreshEatIOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="flc-zz-PgE" customClass="ChangePasswordViewController" customModule="FreshEatIOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9wL-x1-8Ky">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -17,13 +17,16 @@
 		20330491285A2BF4006DB34A /* FreshEatIOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20330490285A2BF4006DB34A /* FreshEatIOSUITests.swift */; };
 		20330493285A2BF4006DB34A /* FreshEatIOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20330492285A2BF4006DB34A /* FreshEatIOSUITestsLaunchTests.swift */; };
 		203304A0285A2EAB006DB34A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2033049F285A2EAB006DB34A /* LoginViewController.swift */; };
+		53A1E95428AD2A4500EB7EF5 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A1E95328AD2A4500EB7EF5 /* PostTableViewCell.swift */; };
+		53A1E95728AD2B9100EB7EF5 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 53A1E95628AD2B9100EB7EF5 /* Kingfisher */; };
+		53A1E95A28AD2BDD00EB7EF5 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 53A1E95928AD2BDD00EB7EF5 /* Alamofire */; };
 		53C9364C28ACCEEC00BD067A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 53C9364B28ACCEEC00BD067A /* GoogleService-Info.plist */; };
 		7B5C8759289956920048D7C8 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5C8758289956920048D7C8 /* RegisterViewController.swift */; };
 		7B5C875B289956B60048D7C8 /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5C875A289956B60048D7C8 /* NewPostViewController.swift */; };
 		7B5C875D289957030048D7C8 /* PostTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5C875C289957030048D7C8 /* PostTableViewController.swift */; };
 		7B5C875F289958020048D7C8 /* SeePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5C875E289958020048D7C8 /* SeePostViewController.swift */; };
 		7B5C876728A79BD20048D7C8 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5C876628A79BD20048D7C8 /* UserProfileViewController.swift */; };
-		7B5C876928A7D32E0048D7C8 /* changePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5C876828A7D32E0048D7C8 /* changePasswordViewController.swift */; };
+		7B5C876928A7D32E0048D7C8 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5C876828A7D32E0048D7C8 /* ChangePasswordViewController.swift */; };
 		C22C522C289E5EA100C8E4A0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22C522B289E5EA100C8E4A0 /* User.swift */; };
 		C22C522E289E65B100C8E4A0 /* UserDao+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22C522D289E65B100C8E4A0 /* UserDao+CoreDataClass.swift */; };
 		C22C5230289E66DE00C8E4A0 /* UserDao+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22C522F289E66DD00C8E4A0 /* UserDao+CoreDataProperties.swift */; };
@@ -71,13 +74,14 @@
 		20330490285A2BF4006DB34A /* FreshEatIOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreshEatIOSUITests.swift; sourceTree = "<group>"; };
 		20330492285A2BF4006DB34A /* FreshEatIOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreshEatIOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		2033049F285A2EAB006DB34A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		53A1E95328AD2A4500EB7EF5 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		53C9364B28ACCEEC00BD067A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7B5C8758289956920048D7C8 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		7B5C875A289956B60048D7C8 /* NewPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
 		7B5C875C289957030048D7C8 /* PostTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewController.swift; sourceTree = "<group>"; };
 		7B5C875E289958020048D7C8 /* SeePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeePostViewController.swift; sourceTree = "<group>"; };
 		7B5C876628A79BD20048D7C8 /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
-		7B5C876828A7D32E0048D7C8 /* changePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = changePasswordViewController.swift; sourceTree = "<group>"; };
+		7B5C876828A7D32E0048D7C8 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		C22C522B289E5EA100C8E4A0 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C22C522D289E65B100C8E4A0 /* UserDao+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDao+CoreDataClass.swift"; sourceTree = "<group>"; };
 		C22C522F289E66DD00C8E4A0 /* UserDao+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDao+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -97,7 +101,9 @@
 				C2C269D32865F94C00C621CD /* FirebaseAnalytics in Frameworks */,
 				C2C269D92865F94C00C621CD /* FirebaseStorage in Frameworks */,
 				C2C269D52865F94C00C621CD /* FirebaseAuth in Frameworks */,
+				53A1E95A28AD2BDD00EB7EF5 /* Alamofire in Frameworks */,
 				C2C269D72865F94C00C621CD /* FirebaseFirestore in Frameworks */,
+				53A1E95728AD2B9100EB7EF5 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,7 +163,8 @@
 				C2C269DF2865FDCE00C621CD /* DataModel.xcdatamodeld */,
 				7B5C875E289958020048D7C8 /* SeePostViewController.swift */,
 				7B5C876628A79BD20048D7C8 /* UserProfileViewController.swift */,
-				7B5C876828A7D32E0048D7C8 /* changePasswordViewController.swift */,
+				7B5C876828A7D32E0048D7C8 /* ChangePasswordViewController.swift */,
+				53A1E95328AD2A4500EB7EF5 /* PostTableViewCell.swift */,
 			);
 			path = FreshEatIOS;
 			sourceTree = "<group>";
@@ -215,6 +222,8 @@
 				C2C269D42865F94C00C621CD /* FirebaseAuth */,
 				C2C269D62865F94C00C621CD /* FirebaseFirestore */,
 				C2C269D82865F94C00C621CD /* FirebaseStorage */,
+				53A1E95628AD2B9100EB7EF5 /* Kingfisher */,
+				53A1E95928AD2BDD00EB7EF5 /* Alamofire */,
 			);
 			productName = FreshEatIOS;
 			productReference = 2033046C285A2BF0006DB34A /* FreshEatIOS.app */;
@@ -290,6 +299,8 @@
 			mainGroup = 20330463285A2BF0006DB34A;
 			packageReferences = (
 				C2C269D12865F94C00C621CD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				53A1E95528AD2B9000EB7EF5 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				53A1E95828AD2BDD00EB7EF5 /* XCRemoteSwiftPackageReference "Alamofire" */,
 			);
 			productRefGroup = 2033046D285A2BF0006DB34A /* Products */;
 			projectDirPath = "";
@@ -339,9 +350,10 @@
 				20330474285A2BF0006DB34A /* WelcomeViewController.swift in Sources */,
 				7B5C875F289958020048D7C8 /* SeePostViewController.swift in Sources */,
 				20330470285A2BF0006DB34A /* AppDelegate.swift in Sources */,
-				7B5C876928A7D32E0048D7C8 /* changePasswordViewController.swift in Sources */,
+				7B5C876928A7D32E0048D7C8 /* ChangePasswordViewController.swift in Sources */,
 				C29BCBB228A66FA20003EBD7 /* PostDao+CoreDataClass.swift in Sources */,
 				C22C522E289E65B100C8E4A0 /* UserDao+CoreDataClass.swift in Sources */,
+				53A1E95428AD2A4500EB7EF5 /* PostTableViewCell.swift in Sources */,
 				203304A0285A2EAB006DB34A /* LoginViewController.swift in Sources */,
 				7B5C876728A79BD20048D7C8 /* UserProfileViewController.swift in Sources */,
 				7B5C8759289956920048D7C8 /* RegisterViewController.swift in Sources */,
@@ -701,6 +713,22 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		53A1E95528AD2B9000EB7EF5 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+		53A1E95828AD2BDD00EB7EF5 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 		C2C269D12865F94C00C621CD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
@@ -712,6 +740,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		53A1E95628AD2B9100EB7EF5 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 53A1E95528AD2B9000EB7EF5 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		53A1E95928AD2BDD00EB7EF5 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 53A1E95828AD2BDD00EB7EF5 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
 		C2C269D22865F94C00C621CD /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C2C269D12865F94C00C621CD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
