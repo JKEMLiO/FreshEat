@@ -15,6 +15,7 @@ class Post{
     public var username: String? = ""
     public var postDescription: String? = ""
     public var photo: String? = ""
+    public var location: String? = ""
     public var isPostDeleted: Bool? = false
     public var lastUpdated:Int64 = 0
     
@@ -28,6 +29,7 @@ class Post{
         photo = post.photo
         isPostDeleted = post.isPostDeleted
         lastUpdated = post.lastUpdated
+        location = post.location
     }
 }
 
@@ -39,6 +41,7 @@ extension Post {
         p.title = json["title"] as? String
         p.username = json["username"] as? String
         p.postDescription = json["postDescription"] as? String
+        p.location = json["location"] as? String
         p.photo = json["photo"] as? String
         p.isPostDeleted = json["isPostDeleted"] as? Bool
         if let lup = json["lastUpdated"] as? Timestamp{
@@ -57,6 +60,7 @@ extension Post {
         json["username"] = self.username!
         json["postDescription"] = self.postDescription!
         json["photo"] = self.photo
+        json["location"] = self.location
         json["isPostDeleted"] = self.isPostDeleted!
         json["lastUpdated"] = FieldValue.serverTimestamp()
 

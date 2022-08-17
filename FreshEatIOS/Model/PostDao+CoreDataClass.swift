@@ -66,6 +66,7 @@ public class PostDao: NSManagedObject {
         p.username = post.username
         p.title = post.title
         p.photo = post.photo
+        p.location = post.location
         p.isPostDeleted = post.isPostDeleted!
         p.postDescription = post.postDescription
         p.lastUpdated = post.lastUpdated
