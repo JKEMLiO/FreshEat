@@ -28,6 +28,9 @@ class WelcomeViewController: UIViewController {
                        }
                     }
                 }
+                else{
+                    self.stopLoading()
+                }
             }
         }
     }

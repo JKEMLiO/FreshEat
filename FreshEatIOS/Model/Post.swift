@@ -35,7 +35,9 @@ class Post{
         contactPhone = post.contactPhone
         contactEmail = post.contactEmail
     }
+    
 }
+
 
 extension Post {
     static func FromJson(json:[String:Any])->Post{

@@ -20,7 +20,6 @@
 		53A1E95428AD2A4500EB7EF5 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A1E95328AD2A4500EB7EF5 /* PostTableViewCell.swift */; };
 		53A1E95728AD2B9100EB7EF5 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 53A1E95628AD2B9100EB7EF5 /* Kingfisher */; };
 		53A1E95A28AD2BDD00EB7EF5 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 53A1E95928AD2BDD00EB7EF5 /* Alamofire */; };
-		53C9364C28ACCEEC00BD067A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 53C9364B28ACCEEC00BD067A /* GoogleService-Info.plist */; };
 		7B5C8759289956920048D7C8 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5C8758289956920048D7C8 /* RegisterViewController.swift */; };
 		7B5C875B289956B60048D7C8 /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5C875A289956B60048D7C8 /* NewPostViewController.swift */; };
 		7B5C875D289957030048D7C8 /* PostTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5C875C289957030048D7C8 /* PostTableViewController.swift */; };
@@ -33,6 +32,7 @@
 		C29BCBB028A66C020003EBD7 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29BCBAF28A66C020003EBD7 /* Post.swift */; };
 		C29BCBB228A66FA20003EBD7 /* PostDao+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29BCBB128A66FA20003EBD7 /* PostDao+CoreDataClass.swift */; };
 		C29BCBB628A671130003EBD7 /* PostDao+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29BCBB528A671130003EBD7 /* PostDao+CoreDataProperties.swift */; };
+		C2AEC3CC28AD8E4E007ECD16 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C2AEC3CB28AD8E4E007ECD16 /* GoogleService-Info.plist */; };
 		C2C269D32865F94C00C621CD /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = C2C269D22865F94C00C621CD /* FirebaseAnalytics */; };
 		C2C269D52865F94C00C621CD /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = C2C269D42865F94C00C621CD /* FirebaseAuth */; };
 		C2C269D72865F94C00C621CD /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = C2C269D62865F94C00C621CD /* FirebaseFirestore */; };
@@ -75,7 +75,6 @@
 		20330492285A2BF4006DB34A /* FreshEatIOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreshEatIOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		2033049F285A2EAB006DB34A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		53A1E95328AD2A4500EB7EF5 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
-		53C9364B28ACCEEC00BD067A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		7B5C8758289956920048D7C8 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		7B5C875A289956B60048D7C8 /* NewPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
 		7B5C875C289957030048D7C8 /* PostTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewController.swift; sourceTree = "<group>"; };
@@ -88,6 +87,7 @@
 		C29BCBAF28A66C020003EBD7 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		C29BCBB128A66FA20003EBD7 /* PostDao+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PostDao+CoreDataClass.swift"; sourceTree = "<group>"; };
 		C29BCBB528A671130003EBD7 /* PostDao+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PostDao+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		C2AEC3CB28AD8E4E007ECD16 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C2C269DB2865FA9D00C621CD /* ModelFirebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelFirebase.swift; sourceTree = "<group>"; };
 		C2C269DD2865FACF00C621CD /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		C2C269E02865FDCE00C621CD /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
@@ -147,7 +147,7 @@
 		2033046E285A2BF0006DB34A /* FreshEatIOS */ = {
 			isa = PBXGroup;
 			children = (
-				53C9364B28ACCEEC00BD067A /* GoogleService-Info.plist */,
+				C2AEC3CB28AD8E4E007ECD16 /* GoogleService-Info.plist */,
 				C2C269DA2865FA8500C621CD /* Model */,
 				2033046F285A2BF0006DB34A /* AppDelegate.swift */,
 				20330471285A2BF0006DB34A /* SceneDelegate.swift */,
@@ -319,7 +319,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2033047C285A2BF4006DB34A /* LaunchScreen.storyboard in Resources */,
-				53C9364C28ACCEEC00BD067A /* GoogleService-Info.plist in Resources */,
+				C2AEC3CC28AD8E4E007ECD16 /* GoogleService-Info.plist in Resources */,
 				20330479285A2BF4006DB34A /* Assets.xcassets in Resources */,
 				20330477285A2BF0006DB34A /* Main.storyboard in Resources */,
 			);
