@@ -135,7 +135,7 @@
                                     <constraint firstAttribute="height" constant="50" id="seq-dC-hou"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" textContentType="username"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" keyboardType="emailAddress" textContentType="username"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="24" translatesAutoresizingMaskIntoConstraints="NO" id="Cub-cp-GhW">
                                 <rect key="frame" x="20" y="499" width="374" height="50"/>
@@ -352,7 +352,7 @@
             </objects>
             <point key="canvasLocation" x="2273.8461538461538" y="-443.60189573459712"/>
         </scene>
-        <!--Root View Controller-->
+        <!--Fresh Eat-->
         <scene sceneID="1ww-fe-KhM">
             <objects>
                 <tableViewController id="g8Z-74-x9d" customClass="PostTableViewController" customModule="FreshEatIOS" customModuleProvider="target" sceneMemberID="viewController">
@@ -434,7 +434,7 @@
                             <outlet property="delegate" destination="g8Z-74-x9d" id="9gA-VG-CVB"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="8BX-J0-i10"/>
+                    <navigationItem key="navigationItem" title="Fresh Eat" id="8BX-J0-i10"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K62-AH-I72" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -471,7 +471,7 @@
                                     <constraint firstAttribute="height" constant="50" id="C8a-n4-Zi3"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="yes"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="yes"/>
                             </textField>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vegImg" translatesAutoresizingMaskIntoConstraints="NO" id="5pU-O9-Cfs" userLabel="postMainImage">
                                 <rect key="frame" x="82" y="441" width="250" height="160"/>
@@ -532,7 +532,7 @@
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="50" id="yQH-98-Izv"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="yes"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="yes"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Post" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Tj-YA-Mox">
                                 <rect key="frame" x="20" y="109" width="350" height="30"/>
@@ -962,7 +962,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="vlX-4j-qeh"/>
+        <segue reference="1gr-qf-vea"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="camera.fill" catalog="system" width="128" height="94"/>

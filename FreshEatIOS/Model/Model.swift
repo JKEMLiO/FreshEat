@@ -62,16 +62,16 @@ class Model{
     func getAllPosts(completion:@escaping ([Post])->Void){
         //get the Local Last Update data
         var lup = PostDao.localLastUpdated()
-        NSLog("TAG POSTS_LAST_UPDATE " + String(lup))
+        NSLog("POSTS_LAST_UPDATE " + String(lup))
         
         //fetch all updated records from firebase
         firebaseModel.getAllPosts(since: lup){ posts in
             //insert all records to local DB
-            NSLog("TAG getAllPosts from Model count: \(posts.count)")
+            NSLog("getAllPosts from Model count: \(posts.count)")
             self.dispatchQueue.async{
                 for post in posts {
-                    NSLog("TAG post.title " + post.title!)
-                    NSLog("TAG Post is deleted? " + String(post.isPostDeleted!))
+                    NSLog("post.title " + post.title!)
+                    NSLog("Post is deleted? " + String(post.isPostDeleted!))
                     if !post.isPostDeleted!{
                         PostDao.addPost(post: post)
                     }

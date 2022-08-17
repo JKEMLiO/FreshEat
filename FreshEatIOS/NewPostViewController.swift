@@ -18,22 +18,11 @@ class NewPostViewController: UIViewController, UITextViewDelegate, UITextFieldDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        imgPost.layer.cornerRadius=15
-        imgPost.clipsToBounds=true
-        titleInput.layer.cornerRadius=10
-        titleInput.clipsToBounds=true
-        titlePH = titleInput.placeholder!
-        titleInput.returnKeyType = .next
-        locationInput.layer.cornerRadius=10
-        locationInput.clipsToBounds=true
-        locationPH = locationInput.placeholder!
-        mainInput.layer.cornerRadius=10
-        mainInput.clipsToBounds=true
-        mainInput.text = "What Do You Offer?"
-        mainInput.textColor = UIColor.lightGray
-        mainInput.delegate = self
-        titleInput.delegate = self
-        locationInput.delegate = self
+        self.prepareView()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.prepareView()
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {
@@ -50,14 +39,6 @@ class NewPostViewController: UIViewController, UITextViewDelegate, UITextFieldDe
             textView.textColor = UIColor.lightGray
         }
     }
-        
-                
-//    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-//            textField.placeholder = ""
-//            textField.textColor=UIColor.black
-//            return true
-//
-//     }
     
     func textFieldDidBeginEditing(_ textField:UITextField){
         textField.placeholder=""
@@ -89,13 +70,14 @@ class NewPostViewController: UIViewController, UITextViewDelegate, UITextFieldDe
         fields.append(location)
         
         if !Model.instance.validateFields(fields: fields){
-            self.popupAlert(title: "Error Signing Up",
+            self.popupAlert(title: "Error Posting",
                             message: "You must fill in all of the fields",
                             actionTitles: ["OK"], actions: [nil])
             return
         }
         
         self.startLoading()
+        disableTabBar()
         let post = Post()
         post.id = UUID().uuidString
         post.title = title
@@ -107,17 +89,35 @@ class NewPostViewController: UIViewController, UITextViewDelegate, UITextFieldDe
             if user != nil {
                 post.username = user?.name
                 post.contactEmail = user?.email
-            }
-            
-            //User has selected image
-            if let image = self.selectedImage{
-                Model.instance.uploadImage(name: post.id!, image: image) { url in
-                    post.photo = url
+                //User has selected image
+                if let image = self.selectedImage{
+                    Model.instance.uploadImage(name: post.id!, image: image) { url in
+                        post.photo = url
+                        Model.instance.addPost(post: post) {
+                            self.tabBarController?.selectedIndex = 0
+                            self.stopLoading()
+                            self.enableTabBar()
+                            self.zeroValues()
+                        }
+                    }
+                }
+                //User hasn't selected image
+                else{
+                    post.photo = "vegImg"
+                    Model.instance.addPost(post: post) {
+                        self.tabBarController?.selectedIndex = 0
+                        self.stopLoading()
+                        self.enableTabBar()
+                        self.zeroValues()
+                    }
                 }
             }
-            //User hasn't selected image
             else{
-
+                self.stopLoading()
+                self.enableTabBar()
+                self.popupAlert(title: "Error Adding Post",
+                                message: "An issue has occured...\nTry logout and then login back to the app",
+                                actionTitles: ["OK"], actions: [nil])
             }
         }
     }
@@ -142,7 +142,50 @@ class NewPostViewController: UIViewController, UITextViewDelegate, UITextFieldDe
         self.dismiss(animated: true, completion: nil)
     }
     
-
+    func zeroValues(){
+        titleInput.text! = ""
+        mainInput.text! = ""
+        locationInput.text! = ""
+        selectedImage = UIImage(named: "vegImg")
+        imgPost.image = selectedImage
+    }
+    
+    func prepareView(){
+        self.enableTabBar()
+        imgPost.layer.cornerRadius=15
+        imgPost.clipsToBounds=true
+        titleInput.layer.cornerRadius=10
+        titleInput.clipsToBounds=true
+        titlePH = titleInput.placeholder!
+        titleInput.returnKeyType = .next
+        locationInput.layer.cornerRadius=10
+        locationInput.clipsToBounds=true
+        locationPH = locationInput.placeholder!
+        mainInput.layer.cornerRadius=10
+        mainInput.clipsToBounds=true
+        if mainInput.text == nil || mainInput.text == ""{
+            mainInput.text = "What Do You Offer?"
+            mainInput.textColor = UIColor.lightGray
+            mainInput.delegate = self
+        }
+        titleInput.delegate = self
+        locationInput.delegate = self
+        titleInput.resignFirstResponder()
+        mainInput.resignFirstResponder()
+        locationInput.resignFirstResponder()
+    }
+    
+    func disableTabBar(){
+        for tabBarItem in self.tabBarController?.tabBar.items ?? []{
+            tabBarItem.isEnabled = false
+        }
+    }
+    
+    func enableTabBar(){
+        for tabBarItem in self.tabBarController?.tabBar.items ?? []{
+            tabBarItem.isEnabled = true
+        }
+    }
     /*
     // MARK: - Navigation
 
