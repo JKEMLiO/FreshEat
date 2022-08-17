@@ -362,7 +362,7 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <color key="sectionIndexBackgroundColor" red="0.91064614060000004" green="0.94589275120000005" blue="0.87987905740000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="323" id="qvN-Tu-YBh">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="postCell" rowHeight="323" id="qvN-Tu-YBh" customClass="PostTableViewCell" customModule="FreshEatIOS" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="44.666666030883789" width="390" height="323"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qvN-Tu-YBh" id="Uhk-nt-fZh">
@@ -427,6 +427,12 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.91064614060000004" green="0.94589275120000005" blue="0.87987905740000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <connections>
+                                    <outlet property="postPhoto" destination="cio-A3-peE" id="lMm-F9-k7y"/>
+                                    <outlet property="postTitle" destination="DM5-hh-ZJI" id="KUy-IK-Pzu"/>
+                                    <outlet property="postUserPhoto" destination="KcK-sT-fXk" id="Boj-ro-UlP"/>
+                                    <outlet property="postUsername" destination="cZm-Cn-NwQ" id="Nen-5Q-ycg"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -434,7 +440,12 @@
                             <outlet property="delegate" destination="g8Z-74-x9d" id="9gA-VG-CVB"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Fresh Eat" id="8BX-J0-i10"/>
+                    <navigationItem key="navigationItem" title="Fresh Eat" id="8BX-J0-i10">
+                        <barButtonItem key="backBarButtonItem" title="Home" id="DJV-NW-Mpa"/>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="SxS-XT-odG" kind="show" identifier="openPostCell" id="jTo-0C-yin"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K62-AH-I72" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -775,7 +786,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nhM-hW-8pQ">
-                                <rect key="frame" x="30" y="464" width="330" height="72"/>
+                                <rect key="frame" x="30" y="508" width="330" height="72"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Israel Israel" translatesAutoresizingMaskIntoConstraints="NO" id="s6H-WG-J8c" userLabel="userName">
                                         <rect key="frame" x="71" y="8" width="217" height="29"/>
@@ -819,7 +830,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aar-kN-gUw">
-                                <rect key="frame" x="30" y="544" width="330" height="120"/>
+                                <rect key="frame" x="30" y="588" width="330" height="120"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Our food is from tel tol dasjlk sdjlk asd " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="sq5-GZ-y2z" userLabel="Main text">
                                         <rect key="frame" x="8" y="8" width="314" height="104"/>
@@ -839,14 +850,14 @@
                                 </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vegImg" translatesAutoresizingMaskIntoConstraints="NO" id="CRa-ze-H7O" userLabel="postMainImage">
-                                <rect key="frame" x="30" y="222" width="330" height="230"/>
+                                <rect key="frame" x="30" y="266" width="330" height="230"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="330" id="WN0-LS-41T"/>
                                     <constraint firstAttribute="height" constant="230" id="iVt-Jd-Pgy"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nPc-UI-9nM">
-                                <rect key="frame" x="30" y="674" width="330" height="80"/>
+                                <rect key="frame" x="30" y="718" width="330" height="80"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Contatct Info:" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="vaB-0F-co3" userLabel="contactInfohead">
                                         <rect key="frame" x="8" y="8" width="316" height="28"/>
@@ -881,7 +892,7 @@
                                 </constraints>
                             </view>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fullLogo" translatesAutoresizingMaskIntoConstraints="NO" id="haM-fs-rCp">
-                                <rect key="frame" x="75" y="84" width="240" height="108"/>
+                                <rect key="frame" x="75" y="128" width="240" height="108"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="AJ6-hq-02Y"/>
                                     <constraint firstAttribute="height" constant="108" id="iOt-1W-v0U"/>
@@ -907,9 +918,10 @@
                             <constraint firstItem="haM-fs-rCp" firstAttribute="top" secondItem="duD-GC-GmR" secondAttribute="top" constant="40" id="tSx-22-uT3"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="zJd-im-hAj"/>
                     <connections>
                         <outlet property="contactUIView" destination="nPc-UI-9nM" id="jM7-41-kpQ"/>
-                        <outlet property="discriptionUIView" destination="aar-kN-gUw" id="J0z-9a-eQW"/>
+                        <outlet property="descriptionUIView" destination="aar-kN-gUw" id="J0z-9a-eQW"/>
                         <outlet property="emailTxt" destination="dc1-C0-f6Z" id="cvj-rL-TuV"/>
                         <outlet property="namePostUIView" destination="nhM-hW-8pQ" id="iUr-Lv-k4a"/>
                         <outlet property="postImg" destination="CRa-ze-H7O" id="6xD-Br-E1s"/>

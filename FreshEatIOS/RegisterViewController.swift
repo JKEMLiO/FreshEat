@@ -107,7 +107,7 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate 
                 }
                 //User hasn't selected image - using default avatar image
                 else{
-                    user.avatarUrl = "farmerAvatar"
+                    user.avatarUrl = "farmerAvatarSmall"
                     Model.instance.register(email: user.email!, password: pass) { success in
                         if success{
                             Model.instance.addUser(user: user) {

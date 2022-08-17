@@ -11,25 +11,39 @@ class SeePostViewController: UIViewController {
 
     @IBOutlet weak var postImg: UIImageView!
     @IBOutlet weak var namePostUIView: UIView!
-    @IBOutlet weak var discriptionUIView: UIView!
+    @IBOutlet weak var descriptionUIView: UIView!
     @IBOutlet weak var contactUIView: UIView!
     @IBOutlet weak var emailTxt: UITextView!
     @IBOutlet weak var userImg: UIImageView!
+    
+    var post:Post?{
+        didSet{
+            if(namePostUIView != nil){
+                updateDisplay()
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         postImg.layer.cornerRadius=10
         postImg.clipsToBounds=true
         namePostUIView.layer.cornerRadius=10
         namePostUIView.clipsToBounds=true
-        discriptionUIView.layer.cornerRadius=10
-        discriptionUIView.clipsToBounds=true
+        descriptionUIView.layer.cornerRadius=10
+        descriptionUIView.clipsToBounds=true
         contactUIView.layer.cornerRadius=10
         contactUIView.clipsToBounds=true
         userImg.layer.cornerRadius=10
         userImg.clipsToBounds=true
         
-
-        // Do any additional setup after loading the view.
+        if post != nil {
+            updateDisplay()
+        }
+    }
+    
+    func updateDisplay(){
+        
     }
     
 
