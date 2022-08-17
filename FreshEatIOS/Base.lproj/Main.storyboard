@@ -121,7 +121,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="390" height="790"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="email" textAlignment="natural" minimumFontSize="24" translatesAutoresizingMaskIntoConstraints="NO" id="De8-zD-vUg">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email Address" textAlignment="natural" minimumFontSize="24" translatesAutoresizingMaskIntoConstraints="NO" id="De8-zD-vUg">
                                 <rect key="frame" x="20" y="339" width="374" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="ufD-MK-IAi"/>
@@ -129,7 +129,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" textContentType="email"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User Name" textAlignment="natural" minimumFontSize="24" translatesAutoresizingMaskIntoConstraints="NO" id="Rfg-MY-bSF">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Full Name" textAlignment="natural" minimumFontSize="24" translatesAutoresizingMaskIntoConstraints="NO" id="Rfg-MY-bSF">
                                 <rect key="frame" x="20" y="419" width="374" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="seq-dC-hou"/>
@@ -270,13 +270,13 @@
                                     <constraint firstAttribute="height" constant="160" id="8wk-k8-gtb"/>
                                 </constraints>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User Name" minimumFontSize="24" translatesAutoresizingMaskIntoConstraints="NO" id="7QZ-4D-05U">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email Address" minimumFontSize="24" translatesAutoresizingMaskIntoConstraints="NO" id="7QZ-4D-05U">
                                 <rect key="frame" x="20" y="475" width="350" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="MQJ-Hd-Fxl"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" textContentType="username"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" textContentType="email"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="24" translatesAutoresizingMaskIntoConstraints="NO" id="9CD-cF-lGV">
                                 <rect key="frame" x="20" y="555" width="350" height="50"/>
@@ -308,6 +308,7 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="btnLogin:" destination="cEd-w7-CZs" eventType="touchUpInside" id="tpW-zP-SI0"/>
+                                    <action selector="login:" destination="O2d-Ix-9Kt" eventType="touchUpInside" id="kIL-Zh-U6L"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please Enter User Name &amp; Password" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sr3-0o-PB4">
@@ -342,6 +343,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="mjZ-FM-5jK"/>
                     <connections>
+                        <outlet property="email" destination="7QZ-4D-05U" id="IGX-ge-qwo"/>
+                        <outlet property="password" destination="9CD-cF-lGV" id="ehb-pO-lsJ"/>
                         <segue destination="Tlu-gF-e3S" kind="presentation" identifier="toHomeScreenSegue" modalPresentationStyle="fullScreen" id="vlX-4j-qeh"/>
                     </connections>
                 </viewController>

@@ -36,7 +36,7 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate 
         fields.append(pass)
         fields.append(confirmPass)
 
-        if !validateFields(fields:fields){
+        if !Model.instance.validateFields(fields:fields){
             self.popupAlert(title: "Error Signing Up",
                             message: "You must fill in all of the fields",
                             actionTitles: ["OK"], actions: [nil])
@@ -149,15 +149,6 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate 
         selectedImage = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerOriginalImage")] as? UIImage
         self.profileImage.image = selectedImage
         self.dismiss(animated: true, completion: nil)
-    }
-    
-    func validateFields(fields: [String]) ->Bool{
-        for field in fields{
-            if field == ""{
-                return false
-            }
-        }
-        return true
     }
     
     

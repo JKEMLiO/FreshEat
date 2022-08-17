@@ -148,6 +148,15 @@ class Model{
         let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
         return emailPred.evaluate(with: email)
     }
+    
+    func validateFields(fields: [String]) ->Bool{
+        for field in fields{
+            if field == ""{
+                return false
+            }
+        }
+        return true
+    }
 }
 
 class ModelNotificationBase{
