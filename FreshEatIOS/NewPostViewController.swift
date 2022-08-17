@@ -7,7 +7,7 @@
 
 import UIKit
 
-class NewPostViewController: UIViewController, UITextViewDelegate, UITextFieldDelegate {
+class NewPostViewController: UIViewController, UITextViewDelegate, UITextFieldDelegate, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
 
     @IBOutlet weak var titleInput: UITextField!
     @IBOutlet weak var locationInput: UITextField!
@@ -15,6 +15,7 @@ class NewPostViewController: UIViewController, UITextViewDelegate, UITextFieldDe
     @IBOutlet weak var imgPost: UIImageView!
     var titlePH = ""
     var locationPH = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         imgPost.layer.cornerRadius=15
@@ -69,12 +70,66 @@ class NewPostViewController: UIViewController, UITextViewDelegate, UITextFieldDe
         if ((locationInput.text?.isEmpty) != nil){
             locationInput.placeholder = locationPH
         }
-            
-        
-    
     }
     
     
+    @IBAction func uploadImage(_ sender: UIButton) {
+        takePicture(source: .photoLibrary)
+    }
+    
+    @IBAction func uploadPost(_ sender: UIButton) {
+        
+        let title = titleInput.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let description = mainInput.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let location = locationInput.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        // Add let phone = phoneInput.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        var fields = [String]()
+        fields.append(title)
+        fields.append(description)
+        fields.append(location)
+        
+        if !Model.instance.validateFields(fields: fields){
+            self.popupAlert(title: "Error Signing Up",
+                            message: "You must fill in all of the fields",
+                            actionTitles: ["OK"], actions: [nil])
+            return
+        }
+        
+        self.startLoading()
+        let post = Post()
+        post.id = UUID().uuidString
+        post.title = title
+        post.postDescription = description
+        post.location = location
+        post.isPostDeleted = false
+        // Add post.contactPhone = phone
+        Model.instance.getCurrentUser { user in
+            if user != nil {
+                post.username = user?.name
+                post.contactEmail = user?.email
+            }
+        }
+    }
+    
+    func takePicture(source: UIImagePickerController.SourceType){
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.sourceType = source;
+        imagePicker.allowsEditing = true
+        if (UIImagePickerController.isSourceTypeAvailable(source))
+        {
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+    }
+    
+    var selectedImage: UIImage?
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        selectedImage = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerOriginalImage")] as? UIImage
+        self.imgPost.image = selectedImage
+        self.dismiss(animated: true, completion: nil)
+    }
     
 
     /*

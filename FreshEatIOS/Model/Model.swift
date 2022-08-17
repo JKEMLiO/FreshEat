@@ -126,6 +126,10 @@ class Model{
         firebaseModel.isUserLoggedIn(completion: completion)
     }
     
+    func getCurrentUser(completion:@escaping (User?)->Void){
+        firebaseModel.getCurrentUser(completion: completion)
+    }
+    
     /*
      Images
      */

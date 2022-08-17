@@ -493,6 +493,9 @@
                                     </preferredSymbolConfiguration>
                                     <color key="baseBackgroundColor" red="0.39028996230000002" green="0.65612149239999995" blue="0.26791793110000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="uploadImage:" destination="CLD-eH-ZfL" eventType="touchUpInside" id="gtI-T4-YJj"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u4L-US-gmh">
                                 <rect key="frame" x="107" y="667" width="200" height="50"/>
@@ -518,6 +521,7 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="btnLogin:" destination="cEd-w7-CZs" eventType="touchUpInside" id="NYO-pj-INh"/>
+                                    <action selector="uploadPost:" destination="CLD-eH-ZfL" eventType="touchUpInside" id="Qvy-55-1AT"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Location" textAlignment="natural" minimumFontSize="24" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="w8Z-8y-8Lk" userLabel="Location">

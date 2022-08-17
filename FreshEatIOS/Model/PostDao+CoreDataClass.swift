@@ -67,9 +67,11 @@ public class PostDao: NSManagedObject {
         p.title = post.title
         p.photo = post.photo
         p.location = post.location
+        p.contactPhone = post.contactPhone
         p.isPostDeleted = post.isPostDeleted!
         p.postDescription = post.postDescription
         p.lastUpdated = post.lastUpdated
+        p.contactEmail = post.contactEmail
         
         do{
             try context.save()

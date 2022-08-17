@@ -20,6 +20,8 @@ extension PostDao {
     @NSManaged public var photo: String?
     @NSManaged public var postDescription: String?
     @NSManaged public var location: String?
+    @NSManaged public var contactPhone: String?
+    @NSManaged public var contactEmail: String?
     @NSManaged public var isPostDeleted: Bool
     @NSManaged public var lastUpdated: Int64
 

@@ -149,9 +149,6 @@ class ModelFirebase{
     func register(email: String, password: String, completion: @escaping (_ success: Bool) -> Void) {
         Auth.auth().createUser(withEmail: email, password: password) {(result, error) in
             if (result?.user) != nil {
-                UserDefaults.standard.set(email, forKey: "email")
-                UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
-                UserDefaults.standard.synchronize()
                 completion(true)
             } else {
                 print("Register User Error \(String(describing: error))")
@@ -166,9 +163,6 @@ class ModelFirebase{
                 print("Sign In Error: \(error)")
                 completion(false)
             } else {
-                UserDefaults.standard.set(email, forKey: "email")
-                UserDefaults.standard.set(true, forKey: "isUserLoggedIn")
-                UserDefaults.standard.synchronize()
                 completion(true)
             }
         }
@@ -177,9 +171,6 @@ class ModelFirebase{
     func signOut(completion: @escaping (_ success: Bool) -> Void){
         do {
             try Auth.auth().signOut()
-            UserDefaults.standard.set("", forKey: "email")
-            UserDefaults.standard.set(false, forKey: "isUserLoggedIn")
-            UserDefaults.standard.synchronize()
             completion(true)
         } catch let signOutError as NSError {
             print("Error Sign Out: \(signOutError)")
@@ -195,6 +186,26 @@ class ModelFirebase{
             completion(nil)
         }
     }
+    
+    func getCurrentUser(completion:@escaping (User?)->Void){
+        let docRef = Firestore.firestore().collection("users").document(Auth.auth().currentUser!.email!)
+            docRef.getDocument {
+                (document, error) in
+                if let error = error{
+                    print("Getting Current User Error: \(error)")
+                    completion(nil)
+                }
+                else{
+                    guard let document = document, document.exists else {
+                        print("Current user does not exist")
+                        return
+                    }
+                    let dataDescription = document.data()
+                    let user = User.FromJson(json: dataDescription!)
+                    completion(user)
+                }
+            }
+        }
     
     func updateUserPassword(password: String , completion: @escaping (_ success: Bool)->Void){
         Auth.auth().currentUser?.updatePassword(to: password) { (error) in
