@@ -108,6 +108,17 @@ class NewPostViewController: UIViewController, UITextViewDelegate, UITextFieldDe
                 post.username = user?.name
                 post.contactEmail = user?.email
             }
+            
+            //User has selected image
+            if let image = self.selectedImage{
+                Model.instance.uploadImage(name: post.id!, image: image) { url in
+                    post.photo = url
+                }
+            }
+            //User hasn't selected image
+            else{
+
+            }
         }
     }
     

@@ -80,6 +80,29 @@ public class PostDao: NSManagedObject {
         }
     }
     
+    static func editPost(id:String, data: [String:Any]){
+        guard let context = context else {
+            return
+        }
+        do{
+            let fetchRequest: NSFetchRequest<PostDao> = PostDao.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "id == %@", id)
+            let postsDao = try context.fetch(fetchRequest)
+            if(postsDao.count>0){
+                let post = postsDao.first!
+                for item in data{
+                    post.setValue(item.value, forKey: item.key)
+                }
+                try context.save()
+            }
+            
+            return
+        }catch let error as NSError{
+            print("Post Edit Core Data Error \(error) \(error.userInfo)")
+            return
+        }
+    }
+    
     static func delete(post:Post){
         
         guard let context = context else {
