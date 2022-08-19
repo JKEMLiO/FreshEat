@@ -35,6 +35,7 @@ class PostTableViewController: UITableViewController {
         Model.instance.getAllPosts(){
             posts in
             self.data = posts
+            self.data.sort(by: { $0.lastUpdated > $1.lastUpdated })
             self.tableView.reloadData()
             self.refreshControl?.endRefreshing()
         }

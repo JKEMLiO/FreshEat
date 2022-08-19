@@ -98,7 +98,7 @@ class ModelFirebase{
      */
     
     func getAllPosts(since:Int64, completion:@escaping ([Post])->Void){
-        db.collection("posts").whereField("lastUpdated", isGreaterThanOrEqualTo: Timestamp(seconds: since, nanoseconds: 0))
+        db.collection("posts").whereField("lastUpdated", isGreaterThanOrEqualTo: Timestamp(seconds: since, nanoseconds: 0)).order(by: "lastUpdated",descending: true)
             .getDocuments() {
             (querySnapshot, error) in
             var posts = [Post]()
