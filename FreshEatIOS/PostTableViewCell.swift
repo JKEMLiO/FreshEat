@@ -12,9 +12,10 @@ class PostTableViewCell: UITableViewCell {
 
     
     @IBOutlet weak var postPhoto: UIImageView!
-    @IBOutlet weak var postUsername: UITextView!
     @IBOutlet weak var postUserPhoto: UIImageView!
-    @IBOutlet weak var postTitle: UITextView!
+    @IBOutlet weak var postUsername: UILabel!
+    @IBOutlet weak var postTitle: UILabel!
+    
     
     var title = "" {
         didSet{
@@ -23,6 +24,7 @@ class PostTableViewCell: UITableViewCell {
             }
         }
     }
+
     
     var userName = "" {
         didSet{
@@ -35,6 +37,8 @@ class PostTableViewCell: UITableViewCell {
     var ptPhoto = "" {
         didSet{
             if(postPhoto != nil){
+                postPhoto.layer.cornerRadius=25
+                postPhoto.clipsToBounds = true
                 if (!ptPhoto.elementsEqual("vegImg")){
                     let url = URL(string: ptPhoto)
                     postPhoto?.kf.setImage(with: url)
@@ -49,6 +53,8 @@ class PostTableViewCell: UITableViewCell {
     var userPhoto = "" {
         didSet{
             if(postUserPhoto != nil){
+                postUserPhoto.layer.cornerRadius=25
+                postUserPhoto.clipsToBounds = true
                 if (!userPhoto.elementsEqual("farmerAvatarSmall")){
                     let url = URL(string: userPhoto)
                     postUserPhoto?.kf.setImage(with: url)

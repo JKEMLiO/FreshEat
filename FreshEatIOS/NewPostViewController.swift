@@ -11,6 +11,7 @@ class NewPostViewController: UIViewController, UITextViewDelegate, UITextFieldDe
 
     @IBOutlet weak var titleInput: UITextField!
     @IBOutlet weak var locationInput: UITextField!
+    @IBOutlet weak var cancelBtn: UIButton!
     @IBOutlet weak var mainInput: UITextView!
     @IBOutlet weak var imgPost: UIImageView!
     var titlePH = ""
@@ -54,6 +55,11 @@ class NewPostViewController: UIViewController, UITextViewDelegate, UITextFieldDe
     }
     
     
+    @IBAction func clearTxt (_ sender: UIButton){
+        titleInput.text = nil
+        locationInput.text = nil
+        
+    }
     @IBAction func uploadImage(_ sender: UIButton) {
         takePicture(source: .photoLibrary)
     }

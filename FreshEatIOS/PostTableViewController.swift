@@ -19,10 +19,13 @@ class PostTableViewController: UITableViewController {
                                               for: .valueChanged)
         self.refreshControl?.attributedTitle = NSAttributedString("Loading Posts...")
         
+        
         Model.postDataNotification.observe {
             self.reload()
         }
+        
         reload()
+        
     }
         
     @objc func reload(){
@@ -48,6 +51,7 @@ class PostTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return data.count
     }
+      
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "postCell", for: indexPath) as! PostTableViewCell
