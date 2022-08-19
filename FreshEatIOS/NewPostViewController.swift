@@ -70,12 +70,7 @@ class NewPostViewController: UIViewController, UITextViewDelegate, UITextFieldDe
     }
     
     @IBAction func cancelPost(_ sender: Any) {
-        titleInput.text = nil
-        locationInput.text = nil
-        mainInput.text = nil
-        mainInput.text = "What Do You Offer?"
-        mainInput.textColor = UIColor.lightGray
-        
+        zeroValues()
     }
     
    
@@ -168,9 +163,11 @@ class NewPostViewController: UIViewController, UITextViewDelegate, UITextFieldDe
     }
     
     func zeroValues(){
-        titleInput.text! = ""
-        mainInput.text! = ""
-        locationInput.text! = ""
+        titleInput.text = nil
+        locationInput.text = nil
+        mainInput.text = nil
+        mainInput.text = "What Do You Offer?"
+        mainInput.textColor = UIColor.lightGray
         selectedImage = UIImage(named: "vegImg")
         imgPost.image = selectedImage
     }
