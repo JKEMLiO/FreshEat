@@ -14,13 +14,28 @@ class NewPostViewController: UIViewController, UITextViewDelegate, UITextFieldDe
     @IBOutlet weak var cancelBtn: UIButton!
     @IBOutlet weak var mainInput: UITextView!
     @IBOutlet weak var imgPost: UIImageView!
+    @IBOutlet weak var scroll: UIScrollView!
     var titlePH = ""
     var locationPH = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.prepareView()
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardApear), name: UIResponder.keyboardWillShowNotification, object: nil)
+        
+//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardDisapear), name: UIResponder.keyboardWillShowNotification, object: nil)
+        
     }
+    
+    var isExpand = false
+    @objc func keyboardApear(){
+        if !isExpand {
+            self.scroll.contentSize = CGSize (width: self.view.frame.width, height: self.scroll.frame.height+300)
+            isExpand=true
+        }
+    }
+    
+    
     
     override func viewWillAppear(_ animated: Bool) {
         self.prepareView()
@@ -54,12 +69,16 @@ class NewPostViewController: UIViewController, UITextViewDelegate, UITextFieldDe
         }
     }
     
-    
-    @IBAction func clearTxt (_ sender: UIButton){
+    @IBAction func cancelPost(_ sender: Any) {
         titleInput.text = nil
         locationInput.text = nil
+        mainInput.text = nil
+        mainInput.text = "What Do You Offer?"
+        mainInput.textColor = UIColor.lightGray
         
     }
+    
+   
     @IBAction func uploadImage(_ sender: UIButton) {
         takePicture(source: .photoLibrary)
     }
@@ -176,9 +195,7 @@ class NewPostViewController: UIViewController, UITextViewDelegate, UITextFieldDe
         }
         titleInput.delegate = self
         locationInput.delegate = self
-        titleInput.resignFirstResponder()
-        mainInput.resignFirstResponder()
-        locationInput.resignFirstResponder()
+
     }
     
     func disableTabBar(){

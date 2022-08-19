@@ -15,6 +15,8 @@ class SeePostViewController: UIViewController {
     @IBOutlet weak var contactUIView: UIView!
     @IBOutlet weak var emailTxt: UITextView!
     @IBOutlet weak var userImg: UIImageView!
+    @IBOutlet weak var editBtn: UIButton!
+    @IBOutlet weak var deleteBtn: UIButton!
     
     var post:Post?{
         didSet{
