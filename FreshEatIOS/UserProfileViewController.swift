@@ -16,6 +16,4 @@ class UserProfileViewController: UIViewController {
         profileImage.clipsToBounds=true
     }
     
-
-
 }

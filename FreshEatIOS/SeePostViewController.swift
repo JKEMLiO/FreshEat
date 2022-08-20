@@ -74,6 +74,8 @@ class SeePostViewController: UIViewController {
                     if currentUser?.email == user!.email{
                         self.editBtn.isHidden = false
                         self.deleteBtn.isHidden = false
+                        self.editBtn.isEnabled = true
+                        self.deleteBtn.isEnabled = true
                     }
                     self.emailTxt.text = user!.email
                     
@@ -91,7 +93,29 @@ class SeePostViewController: UIViewController {
                 self.stopLoading()
             }
         }
-        
+    }
+    
+    
+    @IBAction func deletePost(_ sender: UIButton) {
+        let alert = UIAlertController(title: "Delete post", message: "Are you sure you want to delete this post?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        alert.addAction(UIAlertAction(title: "Yes", style: .destructive, handler: { [self] UIAlertAction in
+            self.delPost()
+        }))
+                                      
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func delPost(){
+        self.startLoading()
+        Model.instance.deletePost(post: post!) {
+            self.stopLoading()
+            self.navigationController?.popViewController(animated: false)
+        }
+    }
+    
+    
+    @IBAction func editPost(_ sender: Any) {
         
     }
     
