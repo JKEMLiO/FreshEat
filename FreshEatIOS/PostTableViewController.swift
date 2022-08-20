@@ -35,8 +35,34 @@ class PostTableViewController: UITableViewController {
         Model.instance.getAllPosts(){
             posts in
             self.data = posts
+            self.data.sort(by: { $0.lastUpdated > $1.lastUpdated })
             self.tableView.reloadData()
             self.refreshControl?.endRefreshing()
+        }
+    }
+    
+    @IBAction func signOut(_ sender: UIBarButtonItem) {
+        let alert = UIAlertController(title: "Log Out", message: "Are you sure you want to sign out?", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { UIAlertAction in
+            self.logout()
+        }))
+        present(alert, animated: true, completion: nil)
+    }
+    
+    func logout(){
+        Model.instance.signOut { success in
+            if success{
+                let welcomeVC = self.storyboard?.instantiateViewController(identifier: "welcomeVC")
+                welcomeVC?.modalPresentationStyle = .fullScreen
+                self.present(welcomeVC!, animated: true, completion: {
+                    self.navigationController?.popToRootViewController(animated: false)
+                    self.tabBarController?.selectedIndex = 0
+                })
+            }
+            else{
+                self.popupAlert(title: "Error", message: "There was an issue logging out", actionTitles: ["OK"], actions: [nil])
+            }
         }
     }
 
