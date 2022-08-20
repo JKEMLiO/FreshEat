@@ -32,7 +32,7 @@
 		C22C522C289E5EA100C8E4A0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22C522B289E5EA100C8E4A0 /* User.swift */; };
 		C22C522E289E65B100C8E4A0 /* UserDao+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22C522D289E65B100C8E4A0 /* UserDao+CoreDataClass.swift */; };
 		C22C5230289E66DE00C8E4A0 /* UserDao+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22C522F289E66DD00C8E4A0 /* UserDao+CoreDataProperties.swift */; };
-		C261846528B135C600758FB8 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C261846428B135C600758FB8 /* ChangePasswordViewController.swift */; };
+		C261846728B1372000758FB8 /* PasswordChangeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C261846628B1371F00758FB8 /* PasswordChangeViewController.swift */; };
 		C29BCBB028A66C020003EBD7 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29BCBAF28A66C020003EBD7 /* Post.swift */; };
 		C29BCBB228A66FA20003EBD7 /* PostDao+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29BCBB128A66FA20003EBD7 /* PostDao+CoreDataClass.swift */; };
 		C29BCBB628A671130003EBD7 /* PostDao+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C29BCBB528A671130003EBD7 /* PostDao+CoreDataProperties.swift */; };
@@ -90,7 +90,7 @@
 		C22C522B289E5EA100C8E4A0 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C22C522D289E65B100C8E4A0 /* UserDao+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDao+CoreDataClass.swift"; sourceTree = "<group>"; };
 		C22C522F289E66DD00C8E4A0 /* UserDao+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDao+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		C261846428B135C600758FB8 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
+		C261846628B1371F00758FB8 /* PasswordChangeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordChangeViewController.swift; sourceTree = "<group>"; };
 		C29BCBAF28A66C020003EBD7 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		C29BCBB128A66FA20003EBD7 /* PostDao+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PostDao+CoreDataClass.swift"; sourceTree = "<group>"; };
 		C29BCBB528A671130003EBD7 /* PostDao+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PostDao+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -173,7 +173,7 @@
 				53A1E95328AD2A4500EB7EF5 /* PostTableViewCell.swift */,
 				7B73342028B0EA1800D6C436 /* GifLauncher.swift */,
 				7B73342228B0EB5B00D6C436 /* SplashViewController.swift */,
-				C261846428B135C600758FB8 /* ChangePasswordViewController.swift */,
+				C261846628B1371F00758FB8 /* PasswordChangeViewController.swift */,
 			);
 			path = FreshEatIOS;
 			sourceTree = "<group>";
@@ -367,7 +367,6 @@
 				7B5C876728A79BD20048D7C8 /* UserProfileViewController.swift in Sources */,
 				7B73342128B0EA1800D6C436 /* GifLauncher.swift in Sources */,
 				7B5C8759289956920048D7C8 /* RegisterViewController.swift in Sources */,
-				C261846528B135C600758FB8 /* ChangePasswordViewController.swift in Sources */,
 				C2C269E12865FDCE00C621CD /* DataModel.xcdatamodeld in Sources */,
 				7B5C875D289957030048D7C8 /* PostTableViewController.swift in Sources */,
 				C29BCBB628A671130003EBD7 /* PostDao+CoreDataProperties.swift in Sources */,
@@ -376,6 +375,7 @@
 				C22C522C289E5EA100C8E4A0 /* User.swift in Sources */,
 				C2C269DE2865FACF00C621CD /* Model.swift in Sources */,
 				C2C269DC2865FA9D00C621CD /* ModelFirebase.swift in Sources */,
+				C261846728B1372000758FB8 /* PasswordChangeViewController.swift in Sources */,
 				20330472285A2BF0006DB34A /* SceneDelegate.swift in Sources */,
 				7B73342328B0EB5B00D6C436 /* SplashViewController.swift in Sources */,
 			);

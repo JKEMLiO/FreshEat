@@ -803,10 +803,10 @@
             </objects>
             <point key="canvasLocation" x="5683.0769230769229" y="585.78199052132697"/>
         </scene>
-        <!--Change Password View Controller-->
+        <!--Password Change View Controller-->
         <scene sceneID="PDM-vu-X0W">
             <objects>
-                <viewController id="flc-zz-PgE" customClass="ChangePasswordViewController" customModule="FreshEatIOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="flc-zz-PgE" customClass="PasswordChangeViewController" customModule="FreshEatIOS" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="9wL-x1-8Ky">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -829,7 +829,7 @@
                                     <color key="baseBackgroundColor" red="0.39028996230000002" green="0.65612149239999995" blue="0.26791793110000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <action selector="changePassword:" destination="flc-zz-PgE" eventType="touchUpInside" id="EYf-fR-gjC"/>
+                                    <action selector="changePassword:" destination="flc-zz-PgE" eventType="touchUpInside" id="ag1-kS-0dd"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="24" translatesAutoresizingMaskIntoConstraints="NO" id="uDy-Tv-S2F">
@@ -869,8 +869,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="Ate-iY-vsd"/>
                     <connections>
-                        <outlet property="confirmPasswordInput" destination="uDy-Tv-S2F" id="0yz-n3-kTn"/>
-                        <outlet property="passwordInput" destination="LQl-A8-Xgp" id="2c4-X0-CtW"/>
+                        <outlet property="confirmPassInput" destination="uDy-Tv-S2F" id="n2o-mr-qfM"/>
+                        <outlet property="passInput" destination="LQl-A8-Xgp" id="Ph2-qj-iCe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2g2-UD-XIH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
