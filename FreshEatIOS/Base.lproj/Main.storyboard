@@ -1063,11 +1063,15 @@
                     <connections>
                         <outlet property="contactUIView" destination="nPc-UI-9nM" id="jM7-41-kpQ"/>
                         <outlet property="deleteBtn" destination="e7d-07-nRt" id="QeJ-o1-WRB"/>
+                        <outlet property="descriptionTxt" destination="sq5-GZ-y2z" id="XhX-NC-UsK"/>
                         <outlet property="descriptionUIView" destination="aar-kN-gUw" id="J0z-9a-eQW"/>
                         <outlet property="editBtn" destination="1PB-Cs-Rcv" id="U9p-sr-sA9"/>
                         <outlet property="emailTxt" destination="dc1-C0-f6Z" id="cvj-rL-TuV"/>
+                        <outlet property="locationTxt" destination="qRe-y2-d1U" id="LmG-IM-GnP"/>
                         <outlet property="namePostUIView" destination="nhM-hW-8pQ" id="iUr-Lv-k4a"/>
+                        <outlet property="nameTxt" destination="s6H-WG-J8c" id="EnT-nb-lqG"/>
                         <outlet property="postImg" destination="CRa-ze-H7O" id="6xD-Br-E1s"/>
+                        <outlet property="titleTxt" destination="yHX-Ml-mgt" id="LYX-O1-atn"/>
                         <outlet property="userImg" destination="Eey-Ly-zos" id="K8V-Ae-drC"/>
                     </connections>
                 </viewController>
