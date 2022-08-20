@@ -991,8 +991,8 @@
                                     <action selector="uploadPost:" destination="CLD-eH-ZfL" eventType="touchUpInside" id="UFz-k0-piM"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="fullLogo" translatesAutoresizingMaskIntoConstraints="NO" id="haM-fs-rCp">
-                                <rect key="frame" x="75" y="88" width="240" height="108"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="fullLogo" translatesAutoresizingMaskIntoConstraints="NO" id="haM-fs-rCp">
+                                <rect key="frame" x="74" y="88" width="240" height="108"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="240" id="AJ6-hq-02Y"/>
                                     <constraint firstAttribute="height" constant="108" id="iOt-1W-v0U"/>
