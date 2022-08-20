@@ -32,6 +32,7 @@ class SeePostViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        startLoading()
         postImg.layer.cornerRadius=10
         postImg.clipsToBounds=true
         namePostUIView.layer.cornerRadius=10
@@ -45,6 +46,9 @@ class SeePostViewController: UIViewController {
         
         if post != nil {
             updateDisplay()
+        }
+        else{
+            stopLoading()
         }
     }
     
@@ -67,9 +71,9 @@ class SeePostViewController: UIViewController {
         Model.instance.getCurrentUser { currentUser in
             if currentUser != nil{
                 Model.instance.getUser(byEmail: (self.post?.contactEmail)!) { user in
-                    if currentUser?.email != user!.email{
-                        self.editBtn.isHidden = true
-                        self.deleteBtn.isHidden = true
+                    if currentUser?.email == user!.email{
+                        self.editBtn.isHidden = false
+                        self.deleteBtn.isHidden = false
                     }
                     self.emailTxt.text = user!.email
                     
@@ -79,7 +83,12 @@ class SeePostViewController: UIViewController {
                     }else{
                         self.userImg.image = UIImage(named: "farmerAvatarSmall")
                     }
+                    
+                    self.stopLoading()
                 }
+            }
+            else{
+                self.stopLoading()
             }
         }
         

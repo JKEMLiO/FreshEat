@@ -420,7 +420,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square.and.pencil" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="3lr-iT-Bgv">
+                                                <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square.and.pencil" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="3lr-iT-Bgv">
                                                     <rect key="frame" x="292" y="18.333333333333332" width="30" height="28.333333333333339"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="30" id="1Fz-e4-oca"/>
@@ -985,7 +985,7 @@
                                     <constraint firstItem="vaB-0F-co3" firstAttribute="leading" secondItem="nPc-UI-9nM" secondAttribute="leading" constant="8" id="sHg-DX-qBP"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1PB-Cs-Rcv">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1PB-Cs-Rcv">
                                 <rect key="frame" x="244" y="729" width="100" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="1hT-Ca-TEv"/>
@@ -1014,7 +1014,7 @@
                                 <color key="textColor" red="0.3917872906" green="0.6562518477" blue="0.26828789710000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e7d-07-nRt">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e7d-07-nRt">
                                 <rect key="frame" x="65" y="729" width="100" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="E7j-Qk-yW0"/>

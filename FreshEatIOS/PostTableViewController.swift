@@ -88,10 +88,13 @@ class PostTableViewController: UITableViewController {
         cell.viewBackground.layer.cornerRadius=10
         cell.viewBackground.clipsToBounds=true
         
-        
-        //Enter if its user post//
-        //cell.editIcon.image = nil
-        
+        Model.instance.getCurrentUser { user in
+            if user != nil{
+                if user?.email == pt.contactEmail{
+                    cell.editIcon.isHidden = false
+                }
+            }
+        }
         
         Model.instance.getUser(byEmail: pt.contactEmail!) { user in
             if user != nil{
