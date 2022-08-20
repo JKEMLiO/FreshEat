@@ -20,34 +20,39 @@ class NewPostViewController: UIViewController, UITextViewDelegate, UITextFieldDe
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.addSubview(scroll)
         self.prepareView()
+             
+        
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardApear), name: UIResponder.keyboardWillShowNotification, object: nil)
         
 //        NotificationCenter.default.addObserver(self, selector: #selector(keyboardDisapear), name: UIResponder.keyboardWillShowNotification, object: nil)
         
     }
     
+    
     var isExpand = false
     @objc func keyboardApear(){
         if !isExpand {
-            self.scroll.contentSize = CGSize (width: self.view.frame.width, height: self.scroll.frame.height+300)
-            isExpand=true
+//            self.scroll.contentSize = CGSize (width: self.view.frame.width, height: self.scroll.frame.height+300)
+            //CGSize (width: self.view.frame.width, height: self.scroll.frame.height+300)
+
         }
     }
     
-    
-    
+        
     override func viewWillAppear(_ animated: Bool) {
         self.prepareView()
     }
     
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.textColor == UIColor.lightGray {
-            textView.text = ""
+          textView.text = ""
             textView.textColor = UIColor.black
         }
         
     }
+    
     
     func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text.isEmpty {
@@ -56,9 +61,9 @@ class NewPostViewController: UIViewController, UITextViewDelegate, UITextFieldDe
         }
     }
     
-    func textFieldDidBeginEditing(_ textField:UITextField){
-        textField.placeholder=""
-    }
+//    func textFieldDidBeginEditing(_ textField:UITextField){
+//        textField.placeholder=""
+//    }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         if ((titleInput.text?.isEmpty) != nil){
@@ -170,6 +175,7 @@ class NewPostViewController: UIViewController, UITextViewDelegate, UITextFieldDe
         mainInput.textColor = UIColor.lightGray
         selectedImage = UIImage(named: "vegImg")
         imgPost.image = selectedImage
+        titleInput.becomeFirstResponder()
     }
     
     func prepareView(){
