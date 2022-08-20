@@ -15,6 +15,7 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var postUserPhoto: UIImageView!
     @IBOutlet weak var postUsername: UILabel!
     @IBOutlet weak var postTitle: UILabel!
+    @IBOutlet weak var editIcon: UIImageView!
     @IBOutlet weak var viewBackground: UIView!
     
     
@@ -50,6 +51,7 @@ class PostTableViewCell: UITableViewCell {
         }
     }
     
+       
     
     var userPhoto = "" {
         didSet{
