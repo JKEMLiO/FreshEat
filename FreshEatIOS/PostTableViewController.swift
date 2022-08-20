@@ -85,6 +85,8 @@ class PostTableViewController: UITableViewController {
         cell.title = pt.title!
         cell.userName = pt.username!
         cell.ptPhoto = pt.photo!
+        cell.viewBackground.layer.cornerRadius=10
+        cell.viewBackground.clipsToBounds=true
         
         Model.instance.getUser(byEmail: pt.contactEmail!) { user in
             if user != nil{

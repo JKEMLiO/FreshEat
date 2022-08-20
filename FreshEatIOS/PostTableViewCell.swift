@@ -15,6 +15,7 @@ class PostTableViewCell: UITableViewCell {
     @IBOutlet weak var postUserPhoto: UIImageView!
     @IBOutlet weak var postUsername: UILabel!
     @IBOutlet weak var postTitle: UILabel!
+    @IBOutlet weak var viewBackground: UIView!
     
     
     var title = "" {
