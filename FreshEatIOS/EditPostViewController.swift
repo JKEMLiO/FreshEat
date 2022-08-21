@@ -7,7 +7,7 @@
 
 import UIKit
 
-class EditPostViewController: UIViewController {
+class EditPostViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     
 
     @IBOutlet weak var titleTxt: UITextField!
@@ -15,6 +15,16 @@ class EditPostViewController: UIViewController {
     @IBOutlet weak var locationTxt: UITextField!
     @IBOutlet weak var phoneTxt: UITextField!
     @IBOutlet weak var postImg: UIImageView!
+    
+    var post:Post?{
+       didSet{
+           if(titleTxt != nil){
+               updateDisplay()
+           }
+       }
+   }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,7 +38,15 @@ class EditPostViewController: UIViewController {
         phoneTxt.clipsToBounds = true
         postImg.layer.cornerRadius = 10
         postImg.clipsToBounds = true
-
+        
+        if post != nil{
+            updateDisplay()
+        }
+        
+    }
+    
+    func updateDisplay(){
+        self.startLoading()
         
     }
     

@@ -1095,7 +1095,6 @@
                                     <action selector="btnLogin:" destination="cEd-w7-CZs" eventType="touchUpInside" id="LQY-7n-gwV"/>
                                     <action selector="editPost:" destination="SxS-XT-odG" eventType="touchUpInside" id="ZzR-NL-tkx"/>
                                     <action selector="uploadPost:" destination="CLD-eH-ZfL" eventType="touchUpInside" id="UFz-k0-piM"/>
-                                    <segue destination="K6t-rt-why" kind="show" id="zWX-YI-8gw"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123456789012345678921234567893123456789" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yHX-Ml-mgt">
@@ -1174,6 +1173,7 @@
                         <outlet property="postImg" destination="CRa-ze-H7O" id="6xD-Br-E1s"/>
                         <outlet property="titleTxt" destination="yHX-Ml-mgt" id="LYX-O1-atn"/>
                         <outlet property="userImg" destination="Eey-Ly-zos" id="K8V-Ae-drC"/>
+                        <segue destination="K6t-rt-why" kind="show" identifier="openEditPost" id="4u4-L9-MNH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ubs-Je-Pgq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1199,6 +1199,9 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="yes"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone Number" textAlignment="natural" minimumFontSize="24" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="ZX2-5M-7xr" userLabel="Phone">
                                         <rect key="frame" x="20" y="400" width="350" height="50"/>
@@ -1207,6 +1210,9 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="yes" keyboardType="phonePad" textContentType="tel"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Edit Post" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3DE-Io-PYd">
                                         <rect key="frame" x="9" y="98" width="357" height="20"/>
@@ -1223,12 +1229,18 @@
                                         <color key="textColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
                                     </textView>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="vegImg" translatesAutoresizingMaskIntoConstraints="NO" id="Snn-mZ-pyA" userLabel="postMainImage">
                                         <rect key="frame" x="70" y="458" width="250" height="160"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="160" id="YSI-j3-s7J"/>
                                         </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
                                     </imageView>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Title" textAlignment="natural" minimumFontSize="24" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="rZH-Rd-3IZ">
                                         <rect key="frame" x="20" y="126" width="350" height="50"/>
@@ -1237,6 +1249,9 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="24"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences" autocorrectionType="yes"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="huY-eX-sWE">
                                         <rect key="frame" x="135" y="626" width="120" height="40"/>
