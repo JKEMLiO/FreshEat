@@ -98,7 +98,6 @@ class PostTableViewController: UITableViewController, SkeletonTableViewDataSourc
             if user != nil{
                 if user?.email == pt.contactEmail{
                     cell.editIcon.isHidden = false
-                    cell.editIcon.isUserInteractionEnabled = true
                 }
             }
         }
