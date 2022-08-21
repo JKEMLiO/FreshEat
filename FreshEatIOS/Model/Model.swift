@@ -28,7 +28,10 @@ class Model{
     }
     
     func editUser(user: User, data: [String:Any], completion:@escaping ()->Void){
-        firebaseModel.editUser(user: user, data: data,completion: completion)
+        firebaseModel.editUser(user: user, data: data){
+            UserDao.addUser(user: user)
+            completion()
+        }
     }
     
     func getUser(byEmail:String,completion: @escaping (User?)->Void){
