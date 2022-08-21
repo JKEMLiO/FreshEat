@@ -46,17 +46,6 @@ class SeePostViewController: UIViewController {
         userImg.layer.cornerRadius=20
         userImg.clipsToBounds=true
         descriptionTxt.sizeToFit()
-        let topAlignment: SMIconLabel.VerticalPosition = .top
-        emailTxt.icon = UIImage(systemName: "mail")
-        emailTxt.iconPadding = 5
-        emailTxt.numberOfLines = 0
-        emailTxt.iconPosition = ( .left, topAlignment )
-        emailTxt.textAlignment = .left
-        phoneTxt.icon = UIImage(systemName: "phone")
-        phoneTxt.iconPadding = 5
-        phoneTxt.numberOfLines = 0
-        phoneTxt.iconPosition = ( .left, topAlignment )
-        phoneTxt.textAlignment = .left
         skelShow()
         startLoading()
         
@@ -65,8 +54,9 @@ class SeePostViewController: UIViewController {
             updateDisplay()
         }
         else{
-            stopLoading()
             stopSkel()
+            addIcons()
+            stopLoading()
         }
     }
     
@@ -104,11 +94,13 @@ class SeePostViewController: UIViewController {
                         self.userImg.image = UIImage(named: "farmerAvatarSmall")
                     }
                     self.stopSkel()
+                    self.addIcons()
                     self.stopLoading()
                 }
             }
             else{
                 self.stopSkel()
+                self.addIcons()
                 self.stopLoading()
             }
         }
@@ -140,6 +132,20 @@ class SeePostViewController: UIViewController {
             self.stopLoading()
             self.navigationController?.popViewController(animated: false)
         }
+    }
+    
+    func addIcons(){
+        let topAlignment: SMIconLabel.VerticalPosition = .top
+        emailTxt.icon = UIImage(systemName: "mail")
+        emailTxt.iconPadding = 5
+        emailTxt.numberOfLines = 0
+        emailTxt.iconPosition = ( .left, topAlignment )
+        emailTxt.textAlignment = .left
+        phoneTxt.icon = UIImage(systemName: "phone")
+        phoneTxt.iconPadding = 5
+        phoneTxt.numberOfLines = 0
+        phoneTxt.iconPosition = ( .left, topAlignment )
+        phoneTxt.textAlignment = .left
     }
     
     
