@@ -125,7 +125,8 @@ class NewPostViewController: UIViewController, UITextViewDelegate, UITextFieldDe
         fields.append(title)
         fields.append(description)
         fields.append(location)
-        
+        fields.append(phone)
+
         if !Model.instance.validateFields(fields: fields){
             self.popupAlert(title: "Error Posting",
                             message: "You must fill in all of the fields",
@@ -133,6 +134,13 @@ class NewPostViewController: UIViewController, UITextViewDelegate, UITextFieldDe
             return
         }
         
+        if !Model.instance.isValidIsraeliPhone(phone: phone){
+            self.popupAlert(title: "Error Posting",
+                            message: "You must enter a valid Israeli Phone Number",
+                            actionTitles: ["OK"], actions: [nil])
+            return
+        }
+                
         self.startLoading()
         disableTabBar()
         let post = Post()

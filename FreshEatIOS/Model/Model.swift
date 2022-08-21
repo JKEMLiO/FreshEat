@@ -25,7 +25,10 @@ class Model{
      */
     
     func addUser(user:User, completion: @escaping ()->Void){
-        firebaseModel.addUser(user: user, completion: completion)
+        firebaseModel.addUser(user: user){
+            UserDao.addUser(user: user)
+            completion()
+        }
     }
     
     func editUser(user: User, data: [String:Any], completion:@escaping ()->Void){
@@ -96,6 +99,7 @@ class Model{
         }
     }
     
+    //Core Data will be updated as soon as GetAllPosts methods is called
     func addPost(post:Post, completion: @escaping ()->Void){
         firebaseModel.addPost(post: post){
             completion()
@@ -103,6 +107,7 @@ class Model{
         }
     }
     
+    //Core Data will be updated as soon as GetAllPosts methods is called
     func editPost(post: Post, data: [String:Any], completion:@escaping ()->Void){
         var editedData = data
         editedData["lastUpdated"] = FieldValue.serverTimestamp()
@@ -148,6 +153,10 @@ class Model{
         firebaseModel.getCurrentUser(completion: completion)
     }
     
+    func updateUserPassword(password: String , completion: @escaping (_ success: Bool)->Void){
+        firebaseModel.updateUserPassword(password: password, completion: completion)
+    }
+    
     /*
      Images
      */
@@ -169,6 +178,12 @@ class Model{
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
         let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
         return emailPred.evaluate(with: email)
+    }
+    
+    func isValidIsraeliPhone(phone: String) -> Bool{
+        let israeliPhoneRegex = #"^\+?(972|0)(\-)?0?(([23489]{1}\d{7})|([71,72,73,74,75,76,77]{2}\d{7})|[5]{1}\d{8})$"#
+        let israeliPhonePredicate = NSPredicate(format:"SELF MATCHES %@",israeliPhoneRegex)
+        return israeliPhonePredicate.evaluate(with: phone)
     }
     
     func validateFields(fields: [String]) ->Bool{
