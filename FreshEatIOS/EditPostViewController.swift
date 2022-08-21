@@ -7,6 +7,7 @@
 
 import UIKit
 import SkeletonView
+import SwiftUI
 
 class EditPostViewController: UIViewController,UITextViewDelegate, UITextFieldDelegate, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     
@@ -53,7 +54,7 @@ class EditPostViewController: UIViewController,UITextViewDelegate, UITextFieldDe
     func updateDisplay(){
         self.startLoading()
         self.skelShow()
-        
+        editBtnOff()
         titleTxt.text = post?.title
         mainTxt.text = post?.postDescription
         locationTxt.text = post?.location
@@ -105,9 +106,12 @@ class EditPostViewController: UIViewController,UITextViewDelegate, UITextFieldDe
        
     func editBtnOn(){
         editBtn.isEnabled = true
-        editBtn.layer.cornerRadius = 5
+        editBtn.configuration?.cornerStyle = .capsule
+        editBtn.layer.cornerCurve = .continuous
+        editBtn.layer.cornerRadius = 15
         editBtn.layer.borderWidth = 3
-        editBtn.layer.borderColor = UIColor(red: 100, green: 167, blue: 68, alpha: 1.0).cgColor
+        editBtn.layer.borderColor = UIColor(red: 0.39216, green: 0.65490, blue: 0.26667, alpha: 1.0).cgColor
+
         
         
         
@@ -136,11 +140,15 @@ class EditPostViewController: UIViewController,UITextViewDelegate, UITextFieldDe
         if mainTxt.text == post!.postDescription{
             editBtnOff()
         }
-        if mainTxt.text != post!.postDescription{
-            editBtnOn()
-        }
+
         
     }
+    
+    func textViewDidChange(_ textView: UITextView){
+        editBtnOn()
+    }
+    
+    
     
     func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text.isEmpty {
@@ -176,6 +184,7 @@ class EditPostViewController: UIViewController,UITextViewDelegate, UITextFieldDe
         
         selectedImage = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerOriginalImage")] as? UIImage
         self.postImg.image = selectedImage
+        editBtnOn()
         self.dismiss(animated: true, completion: nil)
     }
     
