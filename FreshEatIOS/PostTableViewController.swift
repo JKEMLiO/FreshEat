@@ -99,6 +99,9 @@ class PostTableViewController: UITableViewController, SkeletonTableViewDataSourc
                 if user?.email == pt.contactEmail{
                     cell.editIcon.isHidden = false
                 }
+                else{
+                    cell.editIcon.isHidden = true
+                }
             }
         }
         
