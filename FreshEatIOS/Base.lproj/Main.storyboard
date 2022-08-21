@@ -1475,6 +1475,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Rnk-3p-rBI"/>
                     <connections>
+                        <outlet property="editBtn" destination="SEV-06-GjX" id="oaR-rk-cNY"/>
                         <outlet property="locationTxt" destination="knk-yZ-vKg" id="kmR-5Q-apv"/>
                         <outlet property="mainTxt" destination="N8a-xF-ewd" id="eIX-cV-2Lg"/>
                         <outlet property="phoneTxt" destination="ZX2-5M-7xr" id="huJ-40-iF4"/>
@@ -1550,7 +1551,7 @@
             <size key="intrinsicContentSize" width="208.33333333333334" height="38.333333333333336"/>
         </designable>
         <designable name="e9S-pI-Nzn">
-            <size key="intrinsicContentSize" width="208.33333333333334" height="38.333333333333336"/>
+            <size key="intrinsicContentSize" width="183.33333333333334" height="38.333333333333336"/>
         </designable>
         <designable name="gNr-3p-tpH">
             <size key="intrinsicContentSize" width="239.33333333333334" height="37"/>
@@ -1562,7 +1563,7 @@
             <size key="intrinsicContentSize" width="239.33333333333334" height="37"/>
         </designable>
         <designable name="w8Z-8y-8Lk">
-            <size key="intrinsicContentSize" width="141.33333333333334" height="38.333333333333336"/>
+            <size key="intrinsicContentSize" width="117.33333333333333" height="38.333333333333336"/>
         </designable>
     </designables>
     <inferredMetricsTieBreakers>

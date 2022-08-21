@@ -16,6 +16,7 @@ class EditPostViewController: UIViewController, UIImagePickerControllerDelegate 
     @IBOutlet weak var locationTxt: UITextField!
     @IBOutlet weak var phoneTxt: UITextField!
     @IBOutlet weak var postImg: UIImageView!
+    @IBOutlet weak var editBtn: UIButton!
     
     var post:Post?{
        didSet{
