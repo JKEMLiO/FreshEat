@@ -758,6 +758,9 @@
                                     </preferredSymbolConfiguration>
                                     <color key="baseBackgroundColor" red="0.39028996230000002" green="0.65612149239999995" blue="0.26791793110000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="changeImage:" destination="w9t-Xa-ede" eventType="touchUpInside" id="tff-vG-um5"/>
+                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Your Details" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="pyW-vM-oNo" userLabel="profileTitleTxt">
                                 <rect key="frame" x="20" y="94" width="350" height="49"/>
@@ -775,10 +778,16 @@
                                     </preferredSymbolConfiguration>
                                     <color key="baseBackgroundColor" red="0.39028996230000002" green="0.65612149239999995" blue="0.26791793110000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <segue destination="flc-zz-PgE" kind="show" id="LD3-b4-Dl2"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="farmerAvatarSmall" translatesAutoresizingMaskIntoConstraints="NO" id="nSr-wB-nNr" userLabel="userImage">
                                 <rect key="frame" x="95" y="163" width="200" height="200"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Israel Israel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u1n-9n-04N">
                                 <rect key="frame" x="20" y="477.66666666666669" width="350" height="30"/>
@@ -788,6 +797,9 @@
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="28"/>
                                 <color key="textColor" red="0.3917872906" green="0.6562518477" blue="0.26828789710000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="bla@bla.com" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q8w-Bc-1lY">
                                 <rect key="frame" x="20" y="557.66666666666663" width="350" height="34"/>
@@ -797,6 +809,9 @@
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="28"/>
                                 <color key="textColor" red="0.3917872906" green="0.6562518477" blue="0.26828789710000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vRH-Mx-e7a"/>
@@ -814,6 +829,9 @@
                             <constraint firstItem="u1n-9n-04N" firstAttribute="leading" secondItem="vRH-Mx-e7a" secondAttribute="leading" constant="20" id="nNX-Qs-fve"/>
                             <constraint firstItem="u1n-9n-04N" firstAttribute="top" secondItem="BLc-6o-v5q" secondAttribute="bottom" constant="40" id="nul-xv-foK"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                        </userDefinedRuntimeAttributes>
                     </view>
                     <tabBarItem key="tabBarItem" title="PROFILE" image="person" catalog="system" id="Vat-Rt-sBN"/>
                     <navigationItem key="navigationItem" id="2T9-jM-6D3"/>
@@ -836,7 +854,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="24" translatesAutoresizingMaskIntoConstraints="NO" id="LQl-A8-Xgp">
-                                <rect key="frame" x="20" y="363" width="350" height="50"/>
+                                <rect key="frame" x="20" y="407" width="350" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="cJw-lm-z2J"/>
                                 </constraints>
@@ -857,7 +875,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="24" translatesAutoresizingMaskIntoConstraints="NO" id="uDy-Tv-S2F">
-                                <rect key="frame" x="20" y="440" width="350" height="50"/>
+                                <rect key="frame" x="20" y="484" width="350" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="1A0-cD-CNv"/>
                                 </constraints>
@@ -865,7 +883,7 @@
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress" secureTextEntry="YES" textContentType="new-password"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change Password" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="clK-zF-g0q">
-                                <rect key="frame" x="20" y="186" width="350" height="30"/>
+                                <rect key="frame" x="20" y="230" width="350" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="XI4-zk-GTz"/>
                                 </constraints>
