@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SkeletonView
 
 class EditPostViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     
@@ -47,6 +48,35 @@ class EditPostViewController: UIViewController, UIImagePickerControllerDelegate 
     
     func updateDisplay(){
         self.startLoading()
+        self.skelShow()
+        
+        titleTxt.text = post?.title
+        mainTxt.text = post?.postDescription
+        locationTxt.text = post?.location
+        phoneTxt.text = post?.contactPhone
+        
+        if let urlStr = post?.photo {
+            if (!urlStr.elementsEqual("vegImg")){
+                let url = URL(string: urlStr)
+                postImg?.kf.setImage(with: url,completionHandler: { result in
+                    self.stopSkel()
+                    self.stopLoading()
+                })
+            }else{
+                postImg.image = UIImage(named: "vegImg")
+                self.stopSkel()
+                self.stopLoading()
+            }
+        }
+    }
+    
+    func skelShow(){
+        self.view.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: .concrete), animation: nil, transition: .crossDissolve(0.25))
+    }
+    
+    func stopSkel(){
+        self.view.stopSkeletonAnimation()
+        self.view.hideSkeleton(reloadDataAfter: true, transition: .crossDissolve(0.25))
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
