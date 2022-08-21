@@ -176,6 +176,12 @@ class Model{
         return emailPred.evaluate(with: email)
     }
     
+    func isValidIsraeliPhone(phone: String) -> Bool{
+        let israeliPhoneRegex = #"^\+?(972|0)(\-)?0?(([23489]{1}\d{7})|([71,72,73,74,75,76,77]{2}\d{7})|[5]{1}\d{8})$"#
+        let israeliPhonePredicate = NSPredicate(format:"SELF MATCHES %@",israeliPhoneRegex)
+        return israeliPhonePredicate.evaluate(with: phone)
+    }
+    
     func validateFields(fields: [String]) ->Bool{
         for field in fields{
             if field == ""{

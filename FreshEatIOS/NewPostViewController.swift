@@ -134,8 +134,13 @@ class NewPostViewController: UIViewController, UITextViewDelegate, UITextFieldDe
             return
         }
         
-        //TODO - validate phone regex
-        
+        if !Model.instance.isValidIsraeliPhone(phone: phone){
+            self.popupAlert(title: "Error Posting",
+                            message: "You must enter a valid Israeli Phone Number",
+                            actionTitles: ["OK"], actions: [nil])
+            return
+        }
+                
         self.startLoading()
         disableTabBar()
         let post = Post()

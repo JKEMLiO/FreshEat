@@ -158,7 +158,13 @@ class EditPostViewController: UIViewController, UIImagePickerControllerDelegate 
             return
         }
         
-        //TODO - validate phone regex
+        if !Model.instance.isValidIsraeliPhone(phone: phone){
+            self.popupAlert(title: "Error Posting",
+                            message: "You must enter a valid Israeli Phone Number",
+                            actionTitles: ["OK"], actions: [nil])
+            return
+        }
+        
         self.startLoading()
         self.disableTabBar()
         var data = [String:Any]()
