@@ -33,6 +33,9 @@ class PostTableViewController: UITableViewController, SkeletonTableViewDataSourc
         if self.refreshControl?.isRefreshing == false {
             self.refreshControl?.beginRefreshing()
         }
+        self.tableView.contentOffset = CGPoint(x:0,y:-90)
+        self.tableView.isSkeletonable = true
+        self.tableView.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: .concrete), animation: nil, transition: .crossDissolve(0.25))
         Model.instance.getAllPosts(){
             posts in
             self.data = posts
@@ -69,13 +72,6 @@ class PostTableViewController: UITableViewController, SkeletonTableViewDataSourc
         }
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        self.tableView.isSkeletonable = true
-        self.tableView.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: .concrete), animation: nil, transition: .crossDissolve(0.25))
-        reload()
-    }
-
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
