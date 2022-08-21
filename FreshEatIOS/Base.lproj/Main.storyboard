@@ -404,7 +404,7 @@
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ctx-Wf-j3m">
                                             <rect key="frame" x="30" y="240" width="330" height="70"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f6g-ZJ-Vp7">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12345678901234567" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f6g-ZJ-Vp7">
                                                     <rect key="frame" x="71" y="8" width="216" height="22"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="22" id="jR7-XF-oIA"/>
@@ -1007,7 +1007,7 @@
                                     <action selector="uploadPost:" destination="CLD-eH-ZfL" eventType="touchUpInside" id="UFz-k0-piM"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TITLE title titel title title title title titletitle title title title title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yHX-Ml-mgt">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123456789012345678921234567893123456789" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yHX-Ml-mgt">
                                 <rect key="frame" x="20" y="96" width="350" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="q8g-la-ei2"/>

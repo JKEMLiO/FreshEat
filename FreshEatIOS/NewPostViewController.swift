@@ -22,6 +22,7 @@ class NewPostViewController: UIViewController, UITextViewDelegate, UITextFieldDe
         super.viewDidLoad()
         view.addSubview(scroll)
         self.prepareView()
+        
              
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardApear), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -30,6 +31,18 @@ class NewPostViewController: UIViewController, UITextViewDelegate, UITextFieldDe
         
     }
     
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let currentTxt = textField.text ?? ""
+        guard let stringRange = Range(range, in: currentTxt) else {
+            return false
+        }
+        
+        let updateText = currentTxt.replacingCharacters(in: stringRange, with: string)
+        return updateText.count < 16
+    
+    }
+    
+       
     
     var isExpand = false
     @objc func keyboardApear(){
@@ -53,6 +66,7 @@ class NewPostViewController: UIViewController, UITextViewDelegate, UITextFieldDe
         
     }
     
+        
     
     func textViewDidEndEditing(_ textView: UITextView) {
         if textView.text.isEmpty {
