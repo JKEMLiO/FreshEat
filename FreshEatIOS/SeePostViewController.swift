@@ -15,12 +15,13 @@ class SeePostViewController: UIViewController {
     @IBOutlet weak var descriptionUIView: UIView!
     @IBOutlet weak var contactUIView: UIView!
     @IBOutlet weak var titleTxt: UILabel!
-    @IBOutlet weak var emailTxt: UITextView!
-    @IBOutlet weak var nameTxt: UITextView!
-    @IBOutlet weak var locationTxt: UITextView!
-    @IBOutlet weak var descriptionTxt: UITextView!
+    @IBOutlet weak var emailTxt: UILabel!
+    @IBOutlet weak var nameTxt: UILabel!
+    @IBOutlet weak var locationTxt: UILabel!
+    @IBOutlet weak var descriptionTxt: UILabel!
     @IBOutlet weak var userImg: UIImageView!
     @IBOutlet weak var editBtn: UIButton!
+    @IBOutlet weak var phoneTxt: UILabel!
     @IBOutlet weak var deleteBtn: UIButton!
     
     var post:Post?{
@@ -34,8 +35,6 @@ class SeePostViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        skelShow()
-        startLoading()
         postImg.layer.cornerRadius=10
         postImg.clipsToBounds=true
         namePostUIView.layer.cornerRadius=10
@@ -44,8 +43,13 @@ class SeePostViewController: UIViewController {
         descriptionUIView.clipsToBounds=true
         contactUIView.layer.cornerRadius=10
         contactUIView.clipsToBounds=true
-        userImg.layer.cornerRadius=10
+        userImg.layer.cornerRadius=20
         userImg.clipsToBounds=true
+        descriptionTxt.sizeToFit()
+        skelShow()
+        startLoading()
+       
+        
         
         if post != nil {
             updateDisplay()
