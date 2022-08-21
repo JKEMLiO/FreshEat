@@ -233,8 +233,11 @@ class EditPostViewController: UIViewController,UITextViewDelegate, UITextFieldDe
             }
         }
         else{
-            self.stopLoading()
-            self.enableTabBar()
+            Model.instance.editPost(post: self.post!, data: data) {
+                self.stopLoading()
+                self.enableTabBar()
+                self.navigationController?.popToRootViewController(animated: true)
+            }
         }
         
     }
