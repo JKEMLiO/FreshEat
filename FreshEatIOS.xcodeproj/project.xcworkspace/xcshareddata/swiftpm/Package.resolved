@@ -78,8 +78,8 @@
         "repositoryURL": "https://github.com/google/gtm-session-fetcher.git",
         "state": {
           "branch": null,
-          "revision": "d4289da23e978f37c344ea6a386e5546e2466294",
-          "version": "2.1.0"
+          "revision": "19605024d59eaefdb1f6a2cb11ebe75df4421126",
+          "version": "2.0.0"
         }
       },
       {
@@ -116,6 +116,15 @@
           "branch": null,
           "revision": "3e4e743631e86c8c70dbc6efdc7beaa6e90fd3bb",
           "version": "2.1.1"
+        }
+      },
+      {
+        "package": "SkeletonView",
+        "repositoryURL": "https://github.com/Juanpe/SkeletonView.git",
+        "state": {
+          "branch": null,
+          "revision": "969f06848060ef4ced7ed274e91bb2c749d0ca22",
+          "version": "1.30.1"
         }
       },
       {

@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import SkeletonView
 
-class PostTableViewController: UITableViewController {
+class PostTableViewController: UITableViewController, SkeletonTableViewDataSource {
     
     var data = [Post]()
     
@@ -36,6 +37,8 @@ class PostTableViewController: UITableViewController {
             posts in
             self.data = posts
             self.data.sort(by: { $0.lastUpdated > $1.lastUpdated })
+            self.tableView.stopSkeletonAnimation()
+            self.view.hideSkeleton(reloadDataAfter: true, transition: .crossDissolve(0.25))
             self.tableView.reloadData()
             self.refreshControl?.endRefreshing()
         }
@@ -64,6 +67,13 @@ class PostTableViewController: UITableViewController {
                 self.popupAlert(title: "Error", message: "There was an issue logging out", actionTitles: ["OK"], actions: [nil])
             }
         }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        self.tableView.isSkeletonable = true
+        self.tableView.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: .concrete), animation: nil, transition: .crossDissolve(0.25))
+        reload()
     }
 
     // MARK: - Table view data source
@@ -112,6 +122,10 @@ class PostTableViewController: UITableViewController {
         selectedRow = indexPath.row
         performSegue(withIdentifier: "openPostCell", sender: self)
         
+    }
+    
+    func collectionSkeletonView(_ skeletonView: UITableView, cellIdentifierForRowAt indexPath: IndexPath) -> ReusableCellIdentifier {
+        return "postCell"
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
