@@ -19,6 +19,7 @@
 		20330493285A2BF4006DB34A /* FreshEatIOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20330492285A2BF4006DB34A /* FreshEatIOSUITestsLaunchTests.swift */; };
 		203304A0285A2EAB006DB34A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2033049F285A2EAB006DB34A /* LoginViewController.swift */; };
 		20BC881D28B23C0800B5A4B5 /* EditPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BC881C28B23C0800B5A4B5 /* EditPostViewController.swift */; };
+		20BC881F28B2498300B5A4B5 /* SMIconLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BC881E28B2498300B5A4B5 /* SMIconLabel.swift */; };
 		532B30DE28B21125008E7808 /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = 532B30DD28B21125008E7808 /* SkeletonView */; };
 		53A1E95428AD2A4500EB7EF5 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A1E95328AD2A4500EB7EF5 /* PostTableViewCell.swift */; };
 		53A1E95728AD2B9100EB7EF5 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 53A1E95628AD2B9100EB7EF5 /* Kingfisher */; };
@@ -81,6 +82,7 @@
 		20330492285A2BF4006DB34A /* FreshEatIOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreshEatIOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		2033049F285A2EAB006DB34A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		20BC881C28B23C0800B5A4B5 /* EditPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPostViewController.swift; sourceTree = "<group>"; };
+		20BC881E28B2498300B5A4B5 /* SMIconLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMIconLabel.swift; sourceTree = "<group>"; };
 		53A1E95328AD2A4500EB7EF5 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		7B5C8758289956920048D7C8 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		7B5C875A289956B60048D7C8 /* NewPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 				7B73342228B0EB5B00D6C436 /* SplashViewController.swift */,
 				C261846628B1371F00758FB8 /* PasswordChangeViewController.swift */,
 				20BC881C28B23C0800B5A4B5 /* EditPostViewController.swift */,
+				20BC881E28B2498300B5A4B5 /* SMIconLabel.swift */,
 			);
 			path = FreshEatIOS;
 			sourceTree = "<group>";
@@ -384,6 +387,7 @@
 				C2C269DE2865FACF00C621CD /* Model.swift in Sources */,
 				C2C269DC2865FA9D00C621CD /* ModelFirebase.swift in Sources */,
 				C261846728B1372000758FB8 /* PasswordChangeViewController.swift in Sources */,
+				20BC881F28B2498300B5A4B5 /* SMIconLabel.swift in Sources */,
 				20330472285A2BF0006DB34A /* SceneDelegate.swift in Sources */,
 				7B73342328B0EB5B00D6C436 /* SplashViewController.swift in Sources */,
 			);

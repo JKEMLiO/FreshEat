@@ -15,13 +15,13 @@ class SeePostViewController: UIViewController {
     @IBOutlet weak var descriptionUIView: UIView!
     @IBOutlet weak var contactUIView: UIView!
     @IBOutlet weak var titleTxt: UILabel!
-    @IBOutlet weak var emailTxt: UILabel!
+    @IBOutlet weak var emailTxt: SMIconLabel!
     @IBOutlet weak var nameTxt: UILabel!
     @IBOutlet weak var locationTxt: UILabel!
     @IBOutlet weak var descriptionTxt: UILabel!
     @IBOutlet weak var userImg: UIImageView!
     @IBOutlet weak var editBtn: UIButton!
-    @IBOutlet weak var phoneTxt: UILabel!
+    @IBOutlet weak var phoneTxt: SMIconLabel!
     @IBOutlet weak var deleteBtn: UIButton!
     
     var post:Post?{
@@ -46,11 +46,19 @@ class SeePostViewController: UIViewController {
         userImg.layer.cornerRadius=20
         userImg.clipsToBounds=true
         descriptionTxt.sizeToFit()
-
-        
+        let topAlignment: SMIconLabel.VerticalPosition = .top
+        emailTxt.icon = UIImage(systemName: "mail")
+        emailTxt.iconPadding = 5
+        emailTxt.numberOfLines = 0
+        emailTxt.iconPosition = ( .left, topAlignment )
+        emailTxt.textAlignment = .left
+        phoneTxt.icon = UIImage(systemName: "phone")
+        phoneTxt.iconPadding = 5
+        phoneTxt.numberOfLines = 0
+        phoneTxt.iconPosition = ( .left, topAlignment )
+        phoneTxt.textAlignment = .left
         skelShow()
         startLoading()
-       
         
         
         if post != nil {
