@@ -25,7 +25,7 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate 
     }
     
     @IBAction func register(_ sender: UIButton) {
-        let emailAddress = email.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let emailAddress = email.text!.trimmingCharacters(in: .whitespacesAndNewlines).lowercased()
         let fullName = name.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         let pass = password.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         let confirmPass = confirmPassword.text!.trimmingCharacters(in: .whitespacesAndNewlines)
