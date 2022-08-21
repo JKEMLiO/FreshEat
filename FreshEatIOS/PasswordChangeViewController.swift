@@ -10,6 +10,7 @@ import UIKit
 class PasswordChangeViewController: UIViewController {
 
     
+    @IBOutlet weak var oldPassword: DesignableUITextField!
     @IBOutlet weak var passInput: UITextField!
     @IBOutlet weak var confirmPassInput: UITextField!
     

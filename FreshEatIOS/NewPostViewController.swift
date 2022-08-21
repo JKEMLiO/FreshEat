@@ -230,6 +230,7 @@ class NewPostViewController: UIViewController, UITextViewDelegate, UITextFieldDe
         )
         mainInput.layer.cornerRadius=10
         mainInput.clipsToBounds=true
+        mainInput.textContainer.maximumNumberOfLines = 5
         phoneInput.layer.cornerRadius=10
         phoneInput.clipsToBounds = true
         phonePH = phoneInput.placeholder!

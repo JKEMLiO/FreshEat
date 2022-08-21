@@ -16,7 +16,7 @@ class UserProfileViewController: UIViewController, UIImagePickerControllerDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        profileImage.layer.cornerRadius=100
+        profileImage.layer.cornerRadius=40
         profileImage.clipsToBounds=true
         self.view.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: .concrete), animation: nil, transition: .crossDissolve(0.25))
         self.startLoading()

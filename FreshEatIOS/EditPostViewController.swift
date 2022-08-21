@@ -8,7 +8,7 @@
 import UIKit
 import SkeletonView
 
-class EditPostViewController: UIViewController, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
+class EditPostViewController: UIViewController,UITextViewDelegate, UITextFieldDelegate, UIImagePickerControllerDelegate & UINavigationControllerDelegate {
     
 
     @IBOutlet weak var titleTxt: UITextField!
@@ -17,6 +17,7 @@ class EditPostViewController: UIViewController, UIImagePickerControllerDelegate 
     @IBOutlet weak var phoneTxt: UITextField!
     @IBOutlet weak var postImg: UIImageView!
     @IBOutlet weak var editBtn: UIButton!
+   
     
     var post:Post?{
        didSet{
@@ -34,12 +35,14 @@ class EditPostViewController: UIViewController, UIImagePickerControllerDelegate 
         titleTxt.clipsToBounds = true
         mainTxt.layer.cornerRadius = 10
         mainTxt.clipsToBounds = true
+        mainTxt.textContainer.maximumNumberOfLines = 5
         locationTxt.layer.cornerRadius = 10
         locationTxt.clipsToBounds = true
         phoneTxt.layer.cornerRadius = 10
         phoneTxt.clipsToBounds = true
         postImg.layer.cornerRadius = 10
         postImg.clipsToBounds = true
+       
         
         if post != nil{
             updateDisplay()
@@ -55,6 +58,10 @@ class EditPostViewController: UIViewController, UIImagePickerControllerDelegate 
         mainTxt.text = post?.postDescription
         locationTxt.text = post?.location
         phoneTxt.text = post?.contactPhone
+        titleTxt.delegate = self
+        mainTxt.delegate = self
+        locationTxt.delegate = self
+        phoneTxt.delegate = self
         
         if let urlStr = post?.photo {
             if (!urlStr.elementsEqual("vegImg")){
@@ -91,6 +98,24 @@ class EditPostViewController: UIViewController, UIImagePickerControllerDelegate 
     
     }
     
+   
+    
+       
+    func editBtnOn(){
+        editBtn.isEnabled = true
+        editBtn.layer.cornerRadius = 5
+        editBtn.layer.borderWidth = 3
+        editBtn.layer.borderColor = UIColor(red: 100, green: 167, blue: 68, alpha: 1.0).cgColor
+        
+        
+        
+        
+    }
+    
+    func editBtnOff(){
+        editBtn.isEnabled = false
+        editBtn.layer.borderWidth = 0
+    }
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
         let currentTxt = textView.text ?? ""
         guard let textRange = Range(range, in: currentTxt) else {
@@ -99,6 +124,20 @@ class EditPostViewController: UIViewController, UIImagePickerControllerDelegate 
         
         let updateText = currentTxt.replacingCharacters(in: textRange, with: text)
         return updateText.count < 200
+    }
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == UIColor.lightGray {
+          textView.text = ""
+            textView.textColor = UIColor.black
+        }
+        if mainTxt.text == post!.postDescription{
+            editBtnOff()
+        }
+        if mainTxt.text != post!.postDescription{
+            editBtnOn()
+        }
+        
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
@@ -143,3 +182,4 @@ class EditPostViewController: UIViewController, UIImagePickerControllerDelegate 
     }
     
 }
+
