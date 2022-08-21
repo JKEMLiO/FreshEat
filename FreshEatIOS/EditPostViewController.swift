@@ -101,6 +101,7 @@ class EditPostViewController: UIViewController,UITextViewDelegate, UITextFieldDe
     
     }
     
+    
    
     
        
@@ -137,15 +138,25 @@ class EditPostViewController: UIViewController,UITextViewDelegate, UITextFieldDe
           textView.text = ""
             textView.textColor = UIColor.black
         }
-        if mainTxt.text == post!.postDescription{
-            editBtnOff()
-        }
-
-        
+               
     }
     
     func textViewDidChange(_ textView: UITextView){
-        editBtnOn()
+        if mainTxt.text == post!.postDescription{
+            editBtnOff()
+        }
+        else {
+            editBtnOn()
+    
+        }
+    }
+    func textFieldDidChangeSelection(_ textField: UITextField){
+        if titleTxt.text == post!.title && locationTxt.text == post!.location && phoneTxt.text == post!.contactPhone{
+            editBtnOff()
+        }
+        else{
+            editBtnOn()
+        }
     }
     
     
