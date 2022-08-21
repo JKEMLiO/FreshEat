@@ -96,6 +96,7 @@ class PostTableViewCell: UITableViewCell {
         super.prepareForReuse()
         postUserPhoto.image = nil
         postPhoto.image = nil
+        editIcon.isHidden = true
      }
 
 }

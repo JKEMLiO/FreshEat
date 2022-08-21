@@ -1528,6 +1528,44 @@
             <point key="canvasLocation" x="4080" y="-877"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="7QZ-4D-05U">
+            <size key="intrinsicContentSize" width="174.66666666666666" height="38.333333333333336"/>
+        </designable>
+        <designable name="9CD-cF-lGV">
+            <size key="intrinsicContentSize" width="128" height="37"/>
+        </designable>
+        <designable name="Cub-cp-GhW">
+            <size key="intrinsicContentSize" width="128" height="37"/>
+        </designable>
+        <designable name="De8-zD-vUg">
+            <size key="intrinsicContentSize" width="174.66666666666666" height="38.333333333333336"/>
+        </designable>
+        <designable name="LQl-A8-Xgp">
+            <size key="intrinsicContentSize" width="128" height="37"/>
+        </designable>
+        <designable name="Rfg-MY-bSF">
+            <size key="intrinsicContentSize" width="131" height="38.333333333333336"/>
+        </designable>
+        <designable name="ZX2-5M-7xr">
+            <size key="intrinsicContentSize" width="183.33333333333334" height="38.333333333333336"/>
+        </designable>
+        <designable name="e9S-pI-Nzn">
+            <size key="intrinsicContentSize" width="183.33333333333334" height="38.333333333333336"/>
+        </designable>
+        <designable name="gNr-3p-tpH">
+            <size key="intrinsicContentSize" width="216.33333333333334" height="37"/>
+        </designable>
+        <designable name="knk-yZ-vKg">
+            <size key="intrinsicContentSize" width="117.33333333333333" height="38.333333333333336"/>
+        </designable>
+        <designable name="uDy-Tv-S2F">
+            <size key="intrinsicContentSize" width="216.33333333333334" height="37"/>
+        </designable>
+        <designable name="w8Z-8y-8Lk">
+            <size key="intrinsicContentSize" width="117.33333333333333" height="38.333333333333336"/>
+        </designable>
+    </designables>
     <inferredMetricsTieBreakers>
         <segue reference="1gr-qf-vea"/>
     </inferredMetricsTieBreakers>
