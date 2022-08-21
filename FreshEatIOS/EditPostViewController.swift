@@ -86,7 +86,7 @@ class EditPostViewController: UIViewController, UIImagePickerControllerDelegate 
         }
         
         let updateText = currentTxt.replacingCharacters(in: stringRange, with: string)
-        return updateText.count < 20
+        return updateText.count < 30
     
     }
     
