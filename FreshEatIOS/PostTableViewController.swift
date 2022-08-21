@@ -40,9 +40,9 @@ class PostTableViewController: UITableViewController, SkeletonTableViewDataSourc
             posts in
             self.data = posts
             self.data.sort(by: { $0.lastUpdated > $1.lastUpdated })
-            self.tableView.stopSkeletonAnimation()
-            self.view.hideSkeleton(reloadDataAfter: true, transition: .crossDissolve(0.25))
             self.tableView.reloadData()
+            self.tableView.stopSkeletonAnimation()
+            self.view.hideSkeleton(reloadDataAfter: false, transition: .crossDissolve(0.25))
             self.refreshControl?.endRefreshing()
         }
     }

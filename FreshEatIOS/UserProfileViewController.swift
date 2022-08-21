@@ -66,12 +66,14 @@ class UserProfileViewController: UIViewController, UIImagePickerControllerDelega
         self.profileImage.image = selectedImage
         self.dismiss(animated: true, completion: nil)
         self.startLoading()
+        self.disableTabBar()
         self.profileImage.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: .concrete), animation: nil, transition: .crossDissolve(0.25))
         if let image = selectedImage{
             Model.instance.uploadImage(name: self.email.text!, image: image) { url in
                 Model.instance.getCurrentUser { user in
                     Model.instance.editUser(user: user!, data: ["avatarUrl":url]) {
                         Model.postDataNotification.post()
+                        self.enableTabBar()
                         self.stopSkel()
                         self.stopLoading()
                     }
@@ -79,6 +81,18 @@ class UserProfileViewController: UIViewController, UIImagePickerControllerDelega
             }
         }
 
+    }
+    
+    func disableTabBar(){
+        for tabBarItem in self.tabBarController?.tabBar.items ?? []{
+            tabBarItem.isEnabled = false
+        }
+    }
+    
+    func enableTabBar(){
+        for tabBarItem in self.tabBarController?.tabBar.items ?? []{
+            tabBarItem.isEnabled = true
+        }
     }
     
     func stopSkel(){
