@@ -153,6 +153,10 @@ class Model{
         firebaseModel.getCurrentUser(completion: completion)
     }
     
+    func updateUserPassword(password: String , completion: @escaping (_ success: Bool)->Void){
+        firebaseModel.updateUserPassword(password: password, completion: completion)
+    }
+    
     /*
      Images
      */
