@@ -45,6 +45,7 @@ class SeePostViewController: UIViewController {
         contactUIView.clipsToBounds=true
         userImg.layer.cornerRadius=20
         userImg.clipsToBounds=true
+        emailTxt.
         descriptionTxt.sizeToFit()
         skelShow()
         startLoading()
