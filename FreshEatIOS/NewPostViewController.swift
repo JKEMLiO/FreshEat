@@ -125,13 +125,16 @@ class NewPostViewController: UIViewController, UITextViewDelegate, UITextFieldDe
         fields.append(title)
         fields.append(description)
         fields.append(location)
-        
+        fields.append(phone)
+
         if !Model.instance.validateFields(fields: fields){
             self.popupAlert(title: "Error Posting",
                             message: "You must fill in all of the fields",
                             actionTitles: ["OK"], actions: [nil])
             return
         }
+        
+        //TODO - validate phone regex
         
         self.startLoading()
         disableTabBar()

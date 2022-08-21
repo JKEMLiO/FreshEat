@@ -69,6 +69,8 @@ class EditPostViewController: UIViewController, UIImagePickerControllerDelegate 
                 self.stopLoading()
             }
         }
+        
+        self.selectedImage = nil
     }
     
     func skelShow(){
@@ -129,7 +131,7 @@ class EditPostViewController: UIViewController, UIImagePickerControllerDelegate 
         }
     }
     
-    var selectedImage: UIImage?
+    var selectedImage: UIImage? = nil
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
@@ -139,7 +141,60 @@ class EditPostViewController: UIViewController, UIImagePickerControllerDelegate 
     }
     
     @IBAction func uploadBtn(_ sender: Any) {
+        let title = titleTxt.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let description = mainTxt.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let location = locationTxt.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let phone = phoneTxt.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        var fields = [String]()
+        fields.append(title)
+        fields.append(description)
+        fields.append(location)
+        fields.append(phone)
+
+        if !Model.instance.validateFields(fields: fields){
+            self.popupAlert(title: "Error Posting",
+                            message: "You must fill in all of the fields",
+                            actionTitles: ["OK"], actions: [nil])
+            return
+        }
         
+        //TODO - validate phone regex
+        self.startLoading()
+        self.disableTabBar()
+        var data = [String:Any]()
+        data["title"] = title
+        data["postDescription"] = description
+        data["location"] = location
+        data["contactPhone"] = phone
+        
+        //User has selected image
+        if let image = self.selectedImage{
+            Model.instance.uploadImage(name: post!.id!, image: image) { url in
+                data["photo"] = url
+                Model.instance.editPost(post: self.post!, data: data) {
+                    self.stopLoading()
+                    self.enableTabBar()
+                    self.navigationController?.popToRootViewController(animated: true)
+                }
+            }
+        }
+        else{
+            self.stopLoading()
+            self.enableTabBar()
+        }
+        
+    }
+    
+    func disableTabBar(){
+        for tabBarItem in self.tabBarController?.tabBar.items ?? []{
+            tabBarItem.isEnabled = false
+        }
+    }
+    
+    func enableTabBar(){
+        for tabBarItem in self.tabBarController?.tabBar.items ?? []{
+            tabBarItem.isEnabled = true
+        }
     }
     
 }

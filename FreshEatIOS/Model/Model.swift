@@ -25,7 +25,10 @@ class Model{
      */
     
     func addUser(user:User, completion: @escaping ()->Void){
-        firebaseModel.addUser(user: user, completion: completion)
+        firebaseModel.addUser(user: user){
+            UserDao.addUser(user: user)
+            completion()
+        }
     }
     
     func editUser(user: User, data: [String:Any], completion:@escaping ()->Void){
@@ -96,6 +99,7 @@ class Model{
         }
     }
     
+    //Core Data will be updated as soon as GetAllPosts methods is called
     func addPost(post:Post, completion: @escaping ()->Void){
         firebaseModel.addPost(post: post){
             completion()
@@ -103,6 +107,7 @@ class Model{
         }
     }
     
+    //Core Data will be updated as soon as GetAllPosts methods is called
     func editPost(post: Post, data: [String:Any], completion:@escaping ()->Void){
         var editedData = data
         editedData["lastUpdated"] = FieldValue.serverTimestamp()
