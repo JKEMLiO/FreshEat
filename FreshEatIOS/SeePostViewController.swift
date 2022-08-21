@@ -136,7 +136,7 @@ class SeePostViewController: UIViewController {
     
     func addIcons(){
         let topAlignment: SMIconLabel.VerticalPosition = .top
-        emailTxt.icon = UIImage(systemName: "mail")
+        emailTxt.icon = UIImage(systemName: "envelope")
         emailTxt.iconPadding = 5
         emailTxt.numberOfLines = 0
         emailTxt.iconPosition = ( .left, topAlignment )
