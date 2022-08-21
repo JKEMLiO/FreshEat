@@ -1255,7 +1255,7 @@
                                             <color key="baseBackgroundColor" red="0.9089351296" green="0.94641011949999998" blue="0.87998175619999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </buttonConfiguration>
                                         <connections>
-                                            <action selector="changeImg:" destination="K6t-rt-why" eventType="touchUpInside" id="Vp5-39-dEX"/>
+                                            <action selector="changeImgBtn:" destination="K6t-rt-why" eventType="touchUpInside" id="hil-Md-Vdx"/>
                                             <action selector="uploadImage:" destination="CLD-eH-ZfL" eventType="touchUpInside" id="ors-uk-aV5"/>
                                         </connections>
                                     </button>
