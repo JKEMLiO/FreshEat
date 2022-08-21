@@ -47,7 +47,6 @@ class EditPostViewController: UIViewController, UIImagePickerControllerDelegate 
     
     func updateDisplay(){
         self.startLoading()
-        
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {

@@ -144,8 +144,16 @@ class SeePostViewController: UIViewController {
     
     
     @IBAction func editPost(_ sender: Any) {
-        
+        performSegue(withIdentifier: "openEditPost", sender: self)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if(segue.identifier == "openEditPost"){
+            let dvc = segue.destination as! EditPostViewController
+            dvc.post = self.post
+        }
+    }
+    
     
 }
 

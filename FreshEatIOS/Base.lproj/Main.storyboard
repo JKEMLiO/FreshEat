@@ -1354,10 +1354,16 @@
                                     <constraint firstItem="huY-eX-sWE" firstAttribute="top" secondItem="Snn-mZ-pyA" secondAttribute="bottom" constant="8" symbolic="YES" id="zDg-6c-pcW"/>
                                     <constraint firstItem="knk-yZ-vKg" firstAttribute="leading" secondItem="sMV-vL-nYg" secondAttribute="leading" constant="20" id="zou-Gi-XVA"/>
                                 </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="G2c-fc-dpo"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                        </userDefinedRuntimeAttributes>
                     </view>
                     <navigationItem key="navigationItem" id="Rnk-3p-rBI"/>
                     <connections>
