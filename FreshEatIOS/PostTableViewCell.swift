@@ -73,7 +73,6 @@ class PostTableViewCell: UITableViewCell {
         super.awakeFromNib()
         postTitle.text = title
         postUsername.text = userName
-        
         if (!userPhoto.elementsEqual("farmerAvatarSmall")){
             let url = URL(string: userPhoto)
             postUserPhoto?.kf.setImage(with: url)

@@ -17,6 +17,8 @@
 		20330491285A2BF4006DB34A /* FreshEatIOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20330490285A2BF4006DB34A /* FreshEatIOSUITests.swift */; };
 		20330493285A2BF4006DB34A /* FreshEatIOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20330492285A2BF4006DB34A /* FreshEatIOSUITestsLaunchTests.swift */; };
 		203304A0285A2EAB006DB34A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2033049F285A2EAB006DB34A /* LoginViewController.swift */; };
+		532B30DB28B20948008E7808 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 532B30DA28B20948008E7808 /* GoogleService-Info.plist */; };
+		532B30DE28B21125008E7808 /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = 532B30DD28B21125008E7808 /* SkeletonView */; };
 		53A1E95428AD2A4500EB7EF5 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A1E95328AD2A4500EB7EF5 /* PostTableViewCell.swift */; };
 		53A1E95728AD2B9100EB7EF5 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 53A1E95628AD2B9100EB7EF5 /* Kingfisher */; };
 		53A1E95A28AD2BDD00EB7EF5 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 53A1E95928AD2BDD00EB7EF5 /* Alamofire */; };
@@ -28,7 +30,6 @@
 		7B73341F28B0E8C700D6C436 /* splash2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7B73341E28B0E8C700D6C436 /* splash2.gif */; };
 		7B73342128B0EA1800D6C436 /* GifLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B73342028B0EA1800D6C436 /* GifLauncher.swift */; };
 		7B73342328B0EB5B00D6C436 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B73342228B0EB5B00D6C436 /* SplashViewController.swift */; };
-		7BC5755428AFA00100CD3DC8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7BC5755328AFA00100CD3DC8 /* GoogleService-Info.plist */; };
 		C22C522C289E5EA100C8E4A0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22C522B289E5EA100C8E4A0 /* User.swift */; };
 		C22C522E289E65B100C8E4A0 /* UserDao+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22C522D289E65B100C8E4A0 /* UserDao+CoreDataClass.swift */; };
 		C22C5230289E66DE00C8E4A0 /* UserDao+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = C22C522F289E66DD00C8E4A0 /* UserDao+CoreDataProperties.swift */; };
@@ -77,6 +78,7 @@
 		20330490285A2BF4006DB34A /* FreshEatIOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreshEatIOSUITests.swift; sourceTree = "<group>"; };
 		20330492285A2BF4006DB34A /* FreshEatIOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreshEatIOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		2033049F285A2EAB006DB34A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		532B30DA28B20948008E7808 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		53A1E95328AD2A4500EB7EF5 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		7B5C8758289956920048D7C8 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		7B5C875A289956B60048D7C8 /* NewPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
@@ -86,7 +88,6 @@
 		7B73341E28B0E8C700D6C436 /* splash2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = splash2.gif; sourceTree = "<group>"; };
 		7B73342028B0EA1800D6C436 /* GifLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifLauncher.swift; sourceTree = "<group>"; };
 		7B73342228B0EB5B00D6C436 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
-		7BC5755328AFA00100CD3DC8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C22C522B289E5EA100C8E4A0 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C22C522D289E65B100C8E4A0 /* UserDao+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDao+CoreDataClass.swift"; sourceTree = "<group>"; };
 		C22C522F289E66DD00C8E4A0 /* UserDao+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDao+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -105,6 +106,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C2C269D32865F94C00C621CD /* FirebaseAnalytics in Frameworks */,
+				532B30DE28B21125008E7808 /* SkeletonView in Frameworks */,
 				C2C269D92865F94C00C621CD /* FirebaseStorage in Frameworks */,
 				C2C269D52865F94C00C621CD /* FirebaseAuth in Frameworks */,
 				53A1E95A28AD2BDD00EB7EF5 /* Alamofire in Frameworks */,
@@ -153,8 +155,8 @@
 		2033046E285A2BF0006DB34A /* FreshEatIOS */ = {
 			isa = PBXGroup;
 			children = (
+				532B30DA28B20948008E7808 /* GoogleService-Info.plist */,
 				7B73341E28B0E8C700D6C436 /* splash2.gif */,
-				7BC5755328AFA00100CD3DC8 /* GoogleService-Info.plist */,
 				C2C269DA2865FA8500C621CD /* Model */,
 				2033046F285A2BF0006DB34A /* AppDelegate.swift */,
 				20330471285A2BF0006DB34A /* SceneDelegate.swift */,
@@ -233,6 +235,7 @@
 				C2C269D82865F94C00C621CD /* FirebaseStorage */,
 				53A1E95628AD2B9100EB7EF5 /* Kingfisher */,
 				53A1E95928AD2BDD00EB7EF5 /* Alamofire */,
+				532B30DD28B21125008E7808 /* SkeletonView */,
 			);
 			productName = FreshEatIOS;
 			productReference = 2033046C285A2BF0006DB34A /* FreshEatIOS.app */;
@@ -310,6 +313,7 @@
 				C2C269D12865F94C00C621CD /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 				53A1E95528AD2B9000EB7EF5 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				53A1E95828AD2BDD00EB7EF5 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				532B30DC28B21125008E7808 /* XCRemoteSwiftPackageReference "SkeletonView" */,
 			);
 			productRefGroup = 2033046D285A2BF0006DB34A /* Products */;
 			projectDirPath = "";
@@ -328,10 +332,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				2033047C285A2BF4006DB34A /* LaunchScreen.storyboard in Resources */,
-				7BC5755428AFA00100CD3DC8 /* GoogleService-Info.plist in Resources */,
 				20330479285A2BF4006DB34A /* Assets.xcassets in Resources */,
 				7B73341F28B0E8C700D6C436 /* splash2.gif in Resources */,
 				20330477285A2BF0006DB34A /* Main.storyboard in Resources */,
+				532B30DB28B20948008E7808 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -725,6 +729,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		532B30DC28B21125008E7808 /* XCRemoteSwiftPackageReference "SkeletonView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Juanpe/SkeletonView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 		53A1E95528AD2B9000EB7EF5 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
@@ -752,6 +764,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		532B30DD28B21125008E7808 /* SkeletonView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 532B30DC28B21125008E7808 /* XCRemoteSwiftPackageReference "SkeletonView" */;
+			productName = SkeletonView;
+		};
 		53A1E95628AD2B9100EB7EF5 /* Kingfisher */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 53A1E95528AD2B9000EB7EF5 /* XCRemoteSwiftPackageReference "Kingfisher" */;

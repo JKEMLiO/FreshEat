@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SkeletonView
 
 class SeePostViewController: UIViewController {
 
@@ -26,12 +27,14 @@ class SeePostViewController: UIViewController {
         didSet{
             if(nameTxt != nil){
                 updateDisplay()
+                stopSkel()
             }
         }
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        skelShow()
         startLoading()
         postImg.layer.cornerRadius=10
         postImg.clipsToBounds=true
@@ -49,6 +52,7 @@ class SeePostViewController: UIViewController {
         }
         else{
             stopLoading()
+            stopSkel()
         }
     }
     
@@ -85,11 +89,12 @@ class SeePostViewController: UIViewController {
                     }else{
                         self.userImg.image = UIImage(named: "farmerAvatarSmall")
                     }
-                    
+                    self.stopSkel()
                     self.stopLoading()
                 }
             }
             else{
+                self.stopSkel()
                 self.stopLoading()
             }
         }
@@ -104,6 +109,15 @@ class SeePostViewController: UIViewController {
         }))
                                       
         present(alert, animated: true, completion: nil)
+    }
+    
+    func skelShow(){
+        self.view.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: .concrete), animation: nil, transition: .crossDissolve(0.25))
+    }
+    
+    func stopSkel(){
+        self.view.stopSkeletonAnimation()
+        self.view.hideSkeleton(reloadDataAfter: true, transition: .crossDissolve(0.25))
     }
     
     func delPost(){
