@@ -151,7 +151,7 @@ class SeePostViewController: UIViewController {
         if(segue.identifier == "openEditPost"){
             let dvc = segue.destination as! EditPostViewController
             dvc.post = self.post
-        }
+            }
     }
     
     

@@ -20,6 +20,7 @@
 		203304A0285A2EAB006DB34A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2033049F285A2EAB006DB34A /* LoginViewController.swift */; };
 		20BC881D28B23C0800B5A4B5 /* EditPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BC881C28B23C0800B5A4B5 /* EditPostViewController.swift */; };
 		20BC881F28B2498300B5A4B5 /* SMIconLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BC881E28B2498300B5A4B5 /* SMIconLabel.swift */; };
+		20BC882528B25B9300B5A4B5 /* DesignableUITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20BC882428B25B9300B5A4B5 /* DesignableUITextField.swift */; };
 		532B30DE28B21125008E7808 /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = 532B30DD28B21125008E7808 /* SkeletonView */; };
 		53A1E95428AD2A4500EB7EF5 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A1E95328AD2A4500EB7EF5 /* PostTableViewCell.swift */; };
 		53A1E95728AD2B9100EB7EF5 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 53A1E95628AD2B9100EB7EF5 /* Kingfisher */; };
@@ -83,6 +84,7 @@
 		2033049F285A2EAB006DB34A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		20BC881C28B23C0800B5A4B5 /* EditPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPostViewController.swift; sourceTree = "<group>"; };
 		20BC881E28B2498300B5A4B5 /* SMIconLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SMIconLabel.swift; sourceTree = "<group>"; };
+		20BC882428B25B9300B5A4B5 /* DesignableUITextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesignableUITextField.swift; sourceTree = "<group>"; };
 		53A1E95328AD2A4500EB7EF5 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		7B5C8758289956920048D7C8 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		7B5C875A289956B60048D7C8 /* NewPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 				C261846628B1371F00758FB8 /* PasswordChangeViewController.swift */,
 				20BC881C28B23C0800B5A4B5 /* EditPostViewController.swift */,
 				20BC881E28B2498300B5A4B5 /* SMIconLabel.swift */,
+				20BC882428B25B9300B5A4B5 /* DesignableUITextField.swift */,
 			);
 			path = FreshEatIOS;
 			sourceTree = "<group>";
@@ -376,6 +379,7 @@
 				53A1E95428AD2A4500EB7EF5 /* PostTableViewCell.swift in Sources */,
 				203304A0285A2EAB006DB34A /* LoginViewController.swift in Sources */,
 				7B5C876728A79BD20048D7C8 /* UserProfileViewController.swift in Sources */,
+				20BC882528B25B9300B5A4B5 /* DesignableUITextField.swift in Sources */,
 				7B73342128B0EA1800D6C436 /* GifLauncher.swift in Sources */,
 				7B5C8759289956920048D7C8 /* RegisterViewController.swift in Sources */,
 				C2C269E12865FDCE00C621CD /* DataModel.xcdatamodeld in Sources */,
