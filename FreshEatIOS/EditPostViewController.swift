@@ -110,11 +110,35 @@ class EditPostViewController: UIViewController, UIImagePickerControllerDelegate 
     
 
     @IBAction func restoreBtn(_ sender: Any) {
+        updateDisplay()
     }
     
     @IBAction func changeImgBtn(_ sender: Any) {
+        takePicture(source: .photoLibrary)
+    }
+    
+    func takePicture(source: UIImagePickerController.SourceType){
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        imagePicker.sourceType = source;
+        imagePicker.allowsEditing = true
+        if (UIImagePickerController.isSourceTypeAvailable(source))
+        {
+            self.present(imagePicker, animated: true, completion: nil)
+        }
+    }
+    
+    var selectedImage: UIImage?
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        selectedImage = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerOriginalImage")] as? UIImage
+        self.postImg.image = selectedImage
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func uploadBtn(_ sender: Any) {
+        
     }
+    
 }
