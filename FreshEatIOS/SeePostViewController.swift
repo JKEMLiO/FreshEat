@@ -65,6 +65,7 @@ class SeePostViewController: UIViewController {
         nameTxt.text = post?.username
         locationTxt.text = post?.location
         descriptionTxt.text = post?.postDescription
+        phoneTxt.text = post?.contactPhone
         
         if let url = post?.photo{
             if !url.elementsEqual("vegImg"){

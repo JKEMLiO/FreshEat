@@ -104,7 +104,9 @@ class Model{
     }
     
     func editPost(post: Post, data: [String:Any], completion:@escaping ()->Void){
-        firebaseModel.editPost(post: post, data: data) {
+        var editedData = data
+        editedData["lastUpdated"] = FieldValue.serverTimestamp()
+        firebaseModel.editPost(post: post, data: editedData) {
             completion()
             Model.postDataNotification.post()
         }
