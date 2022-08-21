@@ -11,26 +11,45 @@ class NewPostViewController: UIViewController, UITextViewDelegate, UITextFieldDe
 
     @IBOutlet weak var titleInput: UITextField!
     @IBOutlet weak var locationInput: UITextField!
+    @IBOutlet weak var phoneInput: UITextField!
     @IBOutlet weak var cancelBtn: UIButton!
     @IBOutlet weak var mainInput: UITextView!
     @IBOutlet weak var imgPost: UIImageView!
-    @IBOutlet weak var scroll: UIScrollView!
+
     var titlePH = ""
     var locationPH = ""
+    var phonePH = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.addSubview(scroll)
+      
         self.prepareView()
         
              
         
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardApear), name: UIResponder.keyboardWillShowNotification, object: nil)
-        
+//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardApear), name: UIResponder.keyboardWillShowNotification, object: nil)
+//
 //        NotificationCenter.default.addObserver(self, selector: #selector(keyboardDisapear), name: UIResponder.keyboardWillShowNotification, object: nil)
         
     }
     
+     
+       
+    
+//    var isExpand = false
+//    @objc func keyboardApear(){
+//        if !isExpand {
+////            self.scroll.contentSize = CGSize (width: self.view.frame.width, height: self.scroll.frame.height+300)
+//            //CGSize (width: self.view.frame.width, height: self.scroll.frame.height+300)
+//
+//        }
+//    }
+//
+//
+//    override func viewWillAppear(_ animated: Bool) {
+//        self.prepareView()
+//    }
+   
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let currentTxt = textField.text ?? ""
         guard let stringRange = Range(range, in: currentTxt) else {
@@ -38,25 +57,21 @@ class NewPostViewController: UIViewController, UITextViewDelegate, UITextFieldDe
         }
         
         let updateText = currentTxt.replacingCharacters(in: stringRange, with: string)
-        return updateText.count < 16
+        return updateText.count < 20
     
     }
     
-       
-    
-    var isExpand = false
-    @objc func keyboardApear(){
-        if !isExpand {
-//            self.scroll.contentSize = CGSize (width: self.view.frame.width, height: self.scroll.frame.height+300)
-            //CGSize (width: self.view.frame.width, height: self.scroll.frame.height+300)
-
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool {
+        let currentTxt = textView.text ?? ""
+        guard let textRange = Range(range, in: currentTxt) else {
+            return false
         }
+        
+        let updateText = currentTxt.replacingCharacters(in: textRange, with: text)
+        return updateText.count < 200
     }
     
-        
-    override func viewWillAppear(_ animated: Bool) {
-        self.prepareView()
-    }
+    
     
     func textViewDidBeginEditing(_ textView: UITextView) {
         if textView.textColor == UIColor.lightGray {
@@ -85,6 +100,9 @@ class NewPostViewController: UIViewController, UITextViewDelegate, UITextFieldDe
         }
         if ((locationInput.text?.isEmpty) != nil){
             locationInput.placeholder = locationPH
+        }
+        if ((phoneInput.text?.isEmpty) != nil){
+            phoneInput.placeholder = phonePH
         }
     }
     
@@ -185,6 +203,7 @@ class NewPostViewController: UIViewController, UITextViewDelegate, UITextFieldDe
         titleInput.text = nil
         locationInput.text = nil
         mainInput.text = nil
+        phoneInput.text = nil
         mainInput.text = "What Do You Offer?"
         mainInput.textColor = UIColor.lightGray
         selectedImage = UIImage(named: "vegImg")
@@ -200,11 +219,23 @@ class NewPostViewController: UIViewController, UITextViewDelegate, UITextFieldDe
         titleInput.clipsToBounds=true
         titlePH = titleInput.placeholder!
         titleInput.returnKeyType = .next
+        titleInput.attributedPlaceholder = NSAttributedString(
+            string: titlePH, attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray]
+        )
         locationInput.layer.cornerRadius=10
         locationInput.clipsToBounds=true
         locationPH = locationInput.placeholder!
+        locationInput.attributedPlaceholder = NSAttributedString(
+            string: locationPH, attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray]
+        )
         mainInput.layer.cornerRadius=10
         mainInput.clipsToBounds=true
+        phoneInput.layer.cornerRadius=10
+        phoneInput.clipsToBounds = true
+        phonePH = phoneInput.placeholder!
+        phoneInput.attributedPlaceholder = NSAttributedString(
+            string: phonePH, attributes: [NSAttributedString.Key.foregroundColor: UIColor.lightGray]
+        )
         if mainInput.text == nil || mainInput.text == ""{
             mainInput.text = "What Do You Offer?"
             mainInput.textColor = UIColor.lightGray
@@ -212,6 +243,7 @@ class NewPostViewController: UIViewController, UITextViewDelegate, UITextFieldDe
         }
         titleInput.delegate = self
         locationInput.delegate = self
+        phoneInput.delegate = self
 
     }
     
