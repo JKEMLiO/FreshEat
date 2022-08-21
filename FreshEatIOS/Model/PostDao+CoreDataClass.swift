@@ -66,14 +66,40 @@ public class PostDao: NSManagedObject {
         p.username = post.username
         p.title = post.title
         p.photo = post.photo
+        p.location = post.location
+        p.contactPhone = post.contactPhone
         p.isPostDeleted = post.isPostDeleted!
         p.postDescription = post.postDescription
         p.lastUpdated = post.lastUpdated
+        p.contactEmail = post.contactEmail
         
         do{
             try context.save()
         }catch let error as NSError{
             print("post add error core data\(error) \(error.userInfo)")
+        }
+    }
+    
+    static func editPost(id:String, data: [String:Any]){
+        guard let context = context else {
+            return
+        }
+        do{
+            let fetchRequest: NSFetchRequest<PostDao> = PostDao.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "id == %@", id)
+            let postsDao = try context.fetch(fetchRequest)
+            if(postsDao.count>0){
+                let post = postsDao.first!
+                for item in data{
+                    post.setValue(item.value, forKey: item.key)
+                }
+                try context.save()
+            }
+            
+            return
+        }catch let error as NSError{
+            print("Post Edit Core Data Error \(error) \(error.userInfo)")
+            return
         }
     }
     
@@ -99,6 +125,27 @@ public class PostDao: NSManagedObject {
        } catch {
            print("Didn't save postDao after deleting post.")
        }
+    }
+    
+    static func deleteAllPosts(){
+        guard let context = context else {
+            return
+        }
+        do{
+            let fetchRequest: NSFetchRequest<PostDao> = PostDao.fetchRequest()
+            let postsDao = try context.fetch(fetchRequest)
+            if(postsDao.count>0){
+                for pDao in postsDao{
+                    context.delete(pDao)
+                }
+                try context.save()
+            }
+            
+            return
+        }catch let error as NSError{
+            print("posts delete core error \(error) \(error.userInfo)")
+            return
+        }
     }
     
     static func localLastUpdated() -> Int64{

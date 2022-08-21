@@ -52,6 +52,28 @@ public class UserDao: NSManagedObject {
         }
     }
     
+    static func editUser(email:String, data: [String:Any]){
+        guard let context = context else {
+            return
+        }
+        do{
+            let fetchRequest: NSFetchRequest<UserDao> = UserDao.fetchRequest()
+            fetchRequest.predicate = NSPredicate(format: "email == %@", email)
+            let usersDao = try context.fetch(fetchRequest)
+            if(usersDao.count>0){
+                let user = usersDao.first!
+                for item in data{
+                    user.setValue(item.value, forKey: item.key)
+                }
+                try context.save()
+            }
+            return
+        }catch let error as NSError{
+            print("Post Edit Core Data Error \(error) \(error.userInfo)")
+            return
+        }
+    }
+    
     static func getUser(byEmail:String)->User?{
         guard let context = context else {
             return nil

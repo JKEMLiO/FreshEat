@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 import CoreData
+import SwiftUI
 
 class Model{
     
@@ -23,10 +24,11 @@ class Model{
      */
     
     func addUser(user:User, completion: @escaping ()->Void){
-        firebaseModel.addUser(user: user){
-            completion()
-            Model.postDataNotification.post()
-        }
+        firebaseModel.addUser(user: user, completion: completion)
+    }
+    
+    func editUser(user: User, data: [String:Any], completion:@escaping ()->Void){
+        firebaseModel.editUser(user: user, data: data,completion: completion)
     }
     
     func getUser(byEmail:String,completion: @escaping (User?)->Void){
@@ -58,16 +60,16 @@ class Model{
     func getAllPosts(completion:@escaping ([Post])->Void){
         //get the Local Last Update data
         var lup = PostDao.localLastUpdated()
-        NSLog("TAG POSTS_LAST_UPDATE " + String(lup))
+        NSLog("POSTS_LAST_UPDATE " + String(lup))
         
         //fetch all updated records from firebase
         firebaseModel.getAllPosts(since: lup){ posts in
             //insert all records to local DB
-            NSLog("TAG getAllPosts from Model count: \(posts.count)")
+            NSLog("getAllPosts from Model count: \(posts.count)")
             self.dispatchQueue.async{
                 for post in posts {
-                    NSLog("TAG post.title " + post.title!)
-                    NSLog("TAG Post is deleted? " + String(post.isPostDeleted!))
+                    NSLog("post.title " + post.title!)
+                    NSLog("Post is deleted? " + String(post.isPostDeleted!))
                     if !post.isPostDeleted!{
                         PostDao.addPost(post: post)
                     }
@@ -89,6 +91,13 @@ class Model{
     
     func addPost(post:Post, completion: @escaping ()->Void){
         firebaseModel.addPost(post: post){
+            completion()
+            Model.postDataNotification.post()
+        }
+    }
+    
+    func editPost(post: Post, data: [String:Any], completion:@escaping ()->Void){
+        firebaseModel.editPost(post: post, data: data) {
             completion()
             Model.postDataNotification.post()
         }
@@ -122,8 +131,12 @@ class Model{
         firebaseModel.isUserExists(email: email, completion:completion)
     }
     
-    func isUserLoggedIn(completion:@escaping (_ success: Bool)->Void){
+    func isUserLoggedIn(completion:@escaping (_ success: String?)->Void){
         firebaseModel.isUserLoggedIn(completion: completion)
+    }
+    
+    func getCurrentUser(completion:@escaping (User?)->Void){
+        firebaseModel.getCurrentUser(completion: completion)
     }
     
     /*
@@ -148,6 +161,15 @@ class Model{
         let emailPred = NSPredicate(format:"SELF MATCHES %@", emailRegEx)
         return emailPred.evaluate(with: email)
     }
+    
+    func validateFields(fields: [String]) ->Bool{
+        for field in fields{
+            if field == ""{
+                return false
+            }
+        }
+        return true
+    }
 }
 
 class ModelNotificationBase{
@@ -166,4 +188,39 @@ class ModelNotificationBase{
         NSLog("post notification")
         NotificationCenter.default.post(name: Notification.Name(name), object: self)
     }
+}
+
+extension UIViewController {
+    func popupAlert(title: String?, message: String?, actionTitles:[String?], actions:[((UIAlertAction) -> Void)?]) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        for (index, title) in actionTitles.enumerated() {
+            let action = UIAlertAction(title: title, style: .default, handler: actions[index])
+            alert.addAction(action)
+        }
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    static let activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
+
+        func startLoading() {
+            let activityIndicator = UIViewController.activityIndicator
+            activityIndicator.center = self.view.center
+            activityIndicator.hidesWhenStopped = true
+            activityIndicator.style = .large
+            activityIndicator.color = .black
+            DispatchQueue.main.async {
+                self.view.addSubview(activityIndicator)
+            }
+            activityIndicator.startAnimating()
+            self.view.isUserInteractionEnabled = false
+        }
+
+        func stopLoading() {
+            let activityIndicator = UIViewController.activityIndicator
+            DispatchQueue.main.async {
+                activityIndicator.stopAnimating()
+                activityIndicator.removeFromSuperview()
+            }
+            self.view.isUserInteractionEnabled = true
+          }
 }
