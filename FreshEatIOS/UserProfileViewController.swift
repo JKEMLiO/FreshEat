@@ -43,6 +43,9 @@ class UserProfileViewController: UIViewController {
         }
     }
     
+    @IBAction func changeImage(_ sender: UIButton) {
+        
+    }
     func stopSkel(){
         self.view.stopSkeletonAnimation()
         self.view.hideSkeleton(reloadDataAfter: true, transition: .crossDissolve(0.25))

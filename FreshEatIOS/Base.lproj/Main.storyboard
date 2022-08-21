@@ -758,6 +758,9 @@
                                     </preferredSymbolConfiguration>
                                     <color key="baseBackgroundColor" red="0.39028996230000002" green="0.65612149239999995" blue="0.26791793110000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="changeImage:" destination="w9t-Xa-ede" eventType="touchUpInside" id="tff-vG-um5"/>
+                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Your Details" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="pyW-vM-oNo" userLabel="profileTitleTxt">
                                 <rect key="frame" x="20" y="94" width="350" height="49"/>
