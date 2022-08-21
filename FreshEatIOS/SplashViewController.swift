@@ -14,7 +14,7 @@ class SplashViewController: UIViewController {
         super.viewDidLoad()
         let splashGif = UIImage.gifImageWithName("splash2")
         imageView.image = splashGif
-        let seconds = 4.0
+        let seconds = 3.0
         DispatchQueue.main.asyncAfter(deadline: .now() + seconds) {
             Model.instance.isUserLoggedIn { email in
                 if email != nil {

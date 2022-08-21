@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		200D5D0528B22265008A1A9A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 200D5D0428B22265008A1A9A /* GoogleService-Info.plist */; };
 		20330470285A2BF0006DB34A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2033046F285A2BF0006DB34A /* AppDelegate.swift */; };
 		20330472285A2BF0006DB34A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20330471285A2BF0006DB34A /* SceneDelegate.swift */; };
 		20330474285A2BF0006DB34A /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20330473285A2BF0006DB34A /* WelcomeViewController.swift */; };
@@ -17,7 +18,6 @@
 		20330491285A2BF4006DB34A /* FreshEatIOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20330490285A2BF4006DB34A /* FreshEatIOSUITests.swift */; };
 		20330493285A2BF4006DB34A /* FreshEatIOSUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 20330492285A2BF4006DB34A /* FreshEatIOSUITestsLaunchTests.swift */; };
 		203304A0285A2EAB006DB34A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2033049F285A2EAB006DB34A /* LoginViewController.swift */; };
-		532B30DB28B20948008E7808 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 532B30DA28B20948008E7808 /* GoogleService-Info.plist */; };
 		532B30DE28B21125008E7808 /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = 532B30DD28B21125008E7808 /* SkeletonView */; };
 		53A1E95428AD2A4500EB7EF5 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 53A1E95328AD2A4500EB7EF5 /* PostTableViewCell.swift */; };
 		53A1E95728AD2B9100EB7EF5 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 53A1E95628AD2B9100EB7EF5 /* Kingfisher */; };
@@ -64,6 +64,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		200D5D0428B22265008A1A9A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		2033046C285A2BF0006DB34A /* FreshEatIOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FreshEatIOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2033046F285A2BF0006DB34A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		20330471285A2BF0006DB34A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,7 +79,6 @@
 		20330490285A2BF4006DB34A /* FreshEatIOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreshEatIOSUITests.swift; sourceTree = "<group>"; };
 		20330492285A2BF4006DB34A /* FreshEatIOSUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FreshEatIOSUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		2033049F285A2EAB006DB34A /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		532B30DA28B20948008E7808 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		53A1E95328AD2A4500EB7EF5 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		7B5C8758289956920048D7C8 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		7B5C875A289956B60048D7C8 /* NewPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
@@ -155,7 +155,7 @@
 		2033046E285A2BF0006DB34A /* FreshEatIOS */ = {
 			isa = PBXGroup;
 			children = (
-				532B30DA28B20948008E7808 /* GoogleService-Info.plist */,
+				200D5D0428B22265008A1A9A /* GoogleService-Info.plist */,
 				7B73341E28B0E8C700D6C436 /* splash2.gif */,
 				C2C269DA2865FA8500C621CD /* Model */,
 				2033046F285A2BF0006DB34A /* AppDelegate.swift */,
@@ -335,7 +335,7 @@
 				20330479285A2BF4006DB34A /* Assets.xcassets in Resources */,
 				7B73341F28B0E8C700D6C436 /* splash2.gif in Resources */,
 				20330477285A2BF0006DB34A /* Main.storyboard in Resources */,
-				532B30DB28B20948008E7808 /* GoogleService-Info.plist in Resources */,
+				200D5D0528B22265008A1A9A /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
