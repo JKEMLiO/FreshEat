@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 import CoreData
 import SwiftUI
+import Firebase
 
 class Model{
     
@@ -110,7 +111,7 @@ class Model{
     }
     
     func deletePost(post:Post, completion:@escaping ()->Void){
-        firebaseModel.editPost(post: post, data: ["isPostDeleted":true]){
+        firebaseModel.editPost(post: post, data: ["isPostDeleted":true, "lastUpdated":FieldValue.serverTimestamp()]){
             PostDao.delete(post: post)
             completion()
             Model.postDataNotification.post()
