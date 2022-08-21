@@ -120,7 +120,7 @@ class NewPostViewController: UIViewController, UITextViewDelegate, UITextFieldDe
         let title = titleInput.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         let description = mainInput.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         let location = locationInput.text!.trimmingCharacters(in: .whitespacesAndNewlines)
-        // Add let phone = phoneInput.text!.trimmingCharacters(in: .whitespacesAndNewlines)
+        let phone = phoneInput.text!.trimmingCharacters(in: .whitespacesAndNewlines)
         var fields = [String]()
         fields.append(title)
         fields.append(description)
@@ -141,7 +141,7 @@ class NewPostViewController: UIViewController, UITextViewDelegate, UITextFieldDe
         post.postDescription = description
         post.location = location
         post.isPostDeleted = false
-        // Add post.contactPhone = phone
+        post.contactPhone = phone
         Model.instance.getCurrentUser { user in
             if user != nil {
                 post.username = user?.name

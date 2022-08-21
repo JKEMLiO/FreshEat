@@ -76,6 +76,9 @@ class Model{
                     if !post.isPostDeleted!{
                         PostDao.addPost(post: post)
                     }
+                    else{
+                        PostDao.delete(post: post)
+                    }
                     if post.lastUpdated > lup {
                         lup = post.lastUpdated
                     }
