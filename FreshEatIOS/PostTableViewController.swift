@@ -17,9 +17,7 @@ class PostTableViewController: UITableViewController, SkeletonTableViewDataSourc
         self.refreshControl = UIRefreshControl()
         self.refreshControl?.addTarget(self, action:
                                               #selector(reload),
-                                              for: .valueChanged)
-        self.refreshControl?.attributedTitle = NSAttributedString("Loading Posts...")
-        
+                                              for: .valueChanged)        
         
         Model.postDataNotification.observe {
             self.reload()

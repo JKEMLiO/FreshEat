@@ -138,51 +138,66 @@ class NewPostViewController: UIViewController, UITextViewDelegate, UITextFieldDe
             self.popupAlert(title: "Error Posting",
                             message: "You must enter a valid Israeli Phone Number",
                             actionTitles: ["OK"], actions: [nil])
+            self.phoneInput.text = ""
             return
         }
-                
+        
         self.startLoading()
-        disableTabBar()
-        let post = Post()
-        post.id = UUID().uuidString
-        post.title = title
-        post.postDescription = description
-        post.location = location
-        post.isPostDeleted = false
-        post.contactPhone = phone
-        Model.instance.getCurrentUser { user in
-            if user != nil {
-                post.username = user?.name
-                post.contactEmail = user?.email
-                //User has selected image
-                if let image = self.selectedImage{
-                    Model.instance.uploadImage(name: post.id!, image: image) { url in
-                        post.photo = url
-                        Model.instance.addPost(post: post) {
-                            self.tabBarController?.selectedIndex = 0
-                            self.stopLoading()
-                            self.enableTabBar()
-                            self.zeroValues()
+        self.disableTabBar()
+        
+        getWeatherDetailsByCity(city: location) { weatherData in
+            if weatherData != nil{
+                let post = Post()
+                post.id = UUID().uuidString
+                post.title = title
+                post.postDescription = description
+                post.location = location
+                post.isPostDeleted = false
+                post.contactPhone = phone
+                Model.instance.getCurrentUser { user in
+                    if user != nil {
+                        post.username = user?.name
+                        post.contactEmail = user?.email
+                        //User has selected image
+                        if let image = self.selectedImage{
+                            Model.instance.uploadImage(name: post.id!, image: image) { url in
+                                post.photo = url
+                                Model.instance.addPost(post: post) {
+                                    self.tabBarController?.selectedIndex = 0
+                                    self.stopLoading()
+                                    self.enableTabBar()
+                                    self.zeroValues()
+                                }
+                            }
+                        }
+                        //User hasn't selected image
+                        else{
+                            post.photo = "vegImg"
+                            Model.instance.addPost(post: post) {
+                                self.tabBarController?.selectedIndex = 0
+                                self.stopLoading()
+                                self.enableTabBar()
+                                self.zeroValues()
+                            }
                         }
                     }
-                }
-                //User hasn't selected image
-                else{
-                    post.photo = "vegImg"
-                    Model.instance.addPost(post: post) {
-                        self.tabBarController?.selectedIndex = 0
+                    else{
                         self.stopLoading()
                         self.enableTabBar()
-                        self.zeroValues()
+                        self.popupAlert(title: "Error Adding Post",
+                                        message: "An issue has occured...\nTry logout and then login back to the app",
+                                        actionTitles: ["OK"], actions: [nil])
                     }
                 }
             }
             else{
                 self.stopLoading()
                 self.enableTabBar()
-                self.popupAlert(title: "Error Adding Post",
-                                message: "An issue has occured...\nTry logout and then login back to the app",
+                self.popupAlert(title: "Error Posting",
+                                message: "You must enter a valid Israeli City",
                                 actionTitles: ["OK"], actions: [nil])
+                self.locationInput.text = ""
+                return
             }
         }
     }

@@ -112,11 +112,6 @@ class EditPostViewController: UIViewController,UITextViewDelegate, UITextFieldDe
         editBtn.layer.cornerRadius = 15
         editBtn.layer.borderWidth = 3
         editBtn.layer.borderColor = UIColor(red: 0.39216, green: 0.65490, blue: 0.26667, alpha: 1.0).cgColor
-
-        
-        
-        
-        
     }
     
     func editBtnOff(){
@@ -211,43 +206,58 @@ class EditPostViewController: UIViewController,UITextViewDelegate, UITextFieldDe
         fields.append(phone)
 
         if !Model.instance.validateFields(fields: fields){
-            self.popupAlert(title: "Error Posting",
+            self.popupAlert(title: "Error Updating Post",
                             message: "You must fill in all of the fields",
                             actionTitles: ["OK"], actions: [nil])
             return
         }
         
         if !Model.instance.isValidIsraeliPhone(phone: phone){
-            self.popupAlert(title: "Error Posting",
+            self.popupAlert(title: "Error Updating Post",
                             message: "You must enter a valid Israeli Phone Number",
                             actionTitles: ["OK"], actions: [nil])
+            self.phoneTxt.text = post?.contactPhone
             return
         }
         
         self.startLoading()
         self.disableTabBar()
-        var data = [String:Any]()
-        data["title"] = title
-        data["postDescription"] = description
-        data["location"] = location
-        data["contactPhone"] = phone
         
-        //User has selected image
-        if let image = self.selectedImage{
-            Model.instance.uploadImage(name: post!.id!, image: image) { url in
-                data["photo"] = url
-                Model.instance.editPost(post: self.post!, data: data) {
-                    self.stopLoading()
-                    self.enableTabBar()
-                    self.navigationController?.popToRootViewController(animated: true)
+        getWeatherDetailsByCity(city: location) { weatherData in
+            if weatherData != nil{
+                var data = [String:Any]()
+                data["title"] = title
+                data["postDescription"] = description
+                data["location"] = location
+                data["contactPhone"] = phone
+                
+                //User has selected image
+                if let image = self.selectedImage{
+                    Model.instance.uploadImage(name: self.post!.id!, image: image) { url in
+                        data["photo"] = url
+                        Model.instance.editPost(post: self.post!, data: data) {
+                            self.stopLoading()
+                            self.enableTabBar()
+                            self.navigationController?.popToRootViewController(animated: true)
+                        }
+                    }
+                }
+                else{
+                    Model.instance.editPost(post: self.post!, data: data) {
+                        self.stopLoading()
+                        self.enableTabBar()
+                        self.navigationController?.popToRootViewController(animated: true)
+                    }
                 }
             }
-        }
-        else{
-            Model.instance.editPost(post: self.post!, data: data) {
+            else{
                 self.stopLoading()
                 self.enableTabBar()
-                self.navigationController?.popToRootViewController(animated: true)
+                self.popupAlert(title: "Error Updating Post",
+                                message: "You must enter a valid Israeli City",
+                                actionTitles: ["OK"], actions: [nil])
+                self.locationTxt.text = self.post?.location
+                return
             }
         }
         
