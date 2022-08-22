@@ -30,6 +30,9 @@
 		7B5C875D289957030048D7C8 /* PostTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5C875C289957030048D7C8 /* PostTableViewController.swift */; };
 		7B5C875F289958020048D7C8 /* SeePostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5C875E289958020048D7C8 /* SeePostViewController.swift */; };
 		7B5C876728A79BD20048D7C8 /* UserProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B5C876628A79BD20048D7C8 /* UserProfileViewController.swift */; };
+		7B605A5F28B367D6001A4652 /* WeatherStructs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B605A5E28B367D6001A4652 /* WeatherStructs.swift */; };
+		7B605A6128B368BB001A4652 /* WeatherAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B605A6028B368BA001A4652 /* WeatherAPI.swift */; };
+		7B605A6528B36BD3001A4652 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B605A6428B36BD3001A4652 /* Constants.swift */; };
 		7B73341F28B0E8C700D6C436 /* splash2.gif in Resources */ = {isa = PBXBuildFile; fileRef = 7B73341E28B0E8C700D6C436 /* splash2.gif */; };
 		7B73342128B0EA1800D6C436 /* GifLauncher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B73342028B0EA1800D6C436 /* GifLauncher.swift */; };
 		7B73342328B0EB5B00D6C436 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B73342228B0EB5B00D6C436 /* SplashViewController.swift */; };
@@ -91,6 +94,9 @@
 		7B5C875C289957030048D7C8 /* PostTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewController.swift; sourceTree = "<group>"; };
 		7B5C875E289958020048D7C8 /* SeePostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeePostViewController.swift; sourceTree = "<group>"; };
 		7B5C876628A79BD20048D7C8 /* UserProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfileViewController.swift; sourceTree = "<group>"; };
+		7B605A5E28B367D6001A4652 /* WeatherStructs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherStructs.swift; sourceTree = "<group>"; };
+		7B605A6028B368BA001A4652 /* WeatherAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPI.swift; sourceTree = "<group>"; };
+		7B605A6428B36BD3001A4652 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		7B73341E28B0E8C700D6C436 /* splash2.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = splash2.gif; sourceTree = "<group>"; };
 		7B73342028B0EA1800D6C436 /* GifLauncher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GifLauncher.swift; sourceTree = "<group>"; };
 		7B73342228B0EB5B00D6C436 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
@@ -161,6 +167,7 @@
 		2033046E285A2BF0006DB34A /* FreshEatIOS */ = {
 			isa = PBXGroup;
 			children = (
+				7B605A5B28B36779001A4652 /* OpenWeatherAPI */,
 				200D5D0428B22265008A1A9A /* GoogleService-Info.plist */,
 				7B73341E28B0E8C700D6C436 /* splash2.gif */,
 				C2C269DA2865FA8500C621CD /* Model */,
@@ -206,6 +213,15 @@
 			path = FreshEatIOSUITests;
 			sourceTree = "<group>";
 		};
+		7B605A5B28B36779001A4652 /* OpenWeatherAPI */ = {
+			isa = PBXGroup;
+			children = (
+				7B605A5E28B367D6001A4652 /* WeatherStructs.swift */,
+				7B605A6028B368BA001A4652 /* WeatherAPI.swift */,
+			);
+			path = OpenWeatherAPI;
+			sourceTree = "<group>";
+		};
 		C2C269DA2865FA8500C621CD /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -217,6 +233,7 @@
 				C29BCBAF28A66C020003EBD7 /* Post.swift */,
 				C29BCBB128A66FA20003EBD7 /* PostDao+CoreDataClass.swift */,
 				C29BCBB528A671130003EBD7 /* PostDao+CoreDataProperties.swift */,
+				7B605A6428B36BD3001A4652 /* Constants.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -374,10 +391,13 @@
 				7B5C875F289958020048D7C8 /* SeePostViewController.swift in Sources */,
 				20330470285A2BF0006DB34A /* AppDelegate.swift in Sources */,
 				C29BCBB228A66FA20003EBD7 /* PostDao+CoreDataClass.swift in Sources */,
+				7B605A5F28B367D6001A4652 /* WeatherStructs.swift in Sources */,
 				20BC881D28B23C0800B5A4B5 /* EditPostViewController.swift in Sources */,
 				C22C522E289E65B100C8E4A0 /* UserDao+CoreDataClass.swift in Sources */,
 				53A1E95428AD2A4500EB7EF5 /* PostTableViewCell.swift in Sources */,
+				7B605A6128B368BB001A4652 /* WeatherAPI.swift in Sources */,
 				203304A0285A2EAB006DB34A /* LoginViewController.swift in Sources */,
+				7B605A6528B36BD3001A4652 /* Constants.swift in Sources */,
 				7B5C876728A79BD20048D7C8 /* UserProfileViewController.swift in Sources */,
 				20BC882528B25B9300B5A4B5 /* DesignableUITextField.swift in Sources */,
 				7B73342128B0EA1800D6C436 /* GifLauncher.swift in Sources */,

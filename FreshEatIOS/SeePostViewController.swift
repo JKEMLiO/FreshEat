@@ -105,6 +105,16 @@ class SeePostViewController: UIViewController {
                 self.stopLoading()
             }
         }
+        
+        getWeatherDetailsByCity(city: post!.location!) { weatherData in
+            if weatherData != nil{
+                print(weatherData!.name)
+                print(weatherData?.main.temp ?? 1234)
+            }
+            else{
+                print("Invalid City")
+            }
+        }
     }
     
     
