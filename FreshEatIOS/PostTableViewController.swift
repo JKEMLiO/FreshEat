@@ -42,6 +42,11 @@ class PostTableViewController: UITableViewController, SkeletonTableViewDataSourc
             self.tableView.stopSkeletonAnimation()
             self.view.hideSkeleton(reloadDataAfter: false, transition: .crossDissolve(0.25))
             self.refreshControl?.endRefreshing()
+            let targetRowIndexPath = IndexPath(row: 0, section: 0)
+            if self.tableView.indexPathExists(indexPath: targetRowIndexPath)
+            {
+                self.tableView.scrollToRow(at: targetRowIndexPath, at: .bottom, animated: true)
+            }
         }
     }
     
@@ -132,4 +137,17 @@ class PostTableViewController: UITableViewController, SkeletonTableViewDataSourc
         }
     }
 
+}
+
+extension UITableView
+{
+    func indexPathExists(indexPath:IndexPath) -> Bool {
+        if indexPath.section >= self.numberOfSections {
+            return false
+        }
+        if indexPath.row >= self.numberOfRows(inSection: indexPath.section) {
+            return false
+        }
+        return true
+    }
 }
