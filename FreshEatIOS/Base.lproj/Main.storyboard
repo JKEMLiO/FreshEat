@@ -1249,6 +1249,18 @@
                                     <action selector="deletePost:" destination="SxS-XT-odG" eventType="touchUpInside" id="Sow-t9-0cD"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wCZ-7C-IIH" customClass="SMIconLabel" customModule="FreshEatIOS" customModuleProvider="target">
+                                <rect key="frame" x="295" y="185.33333333333334" width="65" height="25"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" red="0.1428874433" green="0.58897483350000002" blue="0.42348778250000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="65" id="jw2-uH-Q4P"/>
+                                    <constraint firstAttribute="height" constant="25" id="opR-FU-Hjc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <color key="textColor" red="0.1428874433" green="0.58897483350000002" blue="0.42348778250000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="duD-GC-GmR"/>
                         <color key="backgroundColor" red="0.91064614060000004" green="0.94589275120000005" blue="0.87987905740000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -1271,8 +1283,11 @@
                             <constraint firstAttribute="trailing" secondItem="yHX-Ml-mgt" secondAttribute="trailing" constant="20" id="dSW-rk-8fp"/>
                             <constraint firstItem="nhM-hW-8pQ" firstAttribute="leading" secondItem="duD-GC-GmR" secondAttribute="leading" constant="30" id="eYx-Hv-yqW"/>
                             <constraint firstItem="duD-GC-GmR" firstAttribute="trailing" secondItem="nPc-UI-9nM" secondAttribute="trailing" constant="30" id="fYd-nZ-86q"/>
+                            <constraint firstItem="CRa-ze-H7O" firstAttribute="top" secondItem="wCZ-7C-IIH" secondAttribute="bottom" constant="-24.999999999999972" id="kli-eU-rr5"/>
                             <constraint firstItem="aar-kN-gUw" firstAttribute="leading" secondItem="duD-GC-GmR" secondAttribute="leading" constant="30" id="l1F-3F-UND"/>
+                            <constraint firstItem="wCZ-7C-IIH" firstAttribute="top" secondItem="CRa-ze-H7O" secondAttribute="top" id="rDm-ip-Ycj"/>
                             <constraint firstItem="1PB-Cs-Rcv" firstAttribute="centerY" secondItem="e7d-07-nRt" secondAttribute="centerY" id="s7c-qA-Tus"/>
+                            <constraint firstItem="wCZ-7C-IIH" firstAttribute="leading" secondItem="CRa-ze-H7O" secondAttribute="trailing" constant="-65" id="vWg-AU-kfT"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
@@ -1291,6 +1306,7 @@
                         <outlet property="nameTxt" destination="hFu-u0-Xrd" id="WWx-sZ-4Qa"/>
                         <outlet property="phoneTxt" destination="WLF-kT-Ken" id="WmP-X1-rm9"/>
                         <outlet property="postImg" destination="CRa-ze-H7O" id="6xD-Br-E1s"/>
+                        <outlet property="tempTxt" destination="wCZ-7C-IIH" id="AlL-3Z-TXm"/>
                         <outlet property="titleTxt" destination="yHX-Ml-mgt" id="LYX-O1-atn"/>
                         <outlet property="userImg" destination="Eey-Ly-zos" id="K8V-Ae-drC"/>
                         <segue destination="K6t-rt-why" kind="show" identifier="openEditPost" id="4u4-L9-MNH"/>

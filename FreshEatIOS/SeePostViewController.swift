@@ -23,6 +23,7 @@ class SeePostViewController: UIViewController {
     @IBOutlet weak var editBtn: UIButton!
     @IBOutlet weak var phoneTxt: SMIconLabel!
     @IBOutlet weak var deleteBtn: UIButton!
+    @IBOutlet weak var tempTxt: SMIconLabel!
     
     var post:Post?{
         didSet{
@@ -110,6 +111,34 @@ class SeePostViewController: UIViewController {
             if weatherData != nil{
                 print(weatherData!.name)
                 print(weatherData?.main.temp ?? 1234)
+                
+                let tempString = String(round(weatherData!.main.temp))
+                let topAlignment: SMIconLabel.VerticalPosition = .top
+                self.tempTxt.iconPosition = ( .left, topAlignment )
+                if let range = tempString.range(of: ".") {
+                    let substring = tempString[..<range.lowerBound]+"°"+" "
+                  
+                    self.tempTxt.text = String (substring)
+                }
+                
+                self.tempTxt.layer.borderWidth = 1
+                self.tempTxt.layer.borderColor = UIColor(red: 0.39216, green: 0.65490, blue: 0.26667, alpha: 1.0).cgColor
+                self.tempTxt.layer.cornerRadius = 5
+                self.tempTxt.clipsToBounds = true
+                self.tempTxt.iconPadding = 3
+                let weatherDes = weatherData!.weather[0].main.rawValue
+                
+                switch weatherDes {
+                case "Clear":
+                    self.tempTxt.icon = UIImage(systemName: "sun.max")
+                case "Clouds":
+                    self.tempTxt.icon = UIImage(systemName: "cloud.fill")
+                case "Rain":
+                    self.tempTxt.icon = UIImage(systemName: "cloud.rain.fill")
+                              
+                default:
+                    self.tempTxt.icon = UIImage(systemName: "sun.max")
+                }
             }
             else{
                 print("Invalid City")
@@ -117,6 +146,7 @@ class SeePostViewController: UIViewController {
         }
     }
     
+
     
     @IBAction func deletePost(_ sender: UIButton) {
         let alert = UIAlertController(title: "Delete post", message: "Are you sure you want to delete this post?", preferredStyle: .alert)
