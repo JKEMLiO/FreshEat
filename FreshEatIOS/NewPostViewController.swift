@@ -194,7 +194,7 @@ class NewPostViewController: UIViewController, UITextViewDelegate, UITextFieldDe
                 self.stopLoading()
                 self.enableTabBar()
                 self.popupAlert(title: "Error Posting",
-                                message: "You must enter a valid Israeli City",
+                                message: "You must enter a valid city",
                                 actionTitles: ["OK"], actions: [nil])
                 self.locationInput.text = ""
                 return

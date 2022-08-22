@@ -254,7 +254,7 @@ class EditPostViewController: UIViewController,UITextViewDelegate, UITextFieldDe
                 self.stopLoading()
                 self.enableTabBar()
                 self.popupAlert(title: "Error Updating Post",
-                                message: "You must enter a valid Israeli City",
+                                message: "You must enter a valid city",
                                 actionTitles: ["OK"], actions: [nil])
                 self.locationTxt.text = self.post?.location
                 return
