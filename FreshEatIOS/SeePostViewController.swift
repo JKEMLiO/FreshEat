@@ -38,6 +38,8 @@ class SeePostViewController: UIViewController {
         super.viewDidLoad()
         postImg.layer.cornerRadius=10
         postImg.clipsToBounds=true
+        postImg.layer.borderWidth = 1
+        postImg.layer.borderColor = UIColor(red: 0.39216, green: 0.65490, blue: 0.26667, alpha: 1.0).cgColor
         namePostUIView.layer.cornerRadius=10
         namePostUIView.clipsToBounds=true
         descriptionUIView.layer.cornerRadius=10

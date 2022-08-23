@@ -24,31 +24,9 @@ class NewPostViewController: UIViewController, UITextViewDelegate, UITextFieldDe
         super.viewDidLoad()
       
         self.prepareView()
-        
-             
-        
-//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardApear), name: UIResponder.keyboardWillShowNotification, object: nil)
-//
-//        NotificationCenter.default.addObserver(self, selector: #selector(keyboardDisapear), name: UIResponder.keyboardWillShowNotification, object: nil)
-        
+         
     }
-    
-     
-       
-    
-//    var isExpand = false
-//    @objc func keyboardApear(){
-//        if !isExpand {
-////            self.scroll.contentSize = CGSize (width: self.view.frame.width, height: self.scroll.frame.height+300)
-//            //CGSize (width: self.view.frame.width, height: self.scroll.frame.height+300)
-//
-//        }
-//    }
-//
-//
-//    override func viewWillAppear(_ animated: Bool) {
-//        self.prepareView()
-//    }
+
    
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         let currentTxt = textField.text ?? ""
@@ -57,7 +35,10 @@ class NewPostViewController: UIViewController, UITextViewDelegate, UITextFieldDe
         }
         
         let updateText = currentTxt.replacingCharacters(in: stringRange, with: string)
-        return updateText.count < 30
+        if textField==phoneInput{
+            return updateText.count < 11
+        }
+        return updateText.count < 31
     
     }
     
@@ -217,7 +198,7 @@ class NewPostViewController: UIViewController, UITextViewDelegate, UITextFieldDe
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
-        selectedImage = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerOriginalImage")] as? UIImage
+        selectedImage = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedImage")] as? UIImage
         self.imgPost.image = selectedImage
         self.dismiss(animated: true, completion: nil)
     }
@@ -238,6 +219,8 @@ class NewPostViewController: UIViewController, UITextViewDelegate, UITextFieldDe
         self.enableTabBar()
         imgPost.layer.cornerRadius=15
         imgPost.clipsToBounds=true
+        imgPost.layer.borderWidth = 1
+        imgPost.layer.borderColor = UIColor(red: 0.39216, green: 0.65490, blue: 0.26667, alpha: 1.0).cgColor
         titleInput.layer.cornerRadius=10
         titleInput.clipsToBounds=true
         titlePH = titleInput.placeholder!

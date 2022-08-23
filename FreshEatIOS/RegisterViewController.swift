@@ -17,8 +17,10 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate 
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        profileImage.layer.cornerRadius=100
+        profileImage.layer.cornerRadius=80
         profileImage.clipsToBounds=true
+        profileImage.layer.borderWidth = 1
+        profileImage.layer.borderColor = UIColor(red: 0.39216, green: 0.65490, blue: 0.26667, alpha: 1.0).cgColor
         password.textContentType = .oneTimeCode
         confirmPassword.textContentType = .oneTimeCode
         self.stopLoading()
@@ -146,7 +148,7 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate 
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
-        selectedImage = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerOriginalImage")] as? UIImage
+        selectedImage = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedImage")] as? UIImage
         self.profileImage.image = selectedImage
         self.dismiss(animated: true, completion: nil)
     }

@@ -43,6 +43,8 @@ class EditPostViewController: UIViewController,UITextViewDelegate, UITextFieldDe
         phoneTxt.clipsToBounds = true
         postImg.layer.cornerRadius = 10
         postImg.clipsToBounds = true
+        postImg.layer.borderWidth = 1
+        postImg.layer.borderColor = UIColor(red: 0.39216, green: 0.65490, blue: 0.26667, alpha: 1.0).cgColor
        
         
         if post != nil{
@@ -188,7 +190,7 @@ class EditPostViewController: UIViewController,UITextViewDelegate, UITextFieldDe
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
-        selectedImage = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerOriginalImage")] as? UIImage
+        selectedImage = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedImage")] as? UIImage
         self.postImg.image = selectedImage
         editBtnOn()
         self.dismiss(animated: true, completion: nil)

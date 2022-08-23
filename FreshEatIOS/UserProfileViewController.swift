@@ -16,7 +16,9 @@ class UserProfileViewController: UIViewController, UIImagePickerControllerDelega
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        profileImage.layer.cornerRadius=40
+        profileImage.layer.cornerRadius=80
+        profileImage.layer.borderWidth = 1
+        profileImage.layer.borderColor = UIColor(red: 0.39216, green: 0.65490, blue: 0.26667, alpha: 1.0).cgColor
         profileImage.clipsToBounds=true
         self.view.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: .concrete), animation: nil, transition: .crossDissolve(0.25))
         self.startLoading()
@@ -62,7 +64,7 @@ class UserProfileViewController: UIViewController, UIImagePickerControllerDelega
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         
-        selectedImage = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerOriginalImage")] as? UIImage
+        selectedImage = info[UIImagePickerController.InfoKey(rawValue: "UIImagePickerControllerEditedImage")] as? UIImage
         self.profileImage.image = selectedImage
         self.dismiss(animated: true, completion: nil)
         self.startLoading()
